@@ -17,6 +17,7 @@
     <modules>
         <!-- 通用工具组件 -->
         <module>LittleRedBook-commons</module>
+        <module>LittleRedBook-spring-boot-starter-biz-operationlog</module>
     </modules>
 
 
