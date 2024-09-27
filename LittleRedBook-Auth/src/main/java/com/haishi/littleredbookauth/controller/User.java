@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+import jakarta.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
 
 @Data
@@ -15,6 +15,7 @@ public class User {
     /**
      * 昵称
      */
+    @NotBlank(message = "昵称不能为空")
     private String nickName;
 
     /**

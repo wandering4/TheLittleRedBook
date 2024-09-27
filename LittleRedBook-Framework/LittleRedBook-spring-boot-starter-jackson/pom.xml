@@ -1,19 +1,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>com.haishi</groupId>
         <artifactId>LittleRedBook-Framework</artifactId>
         <version>${revision}</version>
     </parent>
 
-
+    <!-- 指定打包方式 -->
     <packaging>jar</packaging>
 
-    <artifactId>LittleRedBook-spring-boot-starter-biz-operationlog</artifactId>
+    <artifactId>LittleRedBook-spring-boot-starter-jackson</artifactId>
     <name>${project.artifactId}</name>
-    <description>接口日志组件</description>
-
+    <description>自定义 Jackson 配置: 支持 Java 8 新的日期 API，如 LocalDateTime、LocalDate 等等</description>
 
     <dependencies>
         <dependency>
@@ -21,4 +21,5 @@
             <artifactId>LittleRedBook-commons</artifactId>
         </dependency>
     </dependencies>
+
 </project>

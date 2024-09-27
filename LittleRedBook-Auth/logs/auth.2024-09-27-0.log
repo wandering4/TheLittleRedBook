@@ -1,0 +1,124 @@
+2024-09-27 10:25:15.982 [main] INFO  c.h.l.LittleRedBookAuthApplicationTests - Starting LittleRedBookAuthApplicationTests using Java 17.0.12 with PID 36152 (started by xzf in C:\Users\xzf\Desktop\TheLittleRedBook\LittleRedBook-Auth)
+2024-09-27 10:25:15.984 [main] INFO  c.h.l.LittleRedBookAuthApplicationTests - The following 1 profile is active: "dev"
+2024-09-27 10:25:17.247 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-09-27 10:25:17.656 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-09-27 10:25:18.070 [main] INFO  c.h.l.LittleRedBookAuthApplicationTests - Started LittleRedBookAuthApplicationTests in 2.391 seconds (process running for 2.986)
+2024-09-27 10:25:18.637 [main] DEBUG c.h.l.domain.mapper.UserDOMapper.insert - ==>  Preparing: insert into t_user (id, username, create_time, update_time) values (?, ?, ?, ?)
+2024-09-27 10:25:18.795 [main] DEBUG c.h.l.domain.mapper.UserDOMapper.insert - ==> Parameters: null, 犬小哈(String), 2024-09-27T10:25:18.616425300(LocalDateTime), 2024-09-27T10:25:18.616425300(LocalDateTime)
+2024-09-27 10:25:18.805 [main] DEBUG c.h.l.domain.mapper.UserDOMapper.insert - <==    Updates: 1
+2024-09-27 10:25:18.818 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-09-27 10:25:18.825 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-09-27 11:23:38.319 [main] INFO  com.haishi.littleredbookauth.DruidTests - Starting DruidTests using Java 17.0.12 with PID 40244 (started by xzf in C:\Users\xzf\Desktop\TheLittleRedBook\LittleRedBook-Auth)
+2024-09-27 11:23:38.320 [main] INFO  com.haishi.littleredbookauth.DruidTests - The following 1 profile is active: "dev"
+2024-09-27 11:23:39.511 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-09-27 11:23:39.879 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-09-27 11:23:40.246 [main] INFO  com.haishi.littleredbookauth.DruidTests - Started DruidTests in 2.194 seconds (process running for 2.783)
+2024-09-27 11:23:40.791 [main] INFO  com.haishi.littleredbookauth.DruidTests - privateKey: MIIBUwIBADANBgkqhkiG9w0BAQEFAASCAT0wggE5AgEAAkEAxtqcdrgV+vnZ4vJ8ldg8kYGXgDrUvWIfxuSJ8xIJ4Gg4HLvXYFh7wvCzKMCyJzU5H9whTsT2Aox7r5aUa3unewIDAQABAkAoYxUdHZVFRIKGz+YSzvi6Or5I6mnzzt6SWC9WYWcFHvl1D41E9cGR+F15HL+2CIDqXP3ujNpPzbB2tobWwAixAiEAygq81NoFSvdLiDj6oSGlOqn0tpNiwtBjrOuwXcLuT+sCIQD79ep2des1CDEULMRFiCZlg2DgeaZJiDA1DED2jy+ysQIgaKwxclDVhyYhUpy6c/o7YO4mIuSuuOE/kpm0kI7p6isCIFM8D/KGTec9B4mUqFoX+ic62XwOc+KCvPopTCSndKhhAiA39Ui2t1M4FFwqPodd6EJ6NTIgl0cm+cyRqZch0DAr/w==
+2024-09-27 11:23:40.795 [main] INFO  com.haishi.littleredbookauth.DruidTests - publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMbanHa4Ffr52eLyfJXYPJGBl4A61L1iH8bkifMSCeBoOBy712BYe8LwsyjAsic1OR/cIU7E9gKMe6+WlGt7p3sCAwEAAQ==
+2024-09-27 11:23:40.798 [main] INFO  com.haishi.littleredbookauth.DruidTests - password: mNawydasmqmlpgwakgTbkwUbRGguP+PnxRTSWbDwHZu0OcDBB6Myw39MSMhY3yjZKqGJZsEGgAcpXIa31DVlGw==
+2024-09-27 11:23:40.816 [main] INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.haishi.littleredbookauth.LittleRedBookAuthApplicationTests]: LittleRedBookAuthApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-09-27 11:23:40.818 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.haishi.littleredbookauth.LittleRedBookAuthApplication for test class com.haishi.littleredbookauth.LittleRedBookAuthApplicationTests
+2024-09-27 11:23:40.868 [main] DEBUG c.h.l.d.mapper.UserDOMapper.deleteByPrimaryKey - ==>  Preparing: delete from t_user where id = ?
+2024-09-27 11:23:40.993 [main] DEBUG c.h.l.d.mapper.UserDOMapper.deleteByPrimaryKey - ==> Parameters: 1(Long)
+2024-09-27 11:23:40.999 [main] DEBUG c.h.l.d.mapper.UserDOMapper.deleteByPrimaryKey - <==    Updates: 0
+2024-09-27 11:23:41.004 [main] DEBUG c.h.l.domain.mapper.UserDOMapper.insert - ==>  Preparing: insert into t_user (id, username, create_time, update_time) values (?, ?, ?, ?)
+2024-09-27 11:23:41.066 [main] DEBUG c.h.l.domain.mapper.UserDOMapper.insert - ==> Parameters: null, 犬小哈(String), 2024-09-27T11:23:41.003688500(LocalDateTime), 2024-09-27T11:23:41.003688500(LocalDateTime)
+2024-09-27 11:23:41.077 [main] DEBUG c.h.l.domain.mapper.UserDOMapper.insert - <==    Updates: 1
+2024-09-27 11:23:41.084 [main] DEBUG c.h.l.d.mapper.UserDOMapper.selectByPrimaryKey - ==>  Preparing: select id, username, create_time, update_time from t_user where id = ?
+2024-09-27 11:23:41.088 [main] DEBUG c.h.l.d.mapper.UserDOMapper.selectByPrimaryKey - ==> Parameters: 2(Long)
+2024-09-27 11:23:41.105 [main] DEBUG c.h.l.d.mapper.UserDOMapper.selectByPrimaryKey - <==      Total: 1
+2024-09-27 11:23:41.129 [main] INFO  c.h.l.LittleRedBookAuthApplicationTests - User: [2024,9,27,9,43,47]
+2024-09-27 11:23:41.135 [main] DEBUG c.h.l.d.mapper.UserDOMapper.updateByPrimaryKey - ==>  Preparing: update t_user set username = ?, create_time = ?, update_time = ? where id = ?
+2024-09-27 11:23:41.137 [main] DEBUG c.h.l.d.mapper.UserDOMapper.updateByPrimaryKey - ==> Parameters: 犬小哈教程(String), null, 2024-09-27T11:23:41.135050500(LocalDateTime), 2(Long)
+2024-09-27 11:23:41.190 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-09-27 11:23:41.196 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-09-27 11:25:34.060 [main] INFO  com.haishi.littleredbookauth.DruidTests - Starting DruidTests using Java 17.0.12 with PID 468 (started by xzf in C:\Users\xzf\Desktop\TheLittleRedBook\LittleRedBook-Auth)
+2024-09-27 11:25:34.060 [main] INFO  com.haishi.littleredbookauth.DruidTests - The following 1 profile is active: "dev"
+2024-09-27 11:25:35.221 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-09-27 11:25:35.606 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-09-27 11:25:35.980 [main] INFO  com.haishi.littleredbookauth.DruidTests - Started DruidTests in 2.186 seconds (process running for 2.742)
+2024-09-27 11:25:36.604 [main] INFO  com.haishi.littleredbookauth.DruidTests - privateKey: MIIBVAIBADANBgkqhkiG9w0BAQEFAASCAT4wggE6AgEAAkEApK8CyL178zawYftbH8uDG56bJNIL1PMyqIKORxhr0JLx0qSZf5/LgHjeUu6DnE8Y76/kVs7nHreD/k5sCnKTGwIDAQABAkA2NZngBGe5zsXO6xO66p30yIffXfkhFxEU4Sz+gC51UHJLzSUdPEdA396K7VGkHV+XHZ1tjNflrMLKObXvFJBxAiEAw2ZjTnpdX8wwe4SeGJRWipdyu+f3U/3SPykoPypBIlMCIQDXwe1ifQNtMpcd0L+aKRQsXhY0fNFc9nnq1flOMyvDGQIgKF9uY1erFVEWL18+Xyu/GdGi9io+kw8dsskpNKvhW1sCIB78Vt9CHO/dyB4cEKhPJfqJOJ8pHdg//ZpgSIGWj75hAiEAntmcNyTqFkd3aogizhPHlg/J55DbHKjWODzzDdSg3Yw=
+2024-09-27 11:25:36.607 [main] INFO  com.haishi.littleredbookauth.DruidTests - publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKSvAsi9e/M2sGH7Wx/LgxuemyTSC9TzMqiCjkcYa9CS8dKkmX+fy4B43lLug5xPGO+v5FbO5x63g/5ObApykxsCAwEAAQ==
+2024-09-27 11:25:36.609 [main] INFO  com.haishi.littleredbookauth.DruidTests - password: OdVEyuYj+sQxkejKz9xGAX3Xv1nqCznwvge99K2mLnT98Ogv9NMgAAIBimtACbiZ5vQ2K5ssTprtwhiBgEFCUw==
+2024-09-27 11:25:36.633 [main] INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.haishi.littleredbookauth.LittleRedBookAuthApplicationTests]: LittleRedBookAuthApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-09-27 11:25:36.635 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.haishi.littleredbookauth.LittleRedBookAuthApplication for test class com.haishi.littleredbookauth.LittleRedBookAuthApplicationTests
+2024-09-27 11:25:36.670 [main] DEBUG c.h.l.d.mapper.UserDOMapper.deleteByPrimaryKey - ==>  Preparing: delete from t_user where id = ?
+2024-09-27 11:25:36.773 [main] DEBUG c.h.l.d.mapper.UserDOMapper.deleteByPrimaryKey - ==> Parameters: 1(Long)
+2024-09-27 11:25:36.776 [main] DEBUG c.h.l.d.mapper.UserDOMapper.deleteByPrimaryKey - <==    Updates: 0
+2024-09-27 11:25:36.783 [main] DEBUG c.h.l.domain.mapper.UserDOMapper.insert - ==>  Preparing: insert into t_user (id, username, create_time, update_time) values (?, ?, ?, ?)
+2024-09-27 11:25:36.837 [main] DEBUG c.h.l.domain.mapper.UserDOMapper.insert - ==> Parameters: null, 犬小哈(String), 2024-09-27T11:25:36.781648900(LocalDateTime), 2024-09-27T11:25:36.781648900(LocalDateTime)
+2024-09-27 11:25:36.843 [main] DEBUG c.h.l.domain.mapper.UserDOMapper.insert - <==    Updates: 1
+2024-09-27 11:25:36.848 [main] DEBUG c.h.l.d.mapper.UserDOMapper.selectByPrimaryKey - ==>  Preparing: select id, username, create_time, update_time from t_user where id = ?
+2024-09-27 11:25:36.852 [main] DEBUG c.h.l.d.mapper.UserDOMapper.selectByPrimaryKey - ==> Parameters: 2(Long)
+2024-09-27 11:25:36.865 [main] DEBUG c.h.l.d.mapper.UserDOMapper.selectByPrimaryKey - <==      Total: 1
+2024-09-27 11:25:36.886 [main] INFO  c.h.l.LittleRedBookAuthApplicationTests - User: [2024,9,27,9,43,47]
+2024-09-27 11:25:36.891 [main] DEBUG c.h.l.d.mapper.UserDOMapper.updateByPrimaryKey - ==>  Preparing: update t_user set username = ?, create_time = ?, update_time = ? where id = ?
+2024-09-27 11:25:36.894 [main] DEBUG c.h.l.d.mapper.UserDOMapper.updateByPrimaryKey - ==> Parameters: 犬小哈教程(String), null, 2024-09-27T11:25:36.891515700(LocalDateTime), 2(Long)
+2024-09-27 11:25:36.939 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-09-27 11:25:36.944 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-09-27 11:26:56.299 [main] INFO  com.haishi.littleredbookauth.DruidTests - Starting DruidTests using Java 17.0.12 with PID 32988 (started by xzf in C:\Users\xzf\Desktop\TheLittleRedBook\LittleRedBook-Auth)
+2024-09-27 11:26:56.300 [main] INFO  com.haishi.littleredbookauth.DruidTests - The following 1 profile is active: "dev"
+2024-09-27 11:26:57.427 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-09-27 11:26:57.811 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-09-27 11:26:58.183 [main] INFO  com.haishi.littleredbookauth.DruidTests - Started DruidTests in 2.154 seconds (process running for 2.742)
+2024-09-27 11:26:58.789 [main] INFO  com.haishi.littleredbookauth.DruidTests - privateKey: MIIBVQIBADANBgkqhkiG9w0BAQEFAASCAT8wggE7AgEAAkEAqMBLVX7dISC4DAZzm6StFNwJfQV5YJXfGyZBJGI+m8as8KtlQ4NYrJtFjJ7ienQYUxEFqdovEb8e+3qotKCCmwIDAQABAkAI+Duo3jbryVzvCrK/bafjiXSZqB5VA3JZ85UX1X8FcZpoAw5awcv4ArEdI8j8ayffRofHZJGX0vecA1YJ4cINAiEAyAyfWRCbR+052D5ulwAFXteuiJvqdSj7d+FDmFuqTLcCIQDX8r9oenlWUcJseQDr9sQZBetSU3fwjnEE1ucj9ACdPQIhAIlsAlrQiZsTX1UpLhcUsJvCVecKFDl/eZ+UYzbaYVZpAiEAhMBVqoSf0tCwFL7OMkCgjEF3SETHlrn6AF+b+B4nwoECIBfu6J1wWvSRvKvleBE3R1oPX1Mq18ZI6iu1NhDHenc0
+2024-09-27 11:26:58.793 [main] INFO  com.haishi.littleredbookauth.DruidTests - publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKjAS1V+3SEguAwGc5ukrRTcCX0FeWCV3xsmQSRiPpvGrPCrZUODWKybRYye4np0GFMRBanaLxG/Hvt6qLSggpsCAwEAAQ==
+2024-09-27 11:26:58.795 [main] INFO  com.haishi.littleredbookauth.DruidTests - password: OgVnoQdEGdjt/sSDJ0ZrsQUVAqeRGWUS6yodUfYyhLZ0drn/MkDmh5YyjbjIxZjlml68AaO3DMw4K3ADwUrmrw==
+2024-09-27 11:26:58.823 [main] INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.haishi.littleredbookauth.LittleRedBookAuthApplicationTests]: LittleRedBookAuthApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-09-27 11:26:58.825 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.haishi.littleredbookauth.LittleRedBookAuthApplication for test class com.haishi.littleredbookauth.LittleRedBookAuthApplicationTests
+2024-09-27 11:26:58.869 [main] DEBUG c.h.l.d.mapper.UserDOMapper.deleteByPrimaryKey - ==>  Preparing: delete from t_user where id = ?
+2024-09-27 11:26:58.964 [main] DEBUG c.h.l.d.mapper.UserDOMapper.deleteByPrimaryKey - ==> Parameters: 1(Long)
+2024-09-27 11:26:58.967 [main] DEBUG c.h.l.d.mapper.UserDOMapper.deleteByPrimaryKey - <==    Updates: 0
+2024-09-27 11:26:58.972 [main] DEBUG c.h.l.domain.mapper.UserDOMapper.insert - ==>  Preparing: insert into t_user (id, username, create_time, update_time) values (?, ?, ?, ?)
+2024-09-27 11:26:59.035 [main] DEBUG c.h.l.domain.mapper.UserDOMapper.insert - ==> Parameters: null, 犬小哈(String), 2024-09-27T11:26:58.972233(LocalDateTime), 2024-09-27T11:26:58.972233(LocalDateTime)
+2024-09-27 11:26:59.041 [main] DEBUG c.h.l.domain.mapper.UserDOMapper.insert - <==    Updates: 1
+2024-09-27 11:26:59.048 [main] DEBUG c.h.l.d.mapper.UserDOMapper.selectByPrimaryKey - ==>  Preparing: select id, username, create_time, update_time from t_user where id = ?
+2024-09-27 11:26:59.051 [main] DEBUG c.h.l.d.mapper.UserDOMapper.selectByPrimaryKey - ==> Parameters: 2(Long)
+2024-09-27 11:26:59.062 [main] DEBUG c.h.l.d.mapper.UserDOMapper.selectByPrimaryKey - <==      Total: 1
+2024-09-27 11:26:59.083 [main] INFO  c.h.l.LittleRedBookAuthApplicationTests - User: [2024,9,27,9,43,47]
+2024-09-27 11:26:59.096 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-09-27 11:26:59.101 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-09-27 11:27:48.972 [main] INFO  c.h.l.LittleRedBookAuthApplicationTests - Starting LittleRedBookAuthApplicationTests using Java 17.0.12 with PID 41492 (started by xzf in C:\Users\xzf\Desktop\TheLittleRedBook\LittleRedBook-Auth)
+2024-09-27 11:27:48.972 [main] INFO  c.h.l.LittleRedBookAuthApplicationTests - The following 1 profile is active: "dev"
+2024-09-27 11:27:50.241 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-09-27 11:27:50.585 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-09-27 11:27:50.990 [main] INFO  c.h.l.LittleRedBookAuthApplicationTests - Started LittleRedBookAuthApplicationTests in 2.323 seconds (process running for 2.866)
+2024-09-27 11:27:51.743 [main] DEBUG c.h.l.d.mapper.UserDOMapper.updateByPrimaryKey - ==>  Preparing: update t_user set username = ?, create_time = ?, update_time = ? where id = ?
+2024-09-27 11:27:51.861 [main] DEBUG c.h.l.d.mapper.UserDOMapper.updateByPrimaryKey - ==> Parameters: 犬小哈教程(String), null, 2024-09-27T11:27:51.679335400(LocalDateTime), 2(Long)
+2024-09-27 11:27:51.961 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-09-27 11:27:51.966 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-09-27 11:29:19.606 [main] INFO  c.h.l.LittleRedBookAuthApplicationTests - Starting LittleRedBookAuthApplicationTests using Java 17.0.12 with PID 31232 (started by xzf in C:\Users\xzf\Desktop\TheLittleRedBook\LittleRedBook-Auth)
+2024-09-27 11:29:19.606 [main] INFO  c.h.l.LittleRedBookAuthApplicationTests - The following 1 profile is active: "dev"
+2024-09-27 11:29:20.893 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-09-27 11:29:21.288 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-09-27 11:29:21.609 [main] INFO  c.h.l.LittleRedBookAuthApplicationTests - Started LittleRedBookAuthApplicationTests in 2.302 seconds (process running for 2.874)
+2024-09-27 11:29:22.309 [main] DEBUG c.h.l.d.mapper.UserDOMapper.updateByPrimaryKey - ==>  Preparing: update t_user SET username = ?, update_time = ? where id = ?
+2024-09-27 11:29:22.423 [main] DEBUG c.h.l.d.mapper.UserDOMapper.updateByPrimaryKey - ==> Parameters: 犬小哈教程(String), 2024-09-27T11:29:22.258789(LocalDateTime), 2(Long)
+2024-09-27 11:29:22.433 [main] DEBUG c.h.l.d.mapper.UserDOMapper.updateByPrimaryKey - <==    Updates: 1
+2024-09-27 11:29:22.447 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-09-27 11:29:22.452 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-09-27 11:31:14.696 [main] INFO  com.haishi.littleredbookauth.DruidTests - Starting DruidTests using Java 17.0.12 with PID 20864 (started by xzf in C:\Users\xzf\Desktop\TheLittleRedBook\LittleRedBook-Auth)
+2024-09-27 11:31:14.697 [main] INFO  com.haishi.littleredbookauth.DruidTests - The following 1 profile is active: "dev"
+2024-09-27 11:31:15.968 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-09-27 11:31:16.365 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-09-27 11:31:16.779 [main] INFO  com.haishi.littleredbookauth.DruidTests - Started DruidTests in 2.346 seconds (process running for 2.963)
+2024-09-27 11:31:17.456 [main] INFO  com.haishi.littleredbookauth.DruidTests - privateKey: MIIBVAIBADANBgkqhkiG9w0BAQEFAASCAT4wggE6AgEAAkEAqqNP3ImD7sq2WBUW3cJ1LwavXu2kZybwIqMFxFTjvOoCJcJSHhlt4AMKSqKOrb5DlGFsjbdw7JCNjnD5kfftNwIDAQABAkAWDPakBC1FbXK03TzQOXHVOuLsvH7zSYfcof57yZCId+r8OMIalF9C+2aUU7xTQV+JV7Vwq8Cv+QlrGJe9nWaxAiEAz8FZvj6Ze7EkbqPq6DIYjOmDq05J/ECcYl0fl8eYVQkCIQDSQ2hLtXf4fXEqhDfEQftLhKaYdXgdiHHA98N/SWMAPwIgFD2hMbDFoVBr3T+pFkAzNh9WDa2N9b6Rvd+WwWHXzIkCICsJTQGiBQpBcrZHFbr/3lWYsxilgo5Y7R+YFtWoybC1AiEArWJq66iD6zYL80vflib7UNsUfUV1Bb0gkFQ/n2xeUIg=
+2024-09-27 11:31:17.460 [main] INFO  com.haishi.littleredbookauth.DruidTests - publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKqjT9yJg+7KtlgVFt3CdS8Gr17tpGcm8CKjBcRU47zqAiXCUh4ZbeADCkqijq2+Q5RhbI23cOyQjY5w+ZH37TcCAwEAAQ==
+2024-09-27 11:31:17.463 [main] INFO  com.haishi.littleredbookauth.DruidTests - password: ZS/Pjt3BgmiPQu/Q2V10osfvHiF8UtPci2pZavG5dsHywgw4HtNN9Y0ZscIG5WiGpNmAHEuwpO4PcY3i60362g==
+2024-09-27 11:31:17.489 [main] INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.haishi.littleredbookauth.LittleRedBookAuthApplicationTests]: LittleRedBookAuthApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-09-27 11:31:17.490 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.haishi.littleredbookauth.LittleRedBookAuthApplication for test class com.haishi.littleredbookauth.LittleRedBookAuthApplicationTests
+2024-09-27 11:31:17.519 [main] DEBUG c.h.l.d.mapper.UserDOMapper.deleteByPrimaryKey - ==>  Preparing: delete from t_user where id = ?
+2024-09-27 11:31:17.621 [main] DEBUG c.h.l.d.mapper.UserDOMapper.deleteByPrimaryKey - ==> Parameters: 1(Long)
+2024-09-27 11:31:17.629 [main] DEBUG c.h.l.d.mapper.UserDOMapper.deleteByPrimaryKey - <==    Updates: 0
+2024-09-27 11:31:17.635 [main] DEBUG c.h.l.domain.mapper.UserDOMapper.insert - ==>  Preparing: insert into t_user (id, username, create_time, update_time) values (?, ?, ?, ?)
+2024-09-27 11:31:17.733 [main] DEBUG c.h.l.domain.mapper.UserDOMapper.insert - ==> Parameters: null, 犬小哈(String), 2024-09-27T11:31:17.635317300(LocalDateTime), 2024-09-27T11:31:17.635317300(LocalDateTime)
+2024-09-27 11:31:17.740 [main] DEBUG c.h.l.domain.mapper.UserDOMapper.insert - <==    Updates: 1
+2024-09-27 11:31:17.744 [main] DEBUG c.h.l.d.mapper.UserDOMapper.selectByPrimaryKey - ==>  Preparing: select id, username, create_time, update_time from t_user where id = ?
+2024-09-27 11:31:17.749 [main] DEBUG c.h.l.d.mapper.UserDOMapper.selectByPrimaryKey - ==> Parameters: 2(Long)
+2024-09-27 11:31:17.762 [main] DEBUG c.h.l.d.mapper.UserDOMapper.selectByPrimaryKey - <==      Total: 1
+2024-09-27 11:31:17.782 [main] INFO  c.h.l.LittleRedBookAuthApplicationTests - User: [2024,9,27,9,43,47]
+2024-09-27 11:31:17.798 [main] DEBUG c.h.l.d.mapper.UserDOMapper.updateByPrimaryKey - ==>  Preparing: update t_user SET username = ?, update_time = ? where id = ?
+2024-09-27 11:31:17.799 [main] DEBUG c.h.l.d.mapper.UserDOMapper.updateByPrimaryKey - ==> Parameters: 犬小哈教程(String), 2024-09-27T11:31:17.787053700(LocalDateTime), 2(Long)
+2024-09-27 11:31:17.802 [main] DEBUG c.h.l.d.mapper.UserDOMapper.updateByPrimaryKey - <==    Updates: 1
+2024-09-27 11:31:17.813 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-09-27 11:31:17.818 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed

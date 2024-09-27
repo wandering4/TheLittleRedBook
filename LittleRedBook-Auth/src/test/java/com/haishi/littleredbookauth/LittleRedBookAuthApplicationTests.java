@@ -36,7 +36,7 @@ class LittleRedBookAuthApplicationTests {
      */
     @Test
     void testSelect() {
-        UserDO userDO=userDOMapper.selectByPrimaryKey(1l);
+        UserDO userDO=userDOMapper.selectByPrimaryKey(2l);
         log.info("User: {}", JsonUtil.toJsonString(userDO));
     }
 
@@ -46,7 +46,7 @@ class LittleRedBookAuthApplicationTests {
     @Test
     void testUpdate() {
         UserDO userDO = UserDO.builder()
-                .id(1L)
+                .id(2L)
                 .username("犬小哈教程")
                 .updateTime(LocalDateTime.now())
                 .build();

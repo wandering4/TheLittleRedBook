@@ -16,7 +16,18 @@ import java.util.Date;
 
 public class JsonUtil {
 
-    private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
+
+    private static ObjectMapper OBJECT_MAPPER = new ObjectMapper();
+
+    /**
+     * 初始化：统一使用 Spring Boot 个性化配置的 ObjectMapper
+     *
+     * @param objectMapper
+     */
+    public static void init(ObjectMapper objectMapper) {
+        OBJECT_MAPPER = objectMapper;
+    }
+
 
     static {
         //忽略未知属性，不会抛出异常
@@ -27,9 +38,11 @@ public class JsonUtil {
         // JavaTimeModule 用于指定序列化和反序列化规则
         JavaTimeModule javaTimeModule = new JavaTimeModule();
 
+/*
         // 支持 LocalDateTime
         javaTimeModule.addSerializer(LocalDateTime.class, new LocalDateTimeSerializer(DateTimeFormatter.ofPattern(DateConstants.Y_M_D_H_M_S_FORMAT)));
         javaTimeModule.addDeserializer(LocalDateTime.class, new LocalDateTimeDeserializer(DateTimeFormatter.ofPattern(DateConstants.Y_M_D_H_M_S_FORMAT)));
+*/
 
         OBJECT_MAPPER.registerModules(javaTimeModule); // 解决 LocalDateTime 的序列化问题
     }
