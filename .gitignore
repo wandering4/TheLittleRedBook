@@ -42,6 +42,7 @@ build/
 .idea/encodings.xml
 .idea/misc.xml
 .idea/vcs.xml
-LittleRedBook-Auth/src/main/resources/config/application-dev.yml
-LittleRedBook-Auth/src/main/resources/config/application-dev.yml
-/LittleRedBook-Auth/src/main/resources/config
+
+
+
+*.yml
