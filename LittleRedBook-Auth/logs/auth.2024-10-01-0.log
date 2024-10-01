@@ -1,0 +1,75 @@
+2024-10-01 13:54:02.487 [main] INFO  com.haishi.littleredbookauth.RedisTests - Starting RedisTests using Java 17.0.12 with PID 3236 (started by xzf in C:\Users\xzf\Desktop\TheLittleRedBook\LittleRedBook-Auth)
+2024-10-01 13:54:02.488 [main] INFO  com.haishi.littleredbookauth.RedisTests - The following 1 profile is active: "dev"
+2024-10-01 13:54:03.047 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-10-01 13:54:03.049 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-10-01 13:54:03.072 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2024-10-01 13:54:04.468 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-10-01 13:54:04.886 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-10-01 13:54:05.421 [main] INFO  com.haishi.littleredbookauth.RedisTests - Started RedisTests in 3.242 seconds (process running for 3.896)
+2024-10-01 13:54:06.691 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-10-01 13:54:06.700 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-10-01 13:55:14.671 [main] INFO  com.haishi.littleredbookauth.RedisTests - Starting RedisTests using Java 17.0.12 with PID 23388 (started by xzf in C:\Users\xzf\Desktop\TheLittleRedBook\LittleRedBook-Auth)
+2024-10-01 13:55:14.672 [main] INFO  com.haishi.littleredbookauth.RedisTests - The following 1 profile is active: "dev"
+2024-10-01 13:55:15.213 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-10-01 13:55:15.214 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-10-01 13:55:15.243 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2024-10-01 13:55:16.379 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-10-01 13:55:16.780 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-10-01 13:55:17.276 [main] INFO  com.haishi.littleredbookauth.RedisTests - Started RedisTests in 2.914 seconds (process running for 3.537)
+2024-10-01 13:55:17.991 [main] INFO  com.haishi.littleredbookauth.RedisTests - key 是否存在：true
+2024-10-01 13:55:18.006 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-10-01 13:55:18.012 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-10-01 13:55:20.990 [main] INFO  com.haishi.littleredbookauth.RedisTests - Starting RedisTests using Java 17.0.12 with PID 2068 (started by xzf in C:\Users\xzf\Desktop\TheLittleRedBook\LittleRedBook-Auth)
+2024-10-01 13:55:20.991 [main] INFO  com.haishi.littleredbookauth.RedisTests - The following 1 profile is active: "dev"
+2024-10-01 13:55:21.553 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-10-01 13:55:21.554 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-10-01 13:55:21.577 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2024-10-01 13:55:22.736 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-10-01 13:55:23.159 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-10-01 13:55:23.663 [main] INFO  com.haishi.littleredbookauth.RedisTests - Started RedisTests in 2.968 seconds (process running for 3.541)
+2024-10-01 13:55:24.431 [main] INFO  com.haishi.littleredbookauth.RedisTests - value 值：xzf
+2024-10-01 13:55:24.443 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-10-01 13:55:24.448 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-10-01 13:55:27.565 [main] INFO  com.haishi.littleredbookauth.RedisTests - Starting RedisTests using Java 17.0.12 with PID 26192 (started by xzf in C:\Users\xzf\Desktop\TheLittleRedBook\LittleRedBook-Auth)
+2024-10-01 13:55:27.566 [main] INFO  com.haishi.littleredbookauth.RedisTests - The following 1 profile is active: "dev"
+2024-10-01 13:55:28.181 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-10-01 13:55:28.183 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-10-01 13:55:28.207 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2024-10-01 13:55:29.441 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-10-01 13:55:29.861 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-10-01 13:55:30.380 [main] INFO  com.haishi.littleredbookauth.RedisTests - Started RedisTests in 3.12 seconds (process running for 3.705)
+2024-10-01 13:55:33.100 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-10-01 13:55:33.106 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-10-01 21:27:33.716 [main] INFO  c.h.littleredbookauth.ThreadPoolTaskExecutorTests - Starting ThreadPoolTaskExecutorTests using Java 17.0.12 with PID 7332 (started by xzf in C:\Users\xzf\Desktop\TheLittleRedBook\LittleRedBook-Auth)
+2024-10-01 21:27:33.717 [main] INFO  c.h.littleredbookauth.ThreadPoolTaskExecutorTests - The following 1 profile is active: "dev"
+2024-10-01 21:27:34.322 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-10-01 21:27:34.324 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-10-01 21:27:34.353 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2024-10-01 21:27:35.536 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-10-01 21:27:35.941 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-10-01 21:27:36.332 [main] INFO  c.h.littleredbookauth.ThreadPoolTaskExecutorTests - Started ThreadPoolTaskExecutorTests in 2.93 seconds (process running for 3.545)
+2024-10-01 21:27:36.756 [task-1] INFO  c.h.littleredbookauth.ThreadPoolTaskExecutorTests - 异步线程中说: 犬小哈专栏
+2024-10-01 21:27:36.769 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-10-01 21:27:36.778 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-10-01 21:30:13.952 [main] INFO  c.h.littleredbookauth.ThreadPoolTaskExecutorTests - Starting ThreadPoolTaskExecutorTests using Java 17.0.12 with PID 16712 (started by xzf in C:\Users\xzf\Desktop\TheLittleRedBook\LittleRedBook-Auth)
+2024-10-01 21:30:13.953 [main] INFO  c.h.littleredbookauth.ThreadPoolTaskExecutorTests - The following 1 profile is active: "dev"
+2024-10-01 21:30:14.504 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-10-01 21:30:14.507 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-10-01 21:30:14.537 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2024-10-01 21:30:15.664 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-10-01 21:30:16.018 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-10-01 21:30:16.375 [main] INFO  c.h.littleredbookauth.ThreadPoolTaskExecutorTests - Started ThreadPoolTaskExecutorTests in 2.701 seconds (process running for 3.311)
+2024-10-01 21:30:16.875 [task-1] INFO  c.h.littleredbookauth.ThreadPoolTaskExecutorTests - 异步线程中说: 犬小哈专栏
+2024-10-01 21:30:16.895 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-10-01 21:30:16.903 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-10-01 21:31:57.441 [main] INFO  c.h.littleredbookauth.ThreadPoolTaskExecutorTests - Starting ThreadPoolTaskExecutorTests using Java 17.0.12 with PID 16376 (started by xzf in C:\Users\xzf\Desktop\TheLittleRedBook\LittleRedBook-Auth)
+2024-10-01 21:31:57.442 [main] INFO  c.h.littleredbookauth.ThreadPoolTaskExecutorTests - The following 1 profile is active: "dev"
+2024-10-01 21:31:58.059 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-10-01 21:31:58.061 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-10-01 21:31:58.091 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2024-10-01 21:31:59.372 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-10-01 21:31:59.827 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-10-01 21:32:00.366 [main] INFO  c.h.littleredbookauth.ThreadPoolTaskExecutorTests - Started ThreadPoolTaskExecutorTests in 3.229 seconds (process running for 3.842)
+2024-10-01 21:32:00.898 [AuthExecutor-1] INFO  c.h.littleredbookauth.ThreadPoolTaskExecutorTests - 异步线程中说: 犬小哈专栏
+2024-10-01 21:32:00.915 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-10-01 21:32:00.922 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed

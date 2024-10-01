@@ -1,0 +1,94 @@
+2024-10-01 13:43:30.255 [main] INFO  c.h.littleredbookauth.LittleRedBookAuthApplication - Starting LittleRedBookAuthApplication using Java 17.0.12 with PID 8832 (C:\Users\xzf\Desktop\TheLittleRedBook\LittleRedBook-Auth\target\classes started by xzf in C:\Users\xzf\Desktop\TheLittleRedBook)
+2024-10-01 13:43:30.256 [main] INFO  c.h.littleredbookauth.LittleRedBookAuthApplication - The following 1 profile is active: "dev"
+2024-10-01 13:43:31.007 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-10-01 13:43:31.013 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-01 13:43:31.014 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2024-10-01 13:43:31.065 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-01 13:43:31.065 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 785 ms
+2024-10-01 13:43:31.358 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-10-01 13:43:31.514 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-10-01 13:43:31.696 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-10-01 13:43:31.701 [main] INFO  c.h.littleredbookauth.LittleRedBookAuthApplication - Started LittleRedBookAuthApplication in 1.788 seconds (process running for 2.105)
+2024-10-01 13:43:49.358 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-01 13:43:49.358 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-01 13:43:49.359 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-10-01 13:43:49.391 [http-nio-8080-exec-1] WARN  o.s.core.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.haishi.littleredbookauth.controller.TestController
+2024-10-01 13:54:10.516 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-10-01 13:54:10.520 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-10-01 21:19:58.145 [main] INFO  c.h.littleredbookauth.LittleRedBookAuthApplication - Starting LittleRedBookAuthApplication using Java 17.0.12 with PID 11312 (C:\Users\xzf\Desktop\TheLittleRedBook\LittleRedBook-Auth\target\classes started by xzf in C:\Users\xzf\Desktop\TheLittleRedBook)
+2024-10-01 21:19:58.146 [main] INFO  c.h.littleredbookauth.LittleRedBookAuthApplication - The following 1 profile is active: "dev"
+2024-10-01 21:19:58.568 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-10-01 21:19:58.570 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-10-01 21:19:58.590 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2024-10-01 21:19:59.137 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-10-01 21:19:59.144 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-01 21:19:59.144 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2024-10-01 21:19:59.205 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-01 21:19:59.206 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1031 ms
+2024-10-01 21:19:59.681 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-10-01 21:19:59.847 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-10-01 21:20:00.080 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-10-01 21:20:00.084 [main] INFO  c.h.littleredbookauth.LittleRedBookAuthApplication - Started LittleRedBookAuthApplication in 2.267 seconds (process running for 2.619)
+2024-10-01 21:21:30.912 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-01 21:21:30.913 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-01 21:21:30.914 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-10-01 21:21:30.957 [http-nio-8080-exec-2] ERROR c.h.l.exception.GlobalExceptionHandler - /verification/code/send request error, 
+org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.haishi.framework.common.response.Response<?> com.haishi.littleredbookauth.controller.VerificationCodeController.send(com.haishi.littleredbookauth.model.vo.veriticationcode.SendVerificationCodeReqVO)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:166)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:136)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:181)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:148)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1080)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:973)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at com.alibaba.druid.support.jakarta.WebStatFilter.doFilter(WebStatFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at cn.dev33.satoken.filter.SaPathCheckFilterForJakartaServlet.doFilter(SaPathCheckFilterForJakartaServlet.java:55)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-10-01 21:22:13.162 [http-nio-8080-exec-3] INFO  c.h.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [发送短信验证码], 入参: {"phone":"17891997260"}, 请求类: VerificationCodeController, 请求方法: send =================================== 
+2024-10-01 21:22:13.610 [http-nio-8080-exec-3] INFO  c.h.l.service.impl.VerificationCodeServiceImpl - --> 手机号：17891997260,已发送验证码：[008882]
+2024-10-01 21:22:13.622 [http-nio-8080-exec-3] INFO  c.h.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [发送短信验证码], 耗时: 463ms, 出参: {"success":true,"message":null,"errorCode":null,"data":null} =================================== 

@@ -1,14 +1,15 @@
 package com.haishi.littleredbookauth.controller;
 
+import cn.dev33.satoken.stp.StpUtil;
 import com.haishi.framework.biz.operationlog.aspect.ApiOperationLog;
 import com.haishi.framework.common.response.Response;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayDeque;
+import java.util.Arrays;
+import java.util.Deque;
 
 @RestController
 public class TestController {
@@ -32,6 +33,21 @@ public class TestController {
     public Response<User> test2(@RequestBody @Validated User user) {
         int i = 1 / 0;
         return Response.success(user);
+    }
+
+
+    @RequestMapping("/user/pwd/login")
+    public String login(String username, String password) {
+        if("admin".equals(username) && "123456".equals(password)) {
+            StpUtil.login(100);
+            return "success";
+        }
+        return "fail";
+    }
+
+    @RequestMapping("/user/isLogin")
+    public String isLogin() {
+        return "当前会话是否登录：" + StpUtil.isLogin();
     }
 
 }
