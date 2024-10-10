@@ -878,3 +878,12 @@ java.lang.RuntimeException: 系统注册用户异常
 2024-10-04 20:33:28.212 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-10-04 20:33:28.212 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2024-10-04 20:33:28.213 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-10-04 20:40:10.552 [Thread-1] WARN  c.alibaba.nacos.common.http.HttpClientBeanHolder - [HttpClientBeanHolder] Start destroying common HttpClient
+2024-10-04 20:40:10.552 [Thread-6] WARN  com.alibaba.nacos.common.notify.NotifyCenter - [NotifyCenter] Start destroying Publisher
+2024-10-04 20:40:10.552 [Thread-6] WARN  com.alibaba.nacos.common.notify.NotifyCenter - [NotifyCenter] Destruction of the end
+2024-10-04 20:40:10.552 [Thread-1] WARN  c.alibaba.nacos.common.http.HttpClientBeanHolder - [HttpClientBeanHolder] Destruction of the end
+2024-10-04 20:40:10.688 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-10-04 20:40:10.692 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-10-04 20:40:10.692 [SpringApplicationShutdownHook] INFO  c.a.n.s.c.a.c.NacosValueAnnotationBeanPostProcessor - 888 was destroying!
+2024-10-04 20:40:10.692 [SpringApplicationShutdownHook] INFO  c.a.n.s.c.a.c.NacosValueAnnotationBeanPostProcessor - class com.alibaba.nacos.spring.context.annotation.config.NacosValueAnnotationBeanPostProcessor was destroying!
+2024-10-04 20:40:10.692 [SpringApplicationShutdownHook] INFO  c.a.n.s.b.f.a.AnnotationNacosInjectedBeanPostProcessor - class com.alibaba.nacos.spring.beans.factory.annotation.AnnotationNacosInjectedBeanPostProcessor was destroying!
