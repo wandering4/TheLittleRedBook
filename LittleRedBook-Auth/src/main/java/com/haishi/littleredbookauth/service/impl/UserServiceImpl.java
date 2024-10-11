@@ -3,7 +3,6 @@ package com.haishi.littleredbookauth.service.impl;
 import cn.dev33.satoken.stp.SaTokenInfo;
 import cn.dev33.satoken.stp.StpUtil;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.Lists;
 import com.haishi.framework.common.constant.RedisKeyConstants;
 import com.haishi.framework.common.enums.DeletedEnum;
 import com.haishi.framework.common.enums.StatusEnum;
@@ -11,8 +10,10 @@ import com.haishi.framework.common.exception.BizException;
 import com.haishi.framework.common.response.Response;
 import com.haishi.framework.common.util.JsonUtil;
 import com.haishi.littleredbookauth.constant.RoleConstants;
+import com.haishi.littleredbookauth.domain.DO.RoleDO;
 import com.haishi.littleredbookauth.domain.DO.UserDO;
 import com.haishi.littleredbookauth.domain.DO.UserRoleDO;
+import com.haishi.littleredbookauth.domain.mapper.RoleDOMapper;
 import com.haishi.littleredbookauth.domain.mapper.UserDOMapper;
 import com.haishi.littleredbookauth.domain.mapper.UserRoleDOMapper;
 import com.haishi.littleredbookauth.enums.LoginTypeEnum;
@@ -21,14 +22,13 @@ import com.haishi.littleredbookauth.model.vo.user.UserLoginReqVO;
 import com.haishi.littleredbookauth.service.UserService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.stereotype.Service;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.support.TransactionTemplate;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -46,6 +46,9 @@ public class UserServiceImpl implements UserService {
 
     @Resource
     private RedisTemplate<String, Object> redisTemplate;
+
+    @Resource
+    private RoleDOMapper roleDOMapper;
 
     /**
      * 登录与注册
@@ -151,10 +154,13 @@ public class UserServiceImpl implements UserService {
                         .build();
                 userRoleDOMapper.insert(userRoleDO);
 
-                // 将该用户的角色 ID 存入 Redis 中
-                List<Long> roles = Lists.newArrayList();
-                roles.add(RoleConstants.COMMON_USER_ROLE_ID);
-                String userRolesKey = RedisKeyConstants.buildUserRoleKey(phone);
+                RoleDO roleDO = roleDOMapper.selectByPrimaryKey(RoleConstants.COMMON_USER_ROLE_ID);
+
+                // 将该用户的角色 ID 存入 Redis 中，指定初始容量为 1，这样可以减少在扩容时的性能开销
+                List<String> roles = new ArrayList<>(1);
+                roles.add(roleDO.getRoleKey());
+
+                String userRolesKey = RedisKeyConstants.buildUserRoleKey(userId);
                 redisTemplate.opsForValue().set(userRolesKey, JsonUtil.toJsonString(roles));
 
                 return userId;

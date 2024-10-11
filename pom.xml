@@ -61,6 +61,13 @@
 
     <dependencies>
 
+      <!-- Jackson 组件 -->
+      <dependency>
+        <groupId>com.haishi</groupId>
+        <artifactId>LittleRedBook-spring-boot-starter-jackson</artifactId>
+        <version>${revision}</version>
+      </dependency>
+
       <dependency>
         <groupId>cn.dev33</groupId>
         <artifactId>sa-token-reactor-spring-boot3-starter</artifactId>
