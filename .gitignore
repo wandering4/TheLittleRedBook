@@ -46,3 +46,5 @@ build/
 
 
 *.yml
+*.yml
+LittleRedBook-Auth/src/main/resources/config/application-dev.yml
