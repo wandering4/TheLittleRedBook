@@ -21,6 +21,23 @@
 
     <dependencies>
 
+        <!--上下文组件-->
+        <dependency>
+            <groupId>com.haishi</groupId>
+            <artifactId>LittleRedBook-spring-boot-starter-biz-context</artifactId>
+        </dependency>
+
+        <!-- 密码加密 -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-crypto</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>transmittable-thread-local</artifactId>
+        </dependency>
+
         <!-- 服务注册发现 -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>

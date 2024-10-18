@@ -1,6 +1,7 @@
 package com.haishi.littleredbookauth.service;
 
 import com.haishi.framework.common.response.Response;
+import com.haishi.littleredbookauth.model.vo.user.UpdatePasswordReqVO;
 import com.haishi.littleredbookauth.model.vo.user.UserLoginReqVO;
 
 public interface UserService {
@@ -10,4 +11,20 @@ public interface UserService {
      * @return
      */
     Response<String> loginAndRegister(UserLoginReqVO userLoginReqVO);
+
+
+    /**
+     * 退出登录
+     * @return
+     */
+    Response<?> logout();
+
+
+    /**
+     * 修改密码
+     * @param updatePasswordReqVO
+     * @return
+     */
+    Response<?> updatePassword(UpdatePasswordReqVO updatePasswordReqVO);
+
 }

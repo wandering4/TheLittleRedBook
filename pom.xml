@@ -54,12 +54,26 @@
     <commons-lang3.version>3.12.0</commons-lang3.version>
     <dysmsapi.version>3.0.0</dysmsapi.version>
     <nacos-config.version>0.3.0-RC</nacos-config.version>
+    <transmittable-thread-local.version>2.14.2</transmittable-thread-local.version>
   </properties>
 
   <!-- 统一依赖管理 -->
   <dependencyManagement>
 
     <dependencies>
+
+      <!--上下文组件-->
+      <dependency>
+        <groupId>com.haishi</groupId>
+        <artifactId>LittleRedBook-spring-boot-starter-biz-context</artifactId>
+        <version>${revision}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>transmittable-thread-local</artifactId>
+        <version>${transmittable-thread-local.version}</version>
+      </dependency>
 
       <!-- Jackson 组件 -->
       <dependency>

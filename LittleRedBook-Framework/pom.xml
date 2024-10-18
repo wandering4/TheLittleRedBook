@@ -24,6 +24,7 @@
         <module>LittleRedBook-spring-boot-starter-biz-operationlog</module>
         <!-- Jackson 组件 -->
         <module>LittleRedBook-spring-boot-starter-jackson</module>
+        <module>LittleRedBook-spring-boot-starter-biz-context</module>
     </modules>
 
 
