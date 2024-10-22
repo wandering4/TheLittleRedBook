@@ -1,0 +1,1083 @@
+2024-10-22 21:31:08.229 [main] INFO  c.h.L.oss.biz.LittleRedBookOssBizApplication - Starting LittleRedBookOssBizApplication using Java 17.0.12 with PID 6132 (C:\Users\xzf\Desktop\TheLittleRedBook\LittleRedBook-oss\LittleRedBook-oss-biz\target\classes started by xzf in C:\Users\xzf\Desktop\TheLittleRedBook)
+2024-10-22 21:31:08.232 [main] INFO  c.h.L.oss.biz.LittleRedBookOssBizApplication - The following 1 profile is active: "dev"
+2024-10-22 21:31:08.921 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2024-10-22 21:31:08.928 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-22 21:31:08.928 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2024-10-22 21:31:08.998 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-22 21:31:08.998 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 728 ms
+2024-10-22 21:31:09.290 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2024-10-22 21:31:09.295 [main] INFO  c.h.L.oss.biz.LittleRedBookOssBizApplication - Started LittleRedBookOssBizApplication in 1.538 seconds (process running for 2.134)
+2024-10-22 21:50:38.256 [main] INFO  c.h.L.oss.biz.LittleRedBookOssBizApplication - Starting LittleRedBookOssBizApplication using Java 17.0.12 with PID 11080 (C:\Users\xzf\Desktop\TheLittleRedBook\LittleRedBook-oss\LittleRedBook-oss-biz\target\classes started by xzf in C:\Users\xzf\Desktop\TheLittleRedBook)
+2024-10-22 21:50:38.257 [main] INFO  c.h.L.oss.biz.LittleRedBookOssBizApplication - The following 1 profile is active: "dev"
+2024-10-22 21:50:38.873 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2024-10-22 21:50:38.887 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-22 21:50:38.887 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2024-10-22 21:50:38.954 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-22 21:50:38.955 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 667 ms
+2024-10-22 21:50:39.236 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2024-10-22 21:50:39.240 [main] INFO  c.h.L.oss.biz.LittleRedBookOssBizApplication - Started LittleRedBookOssBizApplication in 1.355 seconds (process running for 1.733)
+2024-10-22 21:51:43.607 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-22 21:51:43.608 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-22 21:51:43.608 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-10-22 21:51:43.651 [http-nio-8081-exec-1] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded] with root cause
+org.apache.tomcat.util.http.fileupload.impl.FileSizeLimitExceededException: The field file exceeds its maximum permitted size of 1048576 bytes.
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemStreamImpl$1.raiseError(FileItemStreamImpl.java:117)
+	at org.apache.tomcat.util.http.fileupload.util.LimitedInputStream.checkLimit(LimitedInputStream.java:76)
+	at org.apache.tomcat.util.http.fileupload.util.LimitedInputStream.read(LimitedInputStream.java:135)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:106)
+	at org.apache.tomcat.util.http.fileupload.util.Streams.copy(Streams.java:96)
+	at org.apache.tomcat.util.http.fileupload.FileUploadBase.parseRequest(FileUploadBase.java:292)
+	at org.apache.catalina.connector.Request.parseParts(Request.java:2884)
+	at org.apache.catalina.connector.Request.getParts(Request.java:2778)
+	at org.apache.catalina.connector.RequestFacade.getParts(RequestFacade.java:1074)
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.parseRequest(StandardMultipartHttpServletRequest.java:93)
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.<init>(StandardMultipartHttpServletRequest.java:86)
+	at org.springframework.web.multipart.support.StandardServletMultipartResolver.resolveMultipart(StandardServletMultipartResolver.java:112)
+	at org.springframework.web.servlet.DispatcherServlet.checkMultipart(DispatcherServlet.java:1218)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1052)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:973)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-10-22 21:52:14.094 [http-nio-8081-exec-4] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded] with root cause
+org.apache.tomcat.util.http.fileupload.impl.FileSizeLimitExceededException: The field file exceeds its maximum permitted size of 1048576 bytes.
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemStreamImpl$1.raiseError(FileItemStreamImpl.java:117)
+	at org.apache.tomcat.util.http.fileupload.util.LimitedInputStream.checkLimit(LimitedInputStream.java:76)
+	at org.apache.tomcat.util.http.fileupload.util.LimitedInputStream.read(LimitedInputStream.java:135)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:106)
+	at org.apache.tomcat.util.http.fileupload.util.Streams.copy(Streams.java:96)
+	at org.apache.tomcat.util.http.fileupload.FileUploadBase.parseRequest(FileUploadBase.java:292)
+	at org.apache.catalina.connector.Request.parseParts(Request.java:2884)
+	at org.apache.catalina.connector.Request.getParts(Request.java:2778)
+	at org.apache.catalina.connector.RequestFacade.getParts(RequestFacade.java:1074)
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.parseRequest(StandardMultipartHttpServletRequest.java:93)
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.<init>(StandardMultipartHttpServletRequest.java:86)
+	at org.springframework.web.multipart.support.StandardServletMultipartResolver.resolveMultipart(StandardServletMultipartResolver.java:112)
+	at org.springframework.web.servlet.DispatcherServlet.checkMultipart(DispatcherServlet.java:1218)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1052)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:973)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-10-22 21:52:29.134 [http-nio-8081-exec-6] INFO  c.h.L.oss.biz.strategy.impl.AliyunOSSFileStrategy - ## 上传文件至阿里云 OSS ...
+2024-10-22 21:53:04.824 [main] INFO  c.h.L.oss.biz.LittleRedBookOssBizApplication - Starting LittleRedBookOssBizApplication using Java 17.0.12 with PID 3308 (C:\Users\xzf\Desktop\TheLittleRedBook\LittleRedBook-oss\LittleRedBook-oss-biz\target\classes started by xzf in C:\Users\xzf\Desktop\TheLittleRedBook)
+2024-10-22 21:53:04.826 [main] INFO  c.h.L.oss.biz.LittleRedBookOssBizApplication - The following 1 profile is active: "dev"
+2024-10-22 21:53:05.489 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2024-10-22 21:53:05.494 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-22 21:53:05.495 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2024-10-22 21:53:05.560 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-22 21:53:05.560 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 700 ms
+2024-10-22 21:53:05.814 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2024-10-22 21:53:05.818 [main] INFO  c.h.L.oss.biz.LittleRedBookOssBizApplication - Started LittleRedBookOssBizApplication in 1.354 seconds (process running for 1.687)
+2024-10-22 21:53:10.283 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-22 21:53:10.283 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-22 21:53:10.284 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-10-22 21:53:10.323 [http-nio-8081-exec-1] INFO  c.h.L.oss.biz.strategy.impl.MinioFileStrategy - ## 上传文件至 Minio ...
+2024-10-22 21:53:52.119 [http-nio-8081-exec-2] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded] with root cause
+org.apache.tomcat.util.http.fileupload.impl.FileSizeLimitExceededException: The field file exceeds its maximum permitted size of 1048576 bytes.
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemStreamImpl$1.raiseError(FileItemStreamImpl.java:117)
+	at org.apache.tomcat.util.http.fileupload.util.LimitedInputStream.checkLimit(LimitedInputStream.java:76)
+	at org.apache.tomcat.util.http.fileupload.util.LimitedInputStream.read(LimitedInputStream.java:135)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:106)
+	at org.apache.tomcat.util.http.fileupload.util.Streams.copy(Streams.java:96)
+	at org.apache.tomcat.util.http.fileupload.FileUploadBase.parseRequest(FileUploadBase.java:292)
+	at org.apache.catalina.connector.Request.parseParts(Request.java:2884)
+	at org.apache.catalina.connector.Request.getParts(Request.java:2778)
+	at org.apache.catalina.connector.RequestFacade.getParts(RequestFacade.java:1074)
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.parseRequest(StandardMultipartHttpServletRequest.java:93)
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.<init>(StandardMultipartHttpServletRequest.java:86)
+	at org.springframework.web.multipart.support.StandardServletMultipartResolver.resolveMultipart(StandardServletMultipartResolver.java:112)
+	at org.springframework.web.servlet.DispatcherServlet.checkMultipart(DispatcherServlet.java:1218)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1052)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:973)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-10-22 21:57:42.793 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-10-22 21:57:42.829 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-10-22 21:57:43.122 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-10-22 21:57:43.131 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-10-22 21:57:43.131 [main] INFO  c.h.L.oss.biz.LittleRedBookOssBizApplication - The following 1 profile is active: "dev"
+2024-10-22 21:57:43.452 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=352bb6bd-2933-3f4e-bcdb-66613b4731c0
+2024-10-22 21:57:43.617 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2024-10-22 21:57:43.625 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-22 21:57:43.626 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2024-10-22 21:57:43.688 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-22 21:57:43.688 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 551 ms
+2024-10-22 21:57:44.175 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2024-10-22 21:57:44.178 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-10-22 21:57:44.179 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from ans.namespace attribute : null
+2024-10-22 21:57:44.179 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from ALIBABA_ALIWARE_NAMESPACE attribute :null
+2024-10-22 21:57:44.179 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from namespace attribute :null
+2024-10-22 21:57:44.192 [main] INFO  com.alibaba.nacos.client.utils.ParamUtil - [settings] [req-serv] nacos-server port:8848
+2024-10-22 21:57:44.193 [main] INFO  com.alibaba.nacos.client.utils.ParamUtil - [settings] [http-client] connect timeout:1000
+2024-10-22 21:57:44.193 [main] INFO  com.alibaba.nacos.client.utils.ParamUtil - PER_TASK_CONFIG_SIZE: 3000.0
+2024-10-22 21:57:44.195 [main] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2024-10-22 21:57:44.196 [main] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2024-10-22 21:57:44.198 [main] INFO  c.a.n.client.auth.ram.identify.CredentialWatcher - null No credential found
+2024-10-22 21:57:44.204 [main] INFO  com.alibaba.nacos.common.remote.client - [RpcClientFactory] create a new rpc client of 5f6460c6-eef2-4377-842d-90f438c8709d
+2024-10-22 21:57:44.214 [main] INFO  com.alibaba.nacos.common.remote.client - [5f6460c6-eef2-4377-842d-90f438c8709d] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+2024-10-22 21:57:44.214 [main] INFO  com.alibaba.nacos.common.remote.client - [5f6460c6-eef2-4377-842d-90f438c8709d] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+2024-10-22 21:57:44.214 [main] INFO  com.alibaba.nacos.common.remote.client - [5f6460c6-eef2-4377-842d-90f438c8709d] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+2024-10-22 21:57:44.215 [main] INFO  com.alibaba.nacos.common.remote.client - [5f6460c6-eef2-4377-842d-90f438c8709d] Try to connect to server on start up, server: {serverIp = '127.0.0.1', server main port = 8848}
+2024-10-22 21:57:44.246 [main] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - grpc client connection server:127.0.0.1 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"OPENSSL","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-10-22 21:57:44.853 [main] INFO  com.alibaba.nacos.common.remote.client - [5f6460c6-eef2-4377-842d-90f438c8709d] Success to connect to server [127.0.0.1:8848] on start up, connectionId = 1729605464666_127.0.0.1_52780
+2024-10-22 21:57:44.853 [main] INFO  com.alibaba.nacos.common.remote.client - [5f6460c6-eef2-4377-842d-90f438c8709d] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2024-10-22 21:57:44.853 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.common.remote.client - [5f6460c6-eef2-4377-842d-90f438c8709d] Notify connected event to listeners.
+2024-10-22 21:57:44.855 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.client.naming - Grpc connection connect
+2024-10-22 21:57:44.855 [main] INFO  com.alibaba.nacos.common.remote.client - [5f6460c6-eef2-4377-842d-90f438c8709d] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$943/0x000001a58e665ae0
+2024-10-22 21:57:44.855 [main] INFO  com.alibaba.nacos.client.naming - [REGISTER-SERVICE] Little-Red-Book registering service LittleRedBook-oss with instance Instance{instanceId='null', ip='192.168.101.7', port=8081, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={IPv6=null, preserved.register.source=SPRING_CLOUD}}
+2024-10-22 21:57:44.886 [main] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - nacos registry, DEFAULT_GROUP LittleRedBook-oss 192.168.101.7:8081 register finished
+2024-10-22 21:57:44.961 [main] INFO  c.h.L.oss.biz.LittleRedBookOssBizApplication - Started LittleRedBookOssBizApplication in 2.563 seconds (process running for 2.886)
+2024-10-22 22:01:55.060 [Thread-10] WARN  c.alibaba.nacos.common.http.HttpClientBeanHolder - [HttpClientBeanHolder] Start destroying common HttpClient
+2024-10-22 22:01:55.060 [Thread-7] WARN  com.alibaba.nacos.common.notify.NotifyCenter - [NotifyCenter] Start destroying Publisher
+2024-10-22 22:01:55.060 [Thread-7] WARN  com.alibaba.nacos.common.notify.NotifyCenter - [NotifyCenter] Destruction of the end
+2024-10-22 22:01:55.061 [Thread-10] WARN  c.alibaba.nacos.common.http.HttpClientBeanHolder - [HttpClientBeanHolder] Destruction of the end
+2024-10-22 22:01:55.075 [SpringApplicationShutdownHook] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - De-registering from Nacos Server now...
+2024-10-22 22:01:55.075 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - [DEREGISTER-SERVICE] Little-Red-Book deregistering service LittleRedBook-oss with instance: Instance{instanceId='null', ip='192.168.101.7', port=8081, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={}}
+2024-10-22 22:01:55.088 [SpringApplicationShutdownHook] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - De-registration finished.
+2024-10-22 22:01:55.089 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown begin
+2024-10-22 22:01:55.089 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown begin
+2024-10-22 22:01:55.089 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown stop
+2024-10-22 22:01:55.089 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown stop
+2024-10-22 22:01:55.089 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown begin
+2024-10-22 22:01:55.089 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown begin
+2024-10-22 22:01:55.089 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown stop
+2024-10-22 22:01:55.089 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServerListManager do shutdown begin
+2024-10-22 22:01:55.089 [SpringApplicationShutdownHook] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Start destroying NacosRestTemplate
+2024-10-22 22:01:55.089 [SpringApplicationShutdownHook] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Destruction of the end
+2024-10-22 22:01:55.089 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServerListManager do shutdown stop
+2024-10-22 22:01:55.089 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown begin
+2024-10-22 22:01:55.089 [SpringApplicationShutdownHook] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Start destroying NacosRestTemplate
+2024-10-22 22:01:55.089 [SpringApplicationShutdownHook] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Destruction of the end
+2024-10-22 22:01:55.089 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown stop
+2024-10-22 22:01:55.089 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.common.remote.client - Shutdown rpc client, set status to shutdown
+2024-10-22 22:01:55.089 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.common.remote.client - Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@4adec211[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+2024-10-22 22:01:55.089 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.common.remote.client - Close current connection 1729605464666_127.0.0.1_52780
+2024-10-22 22:01:55.093 [SpringApplicationShutdownHook] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@1abf12fe[Running, pool size = 6, active threads = 0, queued tasks = 0, completed tasks = 92]
+2024-10-22 22:01:55.093 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - Shutdown grpc redo service executor java.util.concurrent.ScheduledThreadPoolExecutor@57bf344a[Running, pool size = 1, active threads = 0, queued tasks = 1, completed tasks = 83]
+2024-10-22 22:01:55.093 [SpringApplicationShutdownHook] INFO  c.a.n.client.auth.ram.identify.CredentialWatcher - [null] CredentialWatcher is stopped
+2024-10-22 22:01:55.094 [SpringApplicationShutdownHook] INFO  c.a.n.client.auth.ram.identify.CredentialService - [null] CredentialService is freed
+2024-10-22 22:01:55.094 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown stop
+2024-10-22 22:01:59.186 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-10-22 22:01:59.222 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-10-22 22:01:59.376 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-10-22 22:01:59.376 [main] INFO  com.alibaba.nacos.client.utils.ParamUtil - [settings] [req-serv] nacos-server port:8848
+2024-10-22 22:01:59.377 [main] INFO  com.alibaba.nacos.client.utils.ParamUtil - [settings] [http-client] connect timeout:1000
+2024-10-22 22:01:59.377 [main] INFO  com.alibaba.nacos.client.utils.ParamUtil - PER_TASK_CONFIG_SIZE: 3000.0
+2024-10-22 22:01:59.400 [main] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2024-10-22 22:01:59.401 [main] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2024-10-22 22:01:59.402 [main] INFO  c.a.n.client.auth.ram.identify.CredentialWatcher - null No credential found
+2024-10-22 22:01:59.537 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-10-22 22:01:59.546 [main] INFO  c.a.n.client.config.impl.LocalConfigInfoProcessor - LOCAL_SNAPSHOT_PATH:C:\Users\xzf\nacos\config
+2024-10-22 22:01:59.550 [main] INFO  com.alibaba.nacos.common.remote.client - [RpcClientFactory] create a new rpc client of 9ce968c7-8b6c-4094-a5c1-691b3663d012_config-0
+2024-10-22 22:01:59.558 [main] INFO  com.alibaba.nacos.common.remote.client - [9ce968c7-8b6c-4094-a5c1-691b3663d012_config-0] Register server push request handler:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$$Lambda$586/0x000002228136f9a8
+2024-10-22 22:01:59.559 [main] INFO  com.alibaba.nacos.common.remote.client - [9ce968c7-8b6c-4094-a5c1-691b3663d012_config-0] Register server push request handler:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$$Lambda$587/0x000002228136fdc8
+2024-10-22 22:01:59.559 [main] INFO  com.alibaba.nacos.common.remote.client - [9ce968c7-8b6c-4094-a5c1-691b3663d012_config-0] Registry connection listener to current client:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$1
+2024-10-22 22:01:59.559 [main] INFO  com.alibaba.nacos.common.remote.client - [9ce968c7-8b6c-4094-a5c1-691b3663d012_config-0] RpcClient init, ServerListFactory = com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$2
+2024-10-22 22:01:59.563 [main] INFO  com.alibaba.nacos.common.remote.client - [9ce968c7-8b6c-4094-a5c1-691b3663d012_config-0] Try to connect to server on start up, server: {serverIp = '127.0.0.1', server main port = 8848}
+2024-10-22 22:01:59.593 [main] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - grpc client connection server:127.0.0.1 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"OPENSSL","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-10-22 22:02:00.191 [main] INFO  com.alibaba.nacos.common.remote.client - [9ce968c7-8b6c-4094-a5c1-691b3663d012_config-0] Success to connect to server [127.0.0.1:8848] on start up, connectionId = 1729605720028_127.0.0.1_53084
+2024-10-22 22:02:00.191 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.common.remote.client - [9ce968c7-8b6c-4094-a5c1-691b3663d012_config-0] Notify connected event to listeners.
+2024-10-22 22:02:00.191 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [9ce968c7-8b6c-4094-a5c1-691b3663d012_config-0] Connected,notify listen context...
+2024-10-22 22:02:00.192 [main] INFO  com.alibaba.nacos.common.remote.client - [9ce968c7-8b6c-4094-a5c1-691b3663d012_config-0] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2024-10-22 22:02:00.192 [main] INFO  com.alibaba.nacos.common.remote.client - [9ce968c7-8b6c-4094-a5c1-691b3663d012_config-0] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$607/0x00000222814f58a8
+2024-10-22 22:02:00.220 [main] INFO  com.alibaba.nacos.client.config.impl.Limiter - limitTime:5.0
+2024-10-22 22:02:00.235 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[LittleRedBook-oss] & group[DEFAULT_GROUP]
+2024-10-22 22:02:00.238 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[LittleRedBook-oss.yaml] & group[DEFAULT_GROUP]
+2024-10-22 22:02:00.253 [main] INFO  com.alibaba.nacos.client.config.utils.JvmUtil - isMultiInstance:false
+2024-10-22 22:02:00.256 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: [BootstrapPropertySource {name='bootstrapProperties-LittleRedBook-oss-dev.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-LittleRedBook-oss.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-LittleRedBook-oss,DEFAULT_GROUP'}]
+2024-10-22 22:02:00.259 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-10-22 22:02:00.259 [main] INFO  c.h.L.oss.biz.LittleRedBookOssBizApplication - The following 1 profile is active: "dev"
+2024-10-22 22:02:00.561 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=be5703b9-7c1f-3813-b161-31cb445b58b4
+2024-10-22 22:02:00.716 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2024-10-22 22:02:00.722 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-22 22:02:00.722 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2024-10-22 22:02:00.771 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-22 22:02:00.771 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 505 ms
+2024-10-22 22:02:01.211 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2024-10-22 22:02:01.214 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from ans.namespace attribute : null
+2024-10-22 22:02:01.214 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from ALIBABA_ALIWARE_NAMESPACE attribute :null
+2024-10-22 22:02:01.215 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from namespace attribute :null
+2024-10-22 22:02:01.218 [main] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2024-10-22 22:02:01.218 [main] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2024-10-22 22:02:01.221 [main] INFO  com.alibaba.nacos.common.remote.client - [RpcClientFactory] create a new rpc client of a2d2e146-a804-4dfd-a0f6-dea567ba0e93
+2024-10-22 22:02:01.222 [main] INFO  com.alibaba.nacos.common.remote.client - [a2d2e146-a804-4dfd-a0f6-dea567ba0e93] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+2024-10-22 22:02:01.222 [main] INFO  com.alibaba.nacos.common.remote.client - [a2d2e146-a804-4dfd-a0f6-dea567ba0e93] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+2024-10-22 22:02:01.222 [main] INFO  com.alibaba.nacos.common.remote.client - [a2d2e146-a804-4dfd-a0f6-dea567ba0e93] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+2024-10-22 22:02:01.222 [main] INFO  com.alibaba.nacos.common.remote.client - [a2d2e146-a804-4dfd-a0f6-dea567ba0e93] Try to connect to server on start up, server: {serverIp = '127.0.0.1', server main port = 8848}
+2024-10-22 22:02:01.222 [main] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - grpc client connection server:127.0.0.1 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"OPENSSL","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-10-22 22:02:01.345 [main] INFO  com.alibaba.nacos.common.remote.client - [a2d2e146-a804-4dfd-a0f6-dea567ba0e93] Success to connect to server [127.0.0.1:8848] on start up, connectionId = 1729605721226_127.0.0.1_53085
+2024-10-22 22:02:01.345 [main] INFO  com.alibaba.nacos.common.remote.client - [a2d2e146-a804-4dfd-a0f6-dea567ba0e93] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2024-10-22 22:02:01.345 [main] INFO  com.alibaba.nacos.common.remote.client - [a2d2e146-a804-4dfd-a0f6-dea567ba0e93] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$607/0x00000222814f58a8
+2024-10-22 22:02:01.345 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.common.remote.client - [a2d2e146-a804-4dfd-a0f6-dea567ba0e93] Notify connected event to listeners.
+2024-10-22 22:02:01.345 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.client.naming - Grpc connection connect
+2024-10-22 22:02:01.346 [main] INFO  com.alibaba.nacos.client.naming - [REGISTER-SERVICE] Little-Red-Book registering service LittleRedBook-oss with instance Instance{instanceId='null', ip='192.168.101.7', port=8081, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={IPv6=null, preserved.register.source=SPRING_CLOUD}}
+2024-10-22 22:02:01.356 [main] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - nacos registry, DEFAULT_GROUP LittleRedBook-oss 192.168.101.7:8081 register finished
+2024-10-22 22:02:01.430 [main] INFO  c.h.L.oss.biz.LittleRedBookOssBizApplication - Started LittleRedBookOssBizApplication in 2.627 seconds (process running for 2.939)
+2024-10-22 22:02:01.432 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - nacos.cache.data.init.snapshot = true 
+2024-10-22 22:02:01.432 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-Little-Red-Book-127.0.0.1_8848] [subscribe] LittleRedBook-oss.yaml+DEFAULT_GROUP+Little-Red-Book
+2024-10-22 22:02:01.439 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-Little-Red-Book-127.0.0.1_8848] [add-listener] ok, tenant=Little-Red-Book, dataId=LittleRedBook-oss.yaml, group=DEFAULT_GROUP, cnt=1
+2024-10-22 22:02:01.439 [main] INFO  c.a.cloud.nacos.refresh.NacosContextRefresher - [Nacos Config] Listening config: dataId=LittleRedBook-oss.yaml, group=DEFAULT_GROUP
+2024-10-22 22:02:01.439 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-Little-Red-Book-127.0.0.1_8848] [subscribe] LittleRedBook-oss+DEFAULT_GROUP+Little-Red-Book
+2024-10-22 22:02:01.439 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-Little-Red-Book-127.0.0.1_8848] [add-listener] ok, tenant=Little-Red-Book, dataId=LittleRedBook-oss, group=DEFAULT_GROUP, cnt=1
+2024-10-22 22:02:01.439 [main] INFO  c.a.cloud.nacos.refresh.NacosContextRefresher - [Nacos Config] Listening config: dataId=LittleRedBook-oss, group=DEFAULT_GROUP
+2024-10-22 22:02:01.440 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-Little-Red-Book-127.0.0.1_8848] [subscribe] LittleRedBook-oss-dev.yaml+DEFAULT_GROUP+Little-Red-Book
+2024-10-22 22:02:01.440 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-Little-Red-Book-127.0.0.1_8848] [add-listener] ok, tenant=Little-Red-Book, dataId=LittleRedBook-oss-dev.yaml, group=DEFAULT_GROUP, cnt=1
+2024-10-22 22:02:01.441 [main] INFO  c.a.cloud.nacos.refresh.NacosContextRefresher - [Nacos Config] Listening config: dataId=LittleRedBook-oss-dev.yaml, group=DEFAULT_GROUP
+2024-10-22 22:18:31.220 [Thread-9] WARN  com.alibaba.nacos.common.notify.NotifyCenter - [NotifyCenter] Start destroying Publisher
+2024-10-22 22:18:31.220 [Thread-2] WARN  c.alibaba.nacos.common.http.HttpClientBeanHolder - [HttpClientBeanHolder] Start destroying common HttpClient
+2024-10-22 22:18:31.220 [Thread-9] WARN  com.alibaba.nacos.common.notify.NotifyCenter - [NotifyCenter] Destruction of the end
+2024-10-22 22:18:31.221 [Thread-2] WARN  c.alibaba.nacos.common.http.HttpClientBeanHolder - [HttpClientBeanHolder] Destruction of the end
+2024-10-22 22:18:31.239 [SpringApplicationShutdownHook] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - De-registering from Nacos Server now...
+2024-10-22 22:18:31.239 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - [DEREGISTER-SERVICE] Little-Red-Book deregistering service LittleRedBook-oss with instance: Instance{instanceId='null', ip='192.168.101.7', port=8081, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={}}
+2024-10-22 22:18:31.241 [SpringApplicationShutdownHook] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - De-registration finished.
+2024-10-22 22:18:31.241 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown begin
+2024-10-22 22:18:31.241 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown begin
+2024-10-22 22:18:31.242 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown stop
+2024-10-22 22:18:31.242 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown stop
+2024-10-22 22:18:31.242 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown begin
+2024-10-22 22:18:31.242 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown begin
+2024-10-22 22:18:31.242 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown stop
+2024-10-22 22:18:31.242 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServerListManager do shutdown begin
+2024-10-22 22:18:31.242 [SpringApplicationShutdownHook] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Start destroying NacosRestTemplate
+2024-10-22 22:18:31.242 [SpringApplicationShutdownHook] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Destruction of the end
+2024-10-22 22:18:31.242 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServerListManager do shutdown stop
+2024-10-22 22:18:31.242 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown begin
+2024-10-22 22:18:31.242 [SpringApplicationShutdownHook] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Start destroying NacosRestTemplate
+2024-10-22 22:18:31.242 [SpringApplicationShutdownHook] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Destruction of the end
+2024-10-22 22:18:31.242 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown stop
+2024-10-22 22:18:31.242 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.common.remote.client - Shutdown rpc client, set status to shutdown
+2024-10-22 22:18:31.242 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.common.remote.client - Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@199179a3[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+2024-10-22 22:18:31.242 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.common.remote.client - Close current connection 1729605721226_127.0.0.1_53085
+2024-10-22 22:18:31.244 [nacos-grpc-client-executor-127.0.0.1-229] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - [1729605721226_127.0.0.1_53085]Ignore complete event,isRunning:false,isAbandon=false
+2024-10-22 22:18:31.247 [SpringApplicationShutdownHook] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@7360ad6[Running, pool size = 4, active threads = 0, queued tasks = 0, completed tasks = 230]
+2024-10-22 22:18:31.247 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - Shutdown grpc redo service executor java.util.concurrent.ScheduledThreadPoolExecutor@7329329f[Running, pool size = 1, active threads = 0, queued tasks = 1, completed tasks = 329]
+2024-10-22 22:18:31.247 [SpringApplicationShutdownHook] INFO  c.a.n.client.auth.ram.identify.CredentialWatcher - [null] CredentialWatcher is stopped
+2024-10-22 22:18:31.248 [SpringApplicationShutdownHook] INFO  c.a.n.client.auth.ram.identify.CredentialService - [null] CredentialService is freed
+2024-10-22 22:18:31.248 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown stop
+2024-10-22 22:18:35.515 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-10-22 22:18:35.555 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-10-22 22:18:35.701 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-10-22 22:18:35.702 [main] INFO  com.alibaba.nacos.client.utils.ParamUtil - [settings] [req-serv] nacos-server port:8848
+2024-10-22 22:18:35.702 [main] INFO  com.alibaba.nacos.client.utils.ParamUtil - [settings] [http-client] connect timeout:1000
+2024-10-22 22:18:35.702 [main] INFO  com.alibaba.nacos.client.utils.ParamUtil - PER_TASK_CONFIG_SIZE: 3000.0
+2024-10-22 22:18:35.719 [main] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2024-10-22 22:18:35.719 [main] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2024-10-22 22:18:35.721 [main] INFO  c.a.n.client.auth.ram.identify.CredentialWatcher - null No credential found
+2024-10-22 22:18:35.855 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-10-22 22:18:35.864 [main] INFO  c.a.n.client.config.impl.LocalConfigInfoProcessor - LOCAL_SNAPSHOT_PATH:C:\Users\xzf\nacos\config
+2024-10-22 22:18:35.866 [main] INFO  com.alibaba.nacos.common.remote.client - [RpcClientFactory] create a new rpc client of 39b7aef4-5aba-4ed5-84d0-82f90ce16887_config-0
+2024-10-22 22:18:35.875 [main] INFO  com.alibaba.nacos.common.remote.client - [39b7aef4-5aba-4ed5-84d0-82f90ce16887_config-0] Register server push request handler:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$$Lambda$587/0x000001ea81370460
+2024-10-22 22:18:35.875 [main] INFO  com.alibaba.nacos.common.remote.client - [39b7aef4-5aba-4ed5-84d0-82f90ce16887_config-0] Register server push request handler:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$$Lambda$588/0x000001ea81370880
+2024-10-22 22:18:35.875 [main] INFO  com.alibaba.nacos.common.remote.client - [39b7aef4-5aba-4ed5-84d0-82f90ce16887_config-0] Registry connection listener to current client:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$1
+2024-10-22 22:18:35.876 [main] INFO  com.alibaba.nacos.common.remote.client - [39b7aef4-5aba-4ed5-84d0-82f90ce16887_config-0] RpcClient init, ServerListFactory = com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$2
+2024-10-22 22:18:35.880 [main] INFO  com.alibaba.nacos.common.remote.client - [39b7aef4-5aba-4ed5-84d0-82f90ce16887_config-0] Try to connect to server on start up, server: {serverIp = '127.0.0.1', server main port = 8848}
+2024-10-22 22:18:35.904 [main] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - grpc client connection server:127.0.0.1 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"OPENSSL","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-10-22 22:18:36.497 [main] INFO  com.alibaba.nacos.common.remote.client - [39b7aef4-5aba-4ed5-84d0-82f90ce16887_config-0] Success to connect to server [127.0.0.1:8848] on start up, connectionId = 1729606716334_127.0.0.1_53807
+2024-10-22 22:18:36.498 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.common.remote.client - [39b7aef4-5aba-4ed5-84d0-82f90ce16887_config-0] Notify connected event to listeners.
+2024-10-22 22:18:36.498 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [39b7aef4-5aba-4ed5-84d0-82f90ce16887_config-0] Connected,notify listen context...
+2024-10-22 22:18:36.499 [main] INFO  com.alibaba.nacos.common.remote.client - [39b7aef4-5aba-4ed5-84d0-82f90ce16887_config-0] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2024-10-22 22:18:36.499 [main] INFO  com.alibaba.nacos.common.remote.client - [39b7aef4-5aba-4ed5-84d0-82f90ce16887_config-0] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$608/0x000001ea814f61c8
+2024-10-22 22:18:36.532 [main] INFO  com.alibaba.nacos.client.config.impl.Limiter - limitTime:5.0
+2024-10-22 22:18:36.543 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[LittleRedBook-oss] & group[DEFAULT_GROUP]
+2024-10-22 22:18:36.548 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[LittleRedBook-oss.yaml] & group[DEFAULT_GROUP]
+2024-10-22 22:18:36.555 [main] INFO  com.alibaba.nacos.client.config.utils.JvmUtil - isMultiInstance:false
+2024-10-22 22:18:36.558 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: [BootstrapPropertySource {name='bootstrapProperties-LittleRedBook-oss-dev.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-LittleRedBook-oss.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-LittleRedBook-oss,DEFAULT_GROUP'}]
+2024-10-22 22:18:36.562 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-10-22 22:18:36.562 [main] INFO  c.h.L.oss.biz.LittleRedBookOssBizApplication - The following 1 profile is active: "dev"
+2024-10-22 22:18:36.902 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=d1da7a54-2794-3f43-a911-48c30d3b2bb8
+2024-10-22 22:18:37.065 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2024-10-22 22:18:37.072 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-22 22:18:37.072 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2024-10-22 22:18:37.126 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-22 22:18:37.126 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 555 ms
+2024-10-22 22:18:37.747 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2024-10-22 22:18:37.750 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from ans.namespace attribute : null
+2024-10-22 22:18:37.750 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from ALIBABA_ALIWARE_NAMESPACE attribute :null
+2024-10-22 22:18:37.750 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from namespace attribute :null
+2024-10-22 22:18:37.755 [main] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2024-10-22 22:18:37.755 [main] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2024-10-22 22:18:37.758 [main] INFO  com.alibaba.nacos.common.remote.client - [RpcClientFactory] create a new rpc client of 61003c77-6e50-4413-9ee4-08767ce9eaa2
+2024-10-22 22:18:37.758 [main] INFO  com.alibaba.nacos.common.remote.client - [61003c77-6e50-4413-9ee4-08767ce9eaa2] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+2024-10-22 22:18:37.759 [main] INFO  com.alibaba.nacos.common.remote.client - [61003c77-6e50-4413-9ee4-08767ce9eaa2] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+2024-10-22 22:18:37.759 [main] INFO  com.alibaba.nacos.common.remote.client - [61003c77-6e50-4413-9ee4-08767ce9eaa2] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+2024-10-22 22:18:37.759 [main] INFO  com.alibaba.nacos.common.remote.client - [61003c77-6e50-4413-9ee4-08767ce9eaa2] Try to connect to server on start up, server: {serverIp = '127.0.0.1', server main port = 8848}
+2024-10-22 22:18:37.759 [main] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - grpc client connection server:127.0.0.1 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"OPENSSL","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-10-22 22:18:37.878 [main] INFO  com.alibaba.nacos.common.remote.client - [61003c77-6e50-4413-9ee4-08767ce9eaa2] Success to connect to server [127.0.0.1:8848] on start up, connectionId = 1729606717765_127.0.0.1_53809
+2024-10-22 22:18:37.878 [main] INFO  com.alibaba.nacos.common.remote.client - [61003c77-6e50-4413-9ee4-08767ce9eaa2] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2024-10-22 22:18:37.878 [main] INFO  com.alibaba.nacos.common.remote.client - [61003c77-6e50-4413-9ee4-08767ce9eaa2] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$608/0x000001ea814f61c8
+2024-10-22 22:18:37.878 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.common.remote.client - [61003c77-6e50-4413-9ee4-08767ce9eaa2] Notify connected event to listeners.
+2024-10-22 22:18:37.878 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.client.naming - Grpc connection connect
+2024-10-22 22:18:37.880 [main] INFO  com.alibaba.nacos.client.naming - [REGISTER-SERVICE] Little-Red-Book registering service LittleRedBook-oss with instance Instance{instanceId='null', ip='192.168.101.7', port=8081, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={IPv6=null, preserved.register.source=SPRING_CLOUD}}
+2024-10-22 22:18:37.889 [main] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - nacos registry, DEFAULT_GROUP LittleRedBook-oss 192.168.101.7:8081 register finished
+2024-10-22 22:18:37.965 [main] INFO  c.h.L.oss.biz.LittleRedBookOssBizApplication - Started LittleRedBookOssBizApplication in 2.846 seconds (process running for 3.186)
+2024-10-22 22:18:37.968 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - nacos.cache.data.init.snapshot = true 
+2024-10-22 22:18:37.968 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-Little-Red-Book-127.0.0.1_8848] [subscribe] LittleRedBook-oss.yaml+DEFAULT_GROUP+Little-Red-Book
+2024-10-22 22:18:37.972 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-Little-Red-Book-127.0.0.1_8848] [add-listener] ok, tenant=Little-Red-Book, dataId=LittleRedBook-oss.yaml, group=DEFAULT_GROUP, cnt=1
+2024-10-22 22:18:37.972 [main] INFO  c.a.cloud.nacos.refresh.NacosContextRefresher - [Nacos Config] Listening config: dataId=LittleRedBook-oss.yaml, group=DEFAULT_GROUP
+2024-10-22 22:18:37.972 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-Little-Red-Book-127.0.0.1_8848] [subscribe] LittleRedBook-oss+DEFAULT_GROUP+Little-Red-Book
+2024-10-22 22:18:37.972 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-Little-Red-Book-127.0.0.1_8848] [add-listener] ok, tenant=Little-Red-Book, dataId=LittleRedBook-oss, group=DEFAULT_GROUP, cnt=1
+2024-10-22 22:18:37.972 [main] INFO  c.a.cloud.nacos.refresh.NacosContextRefresher - [Nacos Config] Listening config: dataId=LittleRedBook-oss, group=DEFAULT_GROUP
+2024-10-22 22:18:37.973 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-Little-Red-Book-127.0.0.1_8848] [subscribe] LittleRedBook-oss-dev.yaml+DEFAULT_GROUP+Little-Red-Book
+2024-10-22 22:18:37.973 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-Little-Red-Book-127.0.0.1_8848] [add-listener] ok, tenant=Little-Red-Book, dataId=LittleRedBook-oss-dev.yaml, group=DEFAULT_GROUP, cnt=1
+2024-10-22 22:18:37.973 [main] INFO  c.a.cloud.nacos.refresh.NacosContextRefresher - [Nacos Config] Listening config: dataId=LittleRedBook-oss-dev.yaml, group=DEFAULT_GROUP
+2024-10-22 22:18:45.082 [http-nio-8081-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-22 22:18:45.082 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-22 22:18:45.083 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-10-22 22:18:45.132 [http-nio-8081-exec-2] INFO  c.h.L.oss.biz.strategy.impl.MinioFileStrategy - ## 上传文件至 Minio ...
+2024-10-22 22:18:45.132 [http-nio-8081-exec-2] INFO  c.h.L.oss.biz.strategy.impl.MinioFileStrategy - ==> 开始上传文件至 Minio, ObjectName: aec4b62afeb648e38758fe1cf2642a02.png
+2024-10-22 22:18:45.559 [http-nio-8081-exec-2] INFO  c.h.L.oss.biz.strategy.impl.MinioFileStrategy - ==> 上传文件至 Minio 成功，访问路径: http://150.158.27.196:9000/little-red-book/aec4b62afeb648e38758fe1cf2642a02.png
+2024-10-22 22:28:45.312 [Thread-2] WARN  c.alibaba.nacos.common.http.HttpClientBeanHolder - [HttpClientBeanHolder] Start destroying common HttpClient
+2024-10-22 22:28:45.312 [Thread-9] WARN  com.alibaba.nacos.common.notify.NotifyCenter - [NotifyCenter] Start destroying Publisher
+2024-10-22 22:28:45.313 [Thread-9] WARN  com.alibaba.nacos.common.notify.NotifyCenter - [NotifyCenter] Destruction of the end
+2024-10-22 22:28:45.313 [Thread-2] WARN  c.alibaba.nacos.common.http.HttpClientBeanHolder - [HttpClientBeanHolder] Destruction of the end
+2024-10-22 22:28:45.326 [SpringApplicationShutdownHook] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - De-registering from Nacos Server now...
+2024-10-22 22:28:45.326 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - [DEREGISTER-SERVICE] Little-Red-Book deregistering service LittleRedBook-oss with instance: Instance{instanceId='null', ip='192.168.101.7', port=8081, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={}}
+2024-10-22 22:28:45.328 [SpringApplicationShutdownHook] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - De-registration finished.
+2024-10-22 22:28:45.328 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown begin
+2024-10-22 22:28:45.328 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown begin
+2024-10-22 22:28:45.328 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown stop
+2024-10-22 22:28:45.328 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown stop
+2024-10-22 22:28:45.328 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown begin
+2024-10-22 22:28:45.328 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown begin
+2024-10-22 22:28:45.328 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown stop
+2024-10-22 22:28:45.329 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServerListManager do shutdown begin
+2024-10-22 22:28:45.329 [SpringApplicationShutdownHook] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Start destroying NacosRestTemplate
+2024-10-22 22:28:45.329 [SpringApplicationShutdownHook] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Destruction of the end
+2024-10-22 22:28:45.329 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServerListManager do shutdown stop
+2024-10-22 22:28:45.329 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown begin
+2024-10-22 22:28:45.329 [SpringApplicationShutdownHook] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Start destroying NacosRestTemplate
+2024-10-22 22:28:45.329 [SpringApplicationShutdownHook] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Destruction of the end
+2024-10-22 22:28:45.329 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown stop
+2024-10-22 22:28:45.329 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.common.remote.client - Shutdown rpc client, set status to shutdown
+2024-10-22 22:28:45.329 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.common.remote.client - Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@8809243[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+2024-10-22 22:28:45.329 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.common.remote.client - Close current connection 1729606717765_127.0.0.1_53809
+2024-10-22 22:28:45.331 [nacos-grpc-client-executor-127.0.0.1-137] WARN  c.a.nacos.common.remote.client.grpc.GrpcClient - [1729606717765_127.0.0.1_53809]Ignore error event,isRunning:false,isAbandon=false
+2024-10-22 22:28:45.331 [SpringApplicationShutdownHook] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@3b38b953[Running, pool size = 4, active threads = 0, queued tasks = 0, completed tasks = 138]
+2024-10-22 22:28:45.331 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - Shutdown grpc redo service executor java.util.concurrent.ScheduledThreadPoolExecutor@34548cd4[Running, pool size = 1, active threads = 0, queued tasks = 1, completed tasks = 201]
+2024-10-22 22:28:45.332 [SpringApplicationShutdownHook] INFO  c.a.n.client.auth.ram.identify.CredentialWatcher - [null] CredentialWatcher is stopped
+2024-10-22 22:28:45.332 [SpringApplicationShutdownHook] INFO  c.a.n.client.auth.ram.identify.CredentialService - [null] CredentialService is freed
+2024-10-22 22:28:45.332 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown stop
+2024-10-22 22:28:48.211 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-10-22 22:28:48.249 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-10-22 22:28:48.391 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-10-22 22:28:48.392 [main] INFO  com.alibaba.nacos.client.utils.ParamUtil - [settings] [req-serv] nacos-server port:8848
+2024-10-22 22:28:48.392 [main] INFO  com.alibaba.nacos.client.utils.ParamUtil - [settings] [http-client] connect timeout:1000
+2024-10-22 22:28:48.392 [main] INFO  com.alibaba.nacos.client.utils.ParamUtil - PER_TASK_CONFIG_SIZE: 3000.0
+2024-10-22 22:28:48.407 [main] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2024-10-22 22:28:48.407 [main] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2024-10-22 22:28:48.408 [main] INFO  c.a.n.client.auth.ram.identify.CredentialWatcher - null No credential found
+2024-10-22 22:28:48.544 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-10-22 22:28:48.552 [main] INFO  c.a.n.client.config.impl.LocalConfigInfoProcessor - LOCAL_SNAPSHOT_PATH:C:\Users\xzf\nacos\config
+2024-10-22 22:28:48.554 [main] INFO  com.alibaba.nacos.common.remote.client - [RpcClientFactory] create a new rpc client of a45cd54a-04aa-425c-9133-a7d92a540ddd_config-0
+2024-10-22 22:28:48.566 [main] INFO  com.alibaba.nacos.common.remote.client - [a45cd54a-04aa-425c-9133-a7d92a540ddd_config-0] Register server push request handler:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$$Lambda$587/0x000001d5b436fde0
+2024-10-22 22:28:48.566 [main] INFO  com.alibaba.nacos.common.remote.client - [a45cd54a-04aa-425c-9133-a7d92a540ddd_config-0] Register server push request handler:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$$Lambda$588/0x000001d5b4370200
+2024-10-22 22:28:48.566 [main] INFO  com.alibaba.nacos.common.remote.client - [a45cd54a-04aa-425c-9133-a7d92a540ddd_config-0] Registry connection listener to current client:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$1
+2024-10-22 22:28:48.567 [main] INFO  com.alibaba.nacos.common.remote.client - [a45cd54a-04aa-425c-9133-a7d92a540ddd_config-0] RpcClient init, ServerListFactory = com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$2
+2024-10-22 22:28:48.571 [main] INFO  com.alibaba.nacos.common.remote.client - [a45cd54a-04aa-425c-9133-a7d92a540ddd_config-0] Try to connect to server on start up, server: {serverIp = '127.0.0.1', server main port = 8848}
+2024-10-22 22:28:48.595 [main] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - grpc client connection server:127.0.0.1 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"OPENSSL","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-10-22 22:28:49.104 [main] INFO  com.alibaba.nacos.common.remote.client - [a45cd54a-04aa-425c-9133-a7d92a540ddd_config-0] Success to connect to server [127.0.0.1:8848] on start up, connectionId = 1729607328947_127.0.0.1_54051
+2024-10-22 22:28:49.104 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.common.remote.client - [a45cd54a-04aa-425c-9133-a7d92a540ddd_config-0] Notify connected event to listeners.
+2024-10-22 22:28:49.104 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [a45cd54a-04aa-425c-9133-a7d92a540ddd_config-0] Connected,notify listen context...
+2024-10-22 22:28:49.105 [main] INFO  com.alibaba.nacos.common.remote.client - [a45cd54a-04aa-425c-9133-a7d92a540ddd_config-0] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2024-10-22 22:28:49.105 [main] INFO  com.alibaba.nacos.common.remote.client - [a45cd54a-04aa-425c-9133-a7d92a540ddd_config-0] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$608/0x000001d5b44f58a8
+2024-10-22 22:28:49.135 [main] INFO  com.alibaba.nacos.client.config.impl.Limiter - limitTime:5.0
+2024-10-22 22:28:49.147 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[LittleRedBook-oss] & group[DEFAULT_GROUP]
+2024-10-22 22:28:49.152 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[LittleRedBook-oss.yaml] & group[DEFAULT_GROUP]
+2024-10-22 22:28:49.156 [main] INFO  com.alibaba.nacos.client.config.utils.JvmUtil - isMultiInstance:false
+2024-10-22 22:28:49.160 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: [BootstrapPropertySource {name='bootstrapProperties-LittleRedBook-oss-dev.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-LittleRedBook-oss.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-LittleRedBook-oss,DEFAULT_GROUP'}]
+2024-10-22 22:28:49.163 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-10-22 22:28:49.163 [main] INFO  c.h.L.oss.biz.LittleRedBookOssBizApplication - The following 1 profile is active: "dev"
+2024-10-22 22:28:49.486 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=b4f3e87b-2fe1-3e82-85dc-b4653a2b28d1
+2024-10-22 22:28:49.637 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2024-10-22 22:28:49.643 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-22 22:28:49.643 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2024-10-22 22:28:49.692 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-22 22:28:49.692 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 520 ms
+2024-10-22 22:28:50.273 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2024-10-22 22:28:50.276 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from ans.namespace attribute : null
+2024-10-22 22:28:50.277 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from ALIBABA_ALIWARE_NAMESPACE attribute :null
+2024-10-22 22:28:50.277 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from namespace attribute :null
+2024-10-22 22:28:50.281 [main] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2024-10-22 22:28:50.281 [main] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2024-10-22 22:28:50.284 [main] INFO  com.alibaba.nacos.common.remote.client - [RpcClientFactory] create a new rpc client of bc81dca7-b9e1-435a-8a84-3ee889b24f1f
+2024-10-22 22:28:50.285 [main] INFO  com.alibaba.nacos.common.remote.client - [bc81dca7-b9e1-435a-8a84-3ee889b24f1f] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+2024-10-22 22:28:50.285 [main] INFO  com.alibaba.nacos.common.remote.client - [bc81dca7-b9e1-435a-8a84-3ee889b24f1f] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+2024-10-22 22:28:50.285 [main] INFO  com.alibaba.nacos.common.remote.client - [bc81dca7-b9e1-435a-8a84-3ee889b24f1f] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+2024-10-22 22:28:50.285 [main] INFO  com.alibaba.nacos.common.remote.client - [bc81dca7-b9e1-435a-8a84-3ee889b24f1f] Try to connect to server on start up, server: {serverIp = '127.0.0.1', server main port = 8848}
+2024-10-22 22:28:50.285 [main] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - grpc client connection server:127.0.0.1 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"OPENSSL","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-10-22 22:28:50.401 [main] INFO  com.alibaba.nacos.common.remote.client - [bc81dca7-b9e1-435a-8a84-3ee889b24f1f] Success to connect to server [127.0.0.1:8848] on start up, connectionId = 1729607330289_127.0.0.1_54053
+2024-10-22 22:28:50.401 [main] INFO  com.alibaba.nacos.common.remote.client - [bc81dca7-b9e1-435a-8a84-3ee889b24f1f] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2024-10-22 22:28:50.401 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.common.remote.client - [bc81dca7-b9e1-435a-8a84-3ee889b24f1f] Notify connected event to listeners.
+2024-10-22 22:28:50.401 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.client.naming - Grpc connection connect
+2024-10-22 22:28:50.401 [main] INFO  com.alibaba.nacos.common.remote.client - [bc81dca7-b9e1-435a-8a84-3ee889b24f1f] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$608/0x000001d5b44f58a8
+2024-10-22 22:28:50.403 [main] INFO  com.alibaba.nacos.client.naming - [REGISTER-SERVICE] Little-Red-Book registering service LittleRedBook-oss with instance Instance{instanceId='null', ip='192.168.101.7', port=8081, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={IPv6=null, preserved.register.source=SPRING_CLOUD}}
+2024-10-22 22:28:50.411 [main] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - nacos registry, DEFAULT_GROUP LittleRedBook-oss 192.168.101.7:8081 register finished
+2024-10-22 22:28:50.488 [main] INFO  c.h.L.oss.biz.LittleRedBookOssBizApplication - Started LittleRedBookOssBizApplication in 2.648 seconds (process running for 2.954)
+2024-10-22 22:28:50.490 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - nacos.cache.data.init.snapshot = true 
+2024-10-22 22:28:50.490 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-Little-Red-Book-127.0.0.1_8848] [subscribe] LittleRedBook-oss.yaml+DEFAULT_GROUP+Little-Red-Book
+2024-10-22 22:28:50.495 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-Little-Red-Book-127.0.0.1_8848] [add-listener] ok, tenant=Little-Red-Book, dataId=LittleRedBook-oss.yaml, group=DEFAULT_GROUP, cnt=1
+2024-10-22 22:28:50.495 [main] INFO  c.a.cloud.nacos.refresh.NacosContextRefresher - [Nacos Config] Listening config: dataId=LittleRedBook-oss.yaml, group=DEFAULT_GROUP
+2024-10-22 22:28:50.495 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-Little-Red-Book-127.0.0.1_8848] [subscribe] LittleRedBook-oss+DEFAULT_GROUP+Little-Red-Book
+2024-10-22 22:28:50.495 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-Little-Red-Book-127.0.0.1_8848] [add-listener] ok, tenant=Little-Red-Book, dataId=LittleRedBook-oss, group=DEFAULT_GROUP, cnt=1
+2024-10-22 22:28:50.495 [main] INFO  c.a.cloud.nacos.refresh.NacosContextRefresher - [Nacos Config] Listening config: dataId=LittleRedBook-oss, group=DEFAULT_GROUP
+2024-10-22 22:28:50.496 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-Little-Red-Book-127.0.0.1_8848] [subscribe] LittleRedBook-oss-dev.yaml+DEFAULT_GROUP+Little-Red-Book
+2024-10-22 22:28:50.496 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-Little-Red-Book-127.0.0.1_8848] [add-listener] ok, tenant=Little-Red-Book, dataId=LittleRedBook-oss-dev.yaml, group=DEFAULT_GROUP, cnt=1
+2024-10-22 22:28:50.496 [main] INFO  c.a.cloud.nacos.refresh.NacosContextRefresher - [Nacos Config] Listening config: dataId=LittleRedBook-oss-dev.yaml, group=DEFAULT_GROUP
+2024-10-22 22:29:01.490 [http-nio-8081-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-22 22:29:01.490 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-22 22:29:01.491 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-10-22 22:29:01.504 [http-nio-8081-exec-2] ERROR c.h.L.oss.biz.exception.GlobalExceptionHandler - /file/upload request error, 
+org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.handleParseFailure(StandardMultipartHttpServletRequest.java:119)
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.parseRequest(StandardMultipartHttpServletRequest.java:110)
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.<init>(StandardMultipartHttpServletRequest.java:86)
+	at org.springframework.web.multipart.support.StandardServletMultipartResolver.resolveMultipart(StandardServletMultipartResolver.java:112)
+	at org.springframework.web.servlet.DispatcherServlet.checkMultipart(DispatcherServlet.java:1218)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1052)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:973)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.lang.IllegalStateException: org.apache.tomcat.util.http.fileupload.impl.SizeLimitExceededException: the request was rejected because its size (2713021) exceeds the configured maximum (2097152)
+	at org.apache.catalina.connector.Request.parseParts(Request.java:2926)
+	at org.apache.catalina.connector.Request.getParts(Request.java:2778)
+	at org.apache.catalina.connector.RequestFacade.getParts(RequestFacade.java:1074)
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.parseRequest(StandardMultipartHttpServletRequest.java:93)
+	... 43 common frames omitted
+Caused by: org.apache.tomcat.util.http.fileupload.impl.SizeLimitExceededException: the request was rejected because its size (2713021) exceeds the configured maximum (2097152)
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemIteratorImpl.init(FileItemIteratorImpl.java:161)
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemIteratorImpl.getMultiPartStream(FileItemIteratorImpl.java:205)
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemIteratorImpl.findNextItem(FileItemIteratorImpl.java:224)
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemIteratorImpl.<init>(FileItemIteratorImpl.java:142)
+	at org.apache.tomcat.util.http.fileupload.FileUploadBase.getItemIterator(FileUploadBase.java:252)
+	at org.apache.tomcat.util.http.fileupload.FileUploadBase.parseRequest(FileUploadBase.java:276)
+	at org.apache.catalina.connector.Request.parseParts(Request.java:2884)
+	... 46 common frames omitted
+2024-10-22 22:29:46.385 [http-nio-8081-exec-4] INFO  c.h.L.oss.biz.strategy.impl.MinioFileStrategy - ## 上传文件至 Minio ...
+2024-10-22 22:29:46.385 [http-nio-8081-exec-4] ERROR c.h.L.oss.biz.strategy.impl.MinioFileStrategy - ==> 上传文件异常：文件大小为空 ...
+2024-10-22 22:29:46.386 [http-nio-8081-exec-4] ERROR c.h.L.oss.biz.exception.GlobalExceptionHandler - /file/upload request error, 
+java.lang.RuntimeException: 文件大小不能为空
+	at com.haishi.LittleRedBook.oss.biz.strategy.impl.MinioFileStrategy.uploadFile(MinioFileStrategy.java:31)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:281)
+	at org.springframework.cloud.context.scope.GenericScope$LockedScopedProxyFactoryBean.invoke(GenericScope.java:482)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:218)
+	at jdk.proxy2/jdk.proxy2.$Proxy77.uploadFile(Unknown Source)
+	at com.haishi.LittleRedBook.oss.biz.service.impl.FileServiceImpl.uploadFile(FileServiceImpl.java:23)
+	at com.haishi.LittleRedBook.oss.biz.controller.FileController.uploadFile(FileController.java:24)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1080)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:973)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-10-22 22:33:10.943 [Thread-9] WARN  com.alibaba.nacos.common.notify.NotifyCenter - [NotifyCenter] Start destroying Publisher
+2024-10-22 22:33:10.943 [Thread-2] WARN  c.alibaba.nacos.common.http.HttpClientBeanHolder - [HttpClientBeanHolder] Start destroying common HttpClient
+2024-10-22 22:33:10.944 [Thread-9] WARN  com.alibaba.nacos.common.notify.NotifyCenter - [NotifyCenter] Destruction of the end
+2024-10-22 22:33:10.944 [Thread-2] WARN  c.alibaba.nacos.common.http.HttpClientBeanHolder - [HttpClientBeanHolder] Destruction of the end
+2024-10-22 22:33:10.956 [SpringApplicationShutdownHook] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - De-registering from Nacos Server now...
+2024-10-22 22:33:10.957 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - [DEREGISTER-SERVICE] Little-Red-Book deregistering service LittleRedBook-oss with instance: Instance{instanceId='null', ip='192.168.101.7', port=8081, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={}}
+2024-10-22 22:33:10.959 [SpringApplicationShutdownHook] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - De-registration finished.
+2024-10-22 22:33:10.960 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown begin
+2024-10-22 22:33:10.960 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown begin
+2024-10-22 22:33:10.960 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown stop
+2024-10-22 22:33:10.960 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown stop
+2024-10-22 22:33:10.960 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown begin
+2024-10-22 22:33:10.960 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown begin
+2024-10-22 22:33:10.960 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown stop
+2024-10-22 22:33:10.960 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServerListManager do shutdown begin
+2024-10-22 22:33:10.960 [SpringApplicationShutdownHook] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Start destroying NacosRestTemplate
+2024-10-22 22:33:10.960 [SpringApplicationShutdownHook] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Destruction of the end
+2024-10-22 22:33:10.960 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServerListManager do shutdown stop
+2024-10-22 22:33:10.960 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown begin
+2024-10-22 22:33:10.960 [SpringApplicationShutdownHook] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Start destroying NacosRestTemplate
+2024-10-22 22:33:10.960 [SpringApplicationShutdownHook] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Destruction of the end
+2024-10-22 22:33:10.960 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown stop
+2024-10-22 22:33:10.960 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.common.remote.client - Shutdown rpc client, set status to shutdown
+2024-10-22 22:33:10.960 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.common.remote.client - Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@57d07436[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+2024-10-22 22:33:10.960 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.common.remote.client - Close current connection 1729607330289_127.0.0.1_54053
+2024-10-22 22:33:10.961 [SpringApplicationShutdownHook] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@560bd9ba[Running, pool size = 3, active threads = 0, queued tasks = 0, completed tasks = 69]
+2024-10-22 22:33:10.961 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - Shutdown grpc redo service executor java.util.concurrent.ScheduledThreadPoolExecutor@2626fa1e[Running, pool size = 1, active threads = 0, queued tasks = 1, completed tasks = 86]
+2024-10-22 22:33:10.961 [SpringApplicationShutdownHook] INFO  c.a.n.client.auth.ram.identify.CredentialWatcher - [null] CredentialWatcher is stopped
+2024-10-22 22:33:10.961 [SpringApplicationShutdownHook] INFO  c.a.n.client.auth.ram.identify.CredentialService - [null] CredentialService is freed
+2024-10-22 22:33:10.961 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown stop
+2024-10-22 22:33:13.847 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-10-22 22:33:13.886 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-10-22 22:33:14.021 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-10-22 22:33:14.022 [main] INFO  com.alibaba.nacos.client.utils.ParamUtil - [settings] [req-serv] nacos-server port:8848
+2024-10-22 22:33:14.022 [main] INFO  com.alibaba.nacos.client.utils.ParamUtil - [settings] [http-client] connect timeout:1000
+2024-10-22 22:33:14.022 [main] INFO  com.alibaba.nacos.client.utils.ParamUtil - PER_TASK_CONFIG_SIZE: 3000.0
+2024-10-22 22:33:14.037 [main] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2024-10-22 22:33:14.037 [main] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2024-10-22 22:33:14.038 [main] INFO  c.a.n.client.auth.ram.identify.CredentialWatcher - null No credential found
+2024-10-22 22:33:14.164 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-10-22 22:33:14.172 [main] INFO  c.a.n.client.config.impl.LocalConfigInfoProcessor - LOCAL_SNAPSHOT_PATH:C:\Users\xzf\nacos\config
+2024-10-22 22:33:14.174 [main] INFO  com.alibaba.nacos.common.remote.client - [RpcClientFactory] create a new rpc client of 493bb137-84ef-4b63-aa5c-c17ef7f36a0c_config-0
+2024-10-22 22:33:14.187 [main] INFO  com.alibaba.nacos.common.remote.client - [493bb137-84ef-4b63-aa5c-c17ef7f36a0c_config-0] Register server push request handler:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$$Lambda$587/0x000002500136f6d0
+2024-10-22 22:33:14.188 [main] INFO  com.alibaba.nacos.common.remote.client - [493bb137-84ef-4b63-aa5c-c17ef7f36a0c_config-0] Register server push request handler:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$$Lambda$588/0x000002500136faf0
+2024-10-22 22:33:14.188 [main] INFO  com.alibaba.nacos.common.remote.client - [493bb137-84ef-4b63-aa5c-c17ef7f36a0c_config-0] Registry connection listener to current client:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$1
+2024-10-22 22:33:14.188 [main] INFO  com.alibaba.nacos.common.remote.client - [493bb137-84ef-4b63-aa5c-c17ef7f36a0c_config-0] RpcClient init, ServerListFactory = com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$2
+2024-10-22 22:33:14.192 [main] INFO  com.alibaba.nacos.common.remote.client - [493bb137-84ef-4b63-aa5c-c17ef7f36a0c_config-0] Try to connect to server on start up, server: {serverIp = '127.0.0.1', server main port = 8848}
+2024-10-22 22:33:14.211 [main] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - grpc client connection server:127.0.0.1 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"OPENSSL","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-10-22 22:33:14.723 [main] INFO  com.alibaba.nacos.common.remote.client - [493bb137-84ef-4b63-aa5c-c17ef7f36a0c_config-0] Success to connect to server [127.0.0.1:8848] on start up, connectionId = 1729607594573_127.0.0.1_54172
+2024-10-22 22:33:14.724 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.common.remote.client - [493bb137-84ef-4b63-aa5c-c17ef7f36a0c_config-0] Notify connected event to listeners.
+2024-10-22 22:33:14.724 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [493bb137-84ef-4b63-aa5c-c17ef7f36a0c_config-0] Connected,notify listen context...
+2024-10-22 22:33:14.724 [main] INFO  com.alibaba.nacos.common.remote.client - [493bb137-84ef-4b63-aa5c-c17ef7f36a0c_config-0] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2024-10-22 22:33:14.724 [main] INFO  com.alibaba.nacos.common.remote.client - [493bb137-84ef-4b63-aa5c-c17ef7f36a0c_config-0] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$608/0x00000250014f58a8
+2024-10-22 22:33:14.749 [main] INFO  com.alibaba.nacos.client.config.impl.Limiter - limitTime:5.0
+2024-10-22 22:33:14.756 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[LittleRedBook-oss] & group[DEFAULT_GROUP]
+2024-10-22 22:33:14.760 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[LittleRedBook-oss.yaml] & group[DEFAULT_GROUP]
+2024-10-22 22:33:14.764 [main] INFO  com.alibaba.nacos.client.config.utils.JvmUtil - isMultiInstance:false
+2024-10-22 22:33:14.766 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: [BootstrapPropertySource {name='bootstrapProperties-LittleRedBook-oss-dev.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-LittleRedBook-oss.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-LittleRedBook-oss,DEFAULT_GROUP'}]
+2024-10-22 22:33:14.769 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-10-22 22:33:14.769 [main] INFO  c.h.L.oss.biz.LittleRedBookOssBizApplication - The following 1 profile is active: "dev"
+2024-10-22 22:33:15.073 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=b4f3e87b-2fe1-3e82-85dc-b4653a2b28d1
+2024-10-22 22:33:15.207 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2024-10-22 22:33:15.212 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-22 22:33:15.213 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2024-10-22 22:33:15.255 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-22 22:33:15.255 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 479 ms
+2024-10-22 22:33:15.803 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2024-10-22 22:33:15.806 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from ans.namespace attribute : null
+2024-10-22 22:33:15.806 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from ALIBABA_ALIWARE_NAMESPACE attribute :null
+2024-10-22 22:33:15.806 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from namespace attribute :null
+2024-10-22 22:33:15.810 [main] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2024-10-22 22:33:15.810 [main] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2024-10-22 22:33:15.812 [main] INFO  com.alibaba.nacos.common.remote.client - [RpcClientFactory] create a new rpc client of b34d89d0-487e-40fe-8515-463cc78a12ab
+2024-10-22 22:33:15.813 [main] INFO  com.alibaba.nacos.common.remote.client - [b34d89d0-487e-40fe-8515-463cc78a12ab] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+2024-10-22 22:33:15.813 [main] INFO  com.alibaba.nacos.common.remote.client - [b34d89d0-487e-40fe-8515-463cc78a12ab] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+2024-10-22 22:33:15.813 [main] INFO  com.alibaba.nacos.common.remote.client - [b34d89d0-487e-40fe-8515-463cc78a12ab] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+2024-10-22 22:33:15.814 [main] INFO  com.alibaba.nacos.common.remote.client - [b34d89d0-487e-40fe-8515-463cc78a12ab] Try to connect to server on start up, server: {serverIp = '127.0.0.1', server main port = 8848}
+2024-10-22 22:33:15.814 [main] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - grpc client connection server:127.0.0.1 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"OPENSSL","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-10-22 22:33:15.931 [main] INFO  com.alibaba.nacos.common.remote.client - [b34d89d0-487e-40fe-8515-463cc78a12ab] Success to connect to server [127.0.0.1:8848] on start up, connectionId = 1729607595817_127.0.0.1_54174
+2024-10-22 22:33:15.931 [main] INFO  com.alibaba.nacos.common.remote.client - [b34d89d0-487e-40fe-8515-463cc78a12ab] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2024-10-22 22:33:15.931 [main] INFO  com.alibaba.nacos.common.remote.client - [b34d89d0-487e-40fe-8515-463cc78a12ab] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$608/0x00000250014f58a8
+2024-10-22 22:33:15.931 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.common.remote.client - [b34d89d0-487e-40fe-8515-463cc78a12ab] Notify connected event to listeners.
+2024-10-22 22:33:15.931 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.client.naming - Grpc connection connect
+2024-10-22 22:33:15.932 [main] INFO  com.alibaba.nacos.client.naming - [REGISTER-SERVICE] Little-Red-Book registering service LittleRedBook-oss with instance Instance{instanceId='null', ip='192.168.101.7', port=8081, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={IPv6=null, preserved.register.source=SPRING_CLOUD}}
+2024-10-22 22:33:15.938 [main] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - nacos registry, DEFAULT_GROUP LittleRedBook-oss 192.168.101.7:8081 register finished
+2024-10-22 22:33:16.013 [main] INFO  c.h.L.oss.biz.LittleRedBookOssBizApplication - Started LittleRedBookOssBizApplication in 2.548 seconds (process running for 2.875)
+2024-10-22 22:33:16.016 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - nacos.cache.data.init.snapshot = true 
+2024-10-22 22:33:16.016 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-Little-Red-Book-127.0.0.1_8848] [subscribe] LittleRedBook-oss.yaml+DEFAULT_GROUP+Little-Red-Book
+2024-10-22 22:33:16.019 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-Little-Red-Book-127.0.0.1_8848] [add-listener] ok, tenant=Little-Red-Book, dataId=LittleRedBook-oss.yaml, group=DEFAULT_GROUP, cnt=1
+2024-10-22 22:33:16.020 [main] INFO  c.a.cloud.nacos.refresh.NacosContextRefresher - [Nacos Config] Listening config: dataId=LittleRedBook-oss.yaml, group=DEFAULT_GROUP
+2024-10-22 22:33:16.020 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-Little-Red-Book-127.0.0.1_8848] [subscribe] LittleRedBook-oss+DEFAULT_GROUP+Little-Red-Book
+2024-10-22 22:33:16.020 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-Little-Red-Book-127.0.0.1_8848] [add-listener] ok, tenant=Little-Red-Book, dataId=LittleRedBook-oss, group=DEFAULT_GROUP, cnt=1
+2024-10-22 22:33:16.020 [main] INFO  c.a.cloud.nacos.refresh.NacosContextRefresher - [Nacos Config] Listening config: dataId=LittleRedBook-oss, group=DEFAULT_GROUP
+2024-10-22 22:33:16.021 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-Little-Red-Book-127.0.0.1_8848] [subscribe] LittleRedBook-oss-dev.yaml+DEFAULT_GROUP+Little-Red-Book
+2024-10-22 22:33:16.021 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-Little-Red-Book-127.0.0.1_8848] [add-listener] ok, tenant=Little-Red-Book, dataId=LittleRedBook-oss-dev.yaml, group=DEFAULT_GROUP, cnt=1
+2024-10-22 22:33:16.021 [main] INFO  c.a.cloud.nacos.refresh.NacosContextRefresher - [Nacos Config] Listening config: dataId=LittleRedBook-oss-dev.yaml, group=DEFAULT_GROUP
+2024-10-22 22:33:18.675 [http-nio-8081-exec-5] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-22 22:33:18.676 [http-nio-8081-exec-5] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-22 22:33:18.676 [http-nio-8081-exec-5] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-10-22 22:33:18.703 [http-nio-8081-exec-5] INFO  c.h.L.oss.biz.strategy.impl.MinioFileStrategy - ## 上传文件至 Minio ...
+2024-10-22 22:33:18.704 [http-nio-8081-exec-5] ERROR c.h.L.oss.biz.strategy.impl.MinioFileStrategy - ==> 上传文件异常：文件大小为空 ...
+2024-10-22 22:33:18.705 [http-nio-8081-exec-5] ERROR c.h.L.oss.biz.exception.GlobalExceptionHandler - /file/upload request error, 
+java.lang.RuntimeException: 文件大小不能为空
+	at com.haishi.LittleRedBook.oss.biz.strategy.impl.MinioFileStrategy.uploadFile(MinioFileStrategy.java:31)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:281)
+	at org.springframework.cloud.context.scope.GenericScope$LockedScopedProxyFactoryBean.invoke(GenericScope.java:482)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:218)
+	at jdk.proxy2/jdk.proxy2.$Proxy77.uploadFile(Unknown Source)
+	at com.haishi.LittleRedBook.oss.biz.service.impl.FileServiceImpl.uploadFile(FileServiceImpl.java:23)
+	at com.haishi.LittleRedBook.oss.biz.controller.FileController.uploadFile(FileController.java:24)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1080)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:973)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-10-22 22:34:49.300 [http-nio-8081-exec-6] ERROR c.h.L.oss.biz.exception.GlobalExceptionHandler - /file/upload request error, 
+org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.handleParseFailure(StandardMultipartHttpServletRequest.java:119)
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.parseRequest(StandardMultipartHttpServletRequest.java:110)
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.<init>(StandardMultipartHttpServletRequest.java:86)
+	at org.springframework.web.multipart.support.StandardServletMultipartResolver.resolveMultipart(StandardServletMultipartResolver.java:112)
+	at org.springframework.web.servlet.DispatcherServlet.checkMultipart(DispatcherServlet.java:1218)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1052)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:973)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.lang.IllegalStateException: org.apache.tomcat.util.http.fileupload.impl.SizeLimitExceededException: the request was rejected because its size (2713021) exceeds the configured maximum (2097152)
+	at org.apache.catalina.connector.Request.parseParts(Request.java:2926)
+	at org.apache.catalina.connector.Request.getParts(Request.java:2778)
+	at org.apache.catalina.connector.RequestFacade.getParts(RequestFacade.java:1074)
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.parseRequest(StandardMultipartHttpServletRequest.java:93)
+	... 43 common frames omitted
+Caused by: org.apache.tomcat.util.http.fileupload.impl.SizeLimitExceededException: the request was rejected because its size (2713021) exceeds the configured maximum (2097152)
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemIteratorImpl.init(FileItemIteratorImpl.java:161)
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemIteratorImpl.getMultiPartStream(FileItemIteratorImpl.java:205)
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemIteratorImpl.findNextItem(FileItemIteratorImpl.java:224)
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemIteratorImpl.<init>(FileItemIteratorImpl.java:142)
+	at org.apache.tomcat.util.http.fileupload.FileUploadBase.getItemIterator(FileUploadBase.java:252)
+	at org.apache.tomcat.util.http.fileupload.FileUploadBase.parseRequest(FileUploadBase.java:276)
+	at org.apache.catalina.connector.Request.parseParts(Request.java:2884)
+	... 46 common frames omitted
+2024-10-22 22:36:42.883 [Thread-2] WARN  c.alibaba.nacos.common.http.HttpClientBeanHolder - [HttpClientBeanHolder] Start destroying common HttpClient
+2024-10-22 22:36:42.883 [Thread-9] WARN  com.alibaba.nacos.common.notify.NotifyCenter - [NotifyCenter] Start destroying Publisher
+2024-10-22 22:36:42.883 [Thread-9] WARN  com.alibaba.nacos.common.notify.NotifyCenter - [NotifyCenter] Destruction of the end
+2024-10-22 22:36:42.883 [Thread-2] WARN  c.alibaba.nacos.common.http.HttpClientBeanHolder - [HttpClientBeanHolder] Destruction of the end
+2024-10-22 22:36:42.907 [SpringApplicationShutdownHook] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - De-registering from Nacos Server now...
+2024-10-22 22:36:42.907 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - [DEREGISTER-SERVICE] Little-Red-Book deregistering service LittleRedBook-oss with instance: Instance{instanceId='null', ip='192.168.101.7', port=8081, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={}}
+2024-10-22 22:36:42.910 [SpringApplicationShutdownHook] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - De-registration finished.
+2024-10-22 22:36:42.910 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown begin
+2024-10-22 22:36:42.910 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown begin
+2024-10-22 22:36:42.910 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown stop
+2024-10-22 22:36:42.910 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown stop
+2024-10-22 22:36:42.910 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown begin
+2024-10-22 22:36:42.910 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown begin
+2024-10-22 22:36:42.910 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown stop
+2024-10-22 22:36:42.910 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServerListManager do shutdown begin
+2024-10-22 22:36:42.910 [SpringApplicationShutdownHook] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Start destroying NacosRestTemplate
+2024-10-22 22:36:42.910 [SpringApplicationShutdownHook] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Destruction of the end
+2024-10-22 22:36:42.910 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServerListManager do shutdown stop
+2024-10-22 22:36:42.910 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown begin
+2024-10-22 22:36:42.910 [SpringApplicationShutdownHook] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Start destroying NacosRestTemplate
+2024-10-22 22:36:42.910 [SpringApplicationShutdownHook] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Destruction of the end
+2024-10-22 22:36:42.910 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown stop
+2024-10-22 22:36:42.911 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.common.remote.client - Shutdown rpc client, set status to shutdown
+2024-10-22 22:36:42.911 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.common.remote.client - Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@4c020f5f[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+2024-10-22 22:36:42.911 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.common.remote.client - Close current connection 1729607595817_127.0.0.1_54174
+2024-10-22 22:36:42.912 [nacos-grpc-client-executor-127.0.0.1-56] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - [1729607595817_127.0.0.1_54174]Ignore complete event,isRunning:false,isAbandon=false
+2024-10-22 22:36:42.912 [SpringApplicationShutdownHook] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@7801367d[Running, pool size = 5, active threads = 0, queued tasks = 0, completed tasks = 57]
+2024-10-22 22:36:42.912 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - Shutdown grpc redo service executor java.util.concurrent.ScheduledThreadPoolExecutor@1d1ef8cb[Running, pool size = 1, active threads = 0, queued tasks = 1, completed tasks = 68]
+2024-10-22 22:36:42.913 [SpringApplicationShutdownHook] INFO  c.a.n.client.auth.ram.identify.CredentialWatcher - [null] CredentialWatcher is stopped
+2024-10-22 22:36:42.913 [SpringApplicationShutdownHook] INFO  c.a.n.client.auth.ram.identify.CredentialService - [null] CredentialService is freed
+2024-10-22 22:36:42.913 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown stop
+2024-10-22 22:36:45.793 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-10-22 22:36:45.831 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-10-22 22:36:45.973 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-10-22 22:36:45.974 [main] INFO  com.alibaba.nacos.client.utils.ParamUtil - [settings] [req-serv] nacos-server port:8848
+2024-10-22 22:36:45.974 [main] INFO  com.alibaba.nacos.client.utils.ParamUtil - [settings] [http-client] connect timeout:1000
+2024-10-22 22:36:45.975 [main] INFO  com.alibaba.nacos.client.utils.ParamUtil - PER_TASK_CONFIG_SIZE: 3000.0
+2024-10-22 22:36:45.990 [main] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2024-10-22 22:36:45.990 [main] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2024-10-22 22:36:45.991 [main] INFO  c.a.n.client.auth.ram.identify.CredentialWatcher - null No credential found
+2024-10-22 22:36:46.126 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-10-22 22:36:46.134 [main] INFO  c.a.n.client.config.impl.LocalConfigInfoProcessor - LOCAL_SNAPSHOT_PATH:C:\Users\xzf\nacos\config
+2024-10-22 22:36:46.137 [main] INFO  com.alibaba.nacos.common.remote.client - [RpcClientFactory] create a new rpc client of 07c6ee32-9b2d-4e8a-8131-da206f41f4e5_config-0
+2024-10-22 22:36:46.149 [main] INFO  com.alibaba.nacos.common.remote.client - [07c6ee32-9b2d-4e8a-8131-da206f41f4e5_config-0] Register server push request handler:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$$Lambda$587/0x000001960d36f818
+2024-10-22 22:36:46.150 [main] INFO  com.alibaba.nacos.common.remote.client - [07c6ee32-9b2d-4e8a-8131-da206f41f4e5_config-0] Register server push request handler:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$$Lambda$588/0x000001960d36fc38
+2024-10-22 22:36:46.150 [main] INFO  com.alibaba.nacos.common.remote.client - [07c6ee32-9b2d-4e8a-8131-da206f41f4e5_config-0] Registry connection listener to current client:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$1
+2024-10-22 22:36:46.150 [main] INFO  com.alibaba.nacos.common.remote.client - [07c6ee32-9b2d-4e8a-8131-da206f41f4e5_config-0] RpcClient init, ServerListFactory = com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$2
+2024-10-22 22:36:46.155 [main] INFO  com.alibaba.nacos.common.remote.client - [07c6ee32-9b2d-4e8a-8131-da206f41f4e5_config-0] Try to connect to server on start up, server: {serverIp = '127.0.0.1', server main port = 8848}
+2024-10-22 22:36:46.178 [main] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - grpc client connection server:127.0.0.1 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"OPENSSL","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-10-22 22:36:46.682 [main] INFO  com.alibaba.nacos.common.remote.client - [07c6ee32-9b2d-4e8a-8131-da206f41f4e5_config-0] Success to connect to server [127.0.0.1:8848] on start up, connectionId = 1729607806524_127.0.0.1_54252
+2024-10-22 22:36:46.683 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.common.remote.client - [07c6ee32-9b2d-4e8a-8131-da206f41f4e5_config-0] Notify connected event to listeners.
+2024-10-22 22:36:46.683 [main] INFO  com.alibaba.nacos.common.remote.client - [07c6ee32-9b2d-4e8a-8131-da206f41f4e5_config-0] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2024-10-22 22:36:46.683 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [07c6ee32-9b2d-4e8a-8131-da206f41f4e5_config-0] Connected,notify listen context...
+2024-10-22 22:36:46.684 [main] INFO  com.alibaba.nacos.common.remote.client - [07c6ee32-9b2d-4e8a-8131-da206f41f4e5_config-0] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$608/0x000001960d4f5948
+2024-10-22 22:36:46.708 [main] INFO  com.alibaba.nacos.client.config.impl.Limiter - limitTime:5.0
+2024-10-22 22:36:46.717 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[LittleRedBook-oss] & group[DEFAULT_GROUP]
+2024-10-22 22:36:46.720 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[LittleRedBook-oss.yaml] & group[DEFAULT_GROUP]
+2024-10-22 22:36:46.724 [main] INFO  com.alibaba.nacos.client.config.utils.JvmUtil - isMultiInstance:false
+2024-10-22 22:36:46.727 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: [BootstrapPropertySource {name='bootstrapProperties-LittleRedBook-oss-dev.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-LittleRedBook-oss.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-LittleRedBook-oss,DEFAULT_GROUP'}]
+2024-10-22 22:36:46.730 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-10-22 22:36:46.731 [main] INFO  c.h.L.oss.biz.LittleRedBookOssBizApplication - The following 1 profile is active: "dev"
+2024-10-22 22:36:47.054 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=b4f3e87b-2fe1-3e82-85dc-b4653a2b28d1
+2024-10-22 22:36:47.196 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2024-10-22 22:36:47.202 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-22 22:36:47.202 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2024-10-22 22:36:47.247 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-22 22:36:47.247 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 509 ms
+2024-10-22 22:36:47.806 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2024-10-22 22:36:47.809 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from ans.namespace attribute : null
+2024-10-22 22:36:47.809 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from ALIBABA_ALIWARE_NAMESPACE attribute :null
+2024-10-22 22:36:47.810 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from namespace attribute :null
+2024-10-22 22:36:47.814 [main] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2024-10-22 22:36:47.814 [main] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2024-10-22 22:36:47.816 [main] INFO  com.alibaba.nacos.common.remote.client - [RpcClientFactory] create a new rpc client of cbba94eb-7e42-41d9-b7c0-597e39c63410
+2024-10-22 22:36:47.817 [main] INFO  com.alibaba.nacos.common.remote.client - [cbba94eb-7e42-41d9-b7c0-597e39c63410] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+2024-10-22 22:36:47.817 [main] INFO  com.alibaba.nacos.common.remote.client - [cbba94eb-7e42-41d9-b7c0-597e39c63410] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+2024-10-22 22:36:47.817 [main] INFO  com.alibaba.nacos.common.remote.client - [cbba94eb-7e42-41d9-b7c0-597e39c63410] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+2024-10-22 22:36:47.817 [main] INFO  com.alibaba.nacos.common.remote.client - [cbba94eb-7e42-41d9-b7c0-597e39c63410] Try to connect to server on start up, server: {serverIp = '127.0.0.1', server main port = 8848}
+2024-10-22 22:36:47.817 [main] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - grpc client connection server:127.0.0.1 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"OPENSSL","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-10-22 22:36:47.929 [main] INFO  com.alibaba.nacos.common.remote.client - [cbba94eb-7e42-41d9-b7c0-597e39c63410] Success to connect to server [127.0.0.1:8848] on start up, connectionId = 1729607807823_127.0.0.1_54253
+2024-10-22 22:36:47.929 [main] INFO  com.alibaba.nacos.common.remote.client - [cbba94eb-7e42-41d9-b7c0-597e39c63410] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2024-10-22 22:36:47.929 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.common.remote.client - [cbba94eb-7e42-41d9-b7c0-597e39c63410] Notify connected event to listeners.
+2024-10-22 22:36:47.929 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.client.naming - Grpc connection connect
+2024-10-22 22:36:47.929 [main] INFO  com.alibaba.nacos.common.remote.client - [cbba94eb-7e42-41d9-b7c0-597e39c63410] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$608/0x000001960d4f5948
+2024-10-22 22:36:47.932 [main] INFO  com.alibaba.nacos.client.naming - [REGISTER-SERVICE] Little-Red-Book registering service LittleRedBook-oss with instance Instance{instanceId='null', ip='192.168.101.7', port=8081, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={IPv6=null, preserved.register.source=SPRING_CLOUD}}
+2024-10-22 22:36:47.940 [main] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - nacos registry, DEFAULT_GROUP LittleRedBook-oss 192.168.101.7:8081 register finished
+2024-10-22 22:36:48.014 [main] INFO  c.h.L.oss.biz.LittleRedBookOssBizApplication - Started LittleRedBookOssBizApplication in 2.595 seconds (process running for 2.902)
+2024-10-22 22:36:48.017 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - nacos.cache.data.init.snapshot = true 
+2024-10-22 22:36:48.017 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-Little-Red-Book-127.0.0.1_8848] [subscribe] LittleRedBook-oss.yaml+DEFAULT_GROUP+Little-Red-Book
+2024-10-22 22:36:48.021 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-Little-Red-Book-127.0.0.1_8848] [add-listener] ok, tenant=Little-Red-Book, dataId=LittleRedBook-oss.yaml, group=DEFAULT_GROUP, cnt=1
+2024-10-22 22:36:48.022 [main] INFO  c.a.cloud.nacos.refresh.NacosContextRefresher - [Nacos Config] Listening config: dataId=LittleRedBook-oss.yaml, group=DEFAULT_GROUP
+2024-10-22 22:36:48.022 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-Little-Red-Book-127.0.0.1_8848] [subscribe] LittleRedBook-oss+DEFAULT_GROUP+Little-Red-Book
+2024-10-22 22:36:48.022 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-Little-Red-Book-127.0.0.1_8848] [add-listener] ok, tenant=Little-Red-Book, dataId=LittleRedBook-oss, group=DEFAULT_GROUP, cnt=1
+2024-10-22 22:36:48.022 [main] INFO  c.a.cloud.nacos.refresh.NacosContextRefresher - [Nacos Config] Listening config: dataId=LittleRedBook-oss, group=DEFAULT_GROUP
+2024-10-22 22:36:48.023 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-Little-Red-Book-127.0.0.1_8848] [subscribe] LittleRedBook-oss-dev.yaml+DEFAULT_GROUP+Little-Red-Book
+2024-10-22 22:36:48.023 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-Little-Red-Book-127.0.0.1_8848] [add-listener] ok, tenant=Little-Red-Book, dataId=LittleRedBook-oss-dev.yaml, group=DEFAULT_GROUP, cnt=1
+2024-10-22 22:36:48.023 [main] INFO  c.a.cloud.nacos.refresh.NacosContextRefresher - [Nacos Config] Listening config: dataId=LittleRedBook-oss-dev.yaml, group=DEFAULT_GROUP
+2024-10-22 22:36:51.439 [http-nio-8081-exec-5] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-22 22:36:51.439 [http-nio-8081-exec-5] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-22 22:36:51.440 [http-nio-8081-exec-5] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-10-22 22:36:51.453 [http-nio-8081-exec-5] WARN  c.h.L.oss.biz.exception.GlobalExceptionHandler - /file/upload picture too big, 
+org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.handleParseFailure(StandardMultipartHttpServletRequest.java:119)
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.parseRequest(StandardMultipartHttpServletRequest.java:110)
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.<init>(StandardMultipartHttpServletRequest.java:86)
+	at org.springframework.web.multipart.support.StandardServletMultipartResolver.resolveMultipart(StandardServletMultipartResolver.java:112)
+	at org.springframework.web.servlet.DispatcherServlet.checkMultipart(DispatcherServlet.java:1218)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1052)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:973)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.lang.IllegalStateException: org.apache.tomcat.util.http.fileupload.impl.SizeLimitExceededException: the request was rejected because its size (2713021) exceeds the configured maximum (2097152)
+	at org.apache.catalina.connector.Request.parseParts(Request.java:2926)
+	at org.apache.catalina.connector.Request.getParts(Request.java:2778)
+	at org.apache.catalina.connector.RequestFacade.getParts(RequestFacade.java:1074)
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.parseRequest(StandardMultipartHttpServletRequest.java:93)
+	... 43 common frames omitted
+Caused by: org.apache.tomcat.util.http.fileupload.impl.SizeLimitExceededException: the request was rejected because its size (2713021) exceeds the configured maximum (2097152)
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemIteratorImpl.init(FileItemIteratorImpl.java:161)
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemIteratorImpl.getMultiPartStream(FileItemIteratorImpl.java:205)
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemIteratorImpl.findNextItem(FileItemIteratorImpl.java:224)
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemIteratorImpl.<init>(FileItemIteratorImpl.java:142)
+	at org.apache.tomcat.util.http.fileupload.FileUploadBase.getItemIterator(FileUploadBase.java:252)
+	at org.apache.tomcat.util.http.fileupload.FileUploadBase.parseRequest(FileUploadBase.java:276)
+	at org.apache.catalina.connector.Request.parseParts(Request.java:2884)
+	... 46 common frames omitted
+2024-10-22 22:44:10.569 [Thread-2] WARN  c.alibaba.nacos.common.http.HttpClientBeanHolder - [HttpClientBeanHolder] Start destroying common HttpClient
+2024-10-22 22:44:10.569 [Thread-9] WARN  com.alibaba.nacos.common.notify.NotifyCenter - [NotifyCenter] Start destroying Publisher
+2024-10-22 22:44:10.569 [Thread-9] WARN  com.alibaba.nacos.common.notify.NotifyCenter - [NotifyCenter] Destruction of the end
+2024-10-22 22:44:10.570 [Thread-2] WARN  c.alibaba.nacos.common.http.HttpClientBeanHolder - [HttpClientBeanHolder] Destruction of the end
+2024-10-22 22:44:10.582 [SpringApplicationShutdownHook] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - De-registering from Nacos Server now...
+2024-10-22 22:44:10.582 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - [DEREGISTER-SERVICE] Little-Red-Book deregistering service LittleRedBook-oss with instance: Instance{instanceId='null', ip='192.168.101.7', port=8081, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={}}
+2024-10-22 22:44:10.585 [SpringApplicationShutdownHook] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - De-registration finished.
+2024-10-22 22:44:10.585 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown begin
+2024-10-22 22:44:10.585 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown begin
+2024-10-22 22:44:10.585 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown stop
+2024-10-22 22:44:10.585 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown stop
+2024-10-22 22:44:10.585 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown begin
+2024-10-22 22:44:10.585 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown begin
+2024-10-22 22:44:10.585 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown stop
+2024-10-22 22:44:10.585 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServerListManager do shutdown begin
+2024-10-22 22:44:10.585 [SpringApplicationShutdownHook] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Start destroying NacosRestTemplate
+2024-10-22 22:44:10.585 [SpringApplicationShutdownHook] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Destruction of the end
+2024-10-22 22:44:10.586 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServerListManager do shutdown stop
+2024-10-22 22:44:10.586 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown begin
+2024-10-22 22:44:10.586 [SpringApplicationShutdownHook] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Start destroying NacosRestTemplate
+2024-10-22 22:44:10.586 [SpringApplicationShutdownHook] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Destruction of the end
+2024-10-22 22:44:10.586 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown stop
+2024-10-22 22:44:10.586 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.common.remote.client - Shutdown rpc client, set status to shutdown
+2024-10-22 22:44:10.586 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.common.remote.client - Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@a7dccc3[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+2024-10-22 22:44:10.586 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.common.remote.client - Close current connection 1729607807823_127.0.0.1_54253
+2024-10-22 22:44:10.586 [nacos-grpc-client-executor-127.0.0.1-103] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - [1729607807823_127.0.0.1_54253]Ignore complete event,isRunning:false,isAbandon=false
+2024-10-22 22:44:10.587 [SpringApplicationShutdownHook] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@1182c38c[Running, pool size = 4, active threads = 0, queued tasks = 0, completed tasks = 104]
+2024-10-22 22:44:10.587 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - Shutdown grpc redo service executor java.util.concurrent.ScheduledThreadPoolExecutor@28b6e119[Running, pool size = 1, active threads = 0, queued tasks = 1, completed tasks = 147]
+2024-10-22 22:44:10.588 [SpringApplicationShutdownHook] INFO  c.a.n.client.auth.ram.identify.CredentialWatcher - [null] CredentialWatcher is stopped
+2024-10-22 22:44:10.588 [SpringApplicationShutdownHook] INFO  c.a.n.client.auth.ram.identify.CredentialService - [null] CredentialService is freed
+2024-10-22 22:44:10.588 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown stop
