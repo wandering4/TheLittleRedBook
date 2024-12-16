@@ -15,12 +15,12 @@
   <packaging>pom</packaging>
 
   <!-- 子模块管理 -->
-<!--  <modules>-->
-<!--    <module>LittleRedBook-Auth</module>-->
+  <modules>
+    <module>LittleRedBook-Auth</module>
 <!--    <module>LittleRedBook-Framework</module>-->
 <!--    <module>LittleRedBook-gateway</module>-->
 <!--    <module>LittleRedBook-oss</module>-->
-<!--  </modules>-->
+  </modules>
 
   <properties>
     <!-- 项目版本号 -->
