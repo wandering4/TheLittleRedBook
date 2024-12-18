@@ -17,7 +17,7 @@
   <!-- 子模块管理 -->
   <modules>
     <module>LittleRedBook-Auth</module>
-<!--    <module>LittleRedBook-Framework</module>-->
+    <module>LittleRedBook-Framework</module>
 <!--    <module>LittleRedBook-gateway</module>-->
 <!--    <module>LittleRedBook-oss</module>-->
   </modules>

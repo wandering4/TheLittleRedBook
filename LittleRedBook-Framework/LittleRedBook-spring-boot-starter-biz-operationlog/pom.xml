@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.haishi</groupId>
+        <artifactId>LittleRedBook-Framework</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <packaging>jar</packaging>
+
+    <artifactId>LittleRedBook-spring-boot-starter-biz-operationlog</artifactId>
+    <name>${project.artifactId}</name>
+    <description>接口日志组件</description>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>com.haishi</groupId>
+            <artifactId>LittleRedBook-commons</artifactId>
+        </dependency>
+    </dependencies>
+</project>

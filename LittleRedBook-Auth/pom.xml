@@ -16,14 +16,14 @@
 
     <artifactId>LittleRedBook-Auth</artifactId>
     <name>${project.artifactId}</name>
-    <description>小哈书：认证服务（负责处理用户登录、注册、账号注销等）</description>
+    <description>仿小红书：认证服务（负责处理用户登录、注册、账号注销等）</description>
     <dependencies>
 
         <!--上下文组件-->
-<!--        <dependency>-->
-<!--            <groupId>com.haishi</groupId>-->
-<!--            <artifactId>LittleRedBook-spring-boot-starter-biz-context</artifactId>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.haishi</groupId>
+            <artifactId>LittleRedBook-spring-boot-starter-biz-context</artifactId>
+        </dependency>
 
         <!-- 密码加密 -->
         <dependency>
@@ -43,7 +43,7 @@
         </dependency>
 
         <!-- Nacos 配置中心 -->
-        <!--        <dependency>
+<!--                <dependency>
                     <groupId>com.alibaba.boot</groupId>
                     <artifactId>nacos-config-spring-boot-starter</artifactId>
                 </dependency>-->
