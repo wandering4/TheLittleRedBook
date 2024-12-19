@@ -1,6 +1,7 @@
 package com.haishi.littleredbookauth.domain.mapper;
 
 import com.haishi.littleredbookauth.domain.DO.UserDO;
+import org.apache.ibatis.annotations.Param;
 
 public interface UserDOMapper {
     int deleteByPrimaryKey(Long id);
@@ -21,5 +22,5 @@ public interface UserDOMapper {
      * @param phone
      * @return
      */
-    UserDO selectByPhone(String phone);
+    UserDO selectByPhone(@Param("phone") String phone);
 }

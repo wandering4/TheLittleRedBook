@@ -1,0 +1,153 @@
+2024-12-19 23:41:30.587 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-12-19 23:41:30.628 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-12-19 23:41:30.768 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-12-19 23:41:30.768 [main] INFO  com.alibaba.nacos.client.utils.ParamUtil - [settings] [req-serv] nacos-server port:8848
+2024-12-19 23:41:30.769 [main] INFO  com.alibaba.nacos.client.utils.ParamUtil - [settings] [http-client] connect timeout:1000
+2024-12-19 23:41:30.770 [main] INFO  com.alibaba.nacos.client.utils.ParamUtil - PER_TASK_CONFIG_SIZE: 3000.0
+2024-12-19 23:41:30.851 [main] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2024-12-19 23:41:30.851 [main] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2024-12-19 23:41:30.853 [main] INFO  c.a.n.client.auth.ram.identify.CredentialWatcher - null No credential found
+2024-12-19 23:41:32.055 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-12-19 23:41:32.062 [main] INFO  c.a.n.client.config.impl.LocalConfigInfoProcessor - LOCAL_SNAPSHOT_PATH:C:\Users\xzf\nacos\config
+2024-12-19 23:41:32.067 [main] INFO  com.alibaba.nacos.common.remote.client - [RpcClientFactory] create a new rpc client of 5892379e-827d-44ee-b235-d1f2fccc491b_config-0
+2024-12-19 23:41:32.078 [main] INFO  com.alibaba.nacos.common.remote.client - [5892379e-827d-44ee-b235-d1f2fccc491b_config-0] Register server push request handler:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$$Lambda$877/0x0000020c543e0eb8
+2024-12-19 23:41:32.078 [main] INFO  com.alibaba.nacos.common.remote.client - [5892379e-827d-44ee-b235-d1f2fccc491b_config-0] Register server push request handler:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$$Lambda$878/0x0000020c543e1328
+2024-12-19 23:41:32.079 [main] INFO  com.alibaba.nacos.common.remote.client - [5892379e-827d-44ee-b235-d1f2fccc491b_config-0] Registry connection listener to current client:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$1
+2024-12-19 23:41:32.079 [main] INFO  com.alibaba.nacos.common.remote.client - [5892379e-827d-44ee-b235-d1f2fccc491b_config-0] RpcClient init, ServerListFactory = com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$2
+2024-12-19 23:41:32.084 [main] INFO  com.alibaba.nacos.common.remote.client - [5892379e-827d-44ee-b235-d1f2fccc491b_config-0] Try to connect to server on start up, server: {serverIp = '127.0.0.1', server main port = 8848}
+2024-12-19 23:41:32.110 [main] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - grpc client connection server:127.0.0.1 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"OPENSSL","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2024-12-19 23:41:32.740 [main] INFO  com.alibaba.nacos.common.remote.client - [5892379e-827d-44ee-b235-d1f2fccc491b_config-0] Success to connect to server [127.0.0.1:8848] on start up, connectionId = 1734622892579_127.0.0.1_56659
+2024-12-19 23:41:32.740 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.common.remote.client - [5892379e-827d-44ee-b235-d1f2fccc491b_config-0] Notify connected event to listeners.
+2024-12-19 23:41:32.740 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [5892379e-827d-44ee-b235-d1f2fccc491b_config-0] Connected,notify listen context...
+2024-12-19 23:41:32.740 [main] INFO  com.alibaba.nacos.common.remote.client - [5892379e-827d-44ee-b235-d1f2fccc491b_config-0] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2024-12-19 23:41:32.742 [main] INFO  com.alibaba.nacos.common.remote.client - [5892379e-827d-44ee-b235-d1f2fccc491b_config-0] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$899/0x0000020c5457c288
+2024-12-19 23:41:32.767 [main] INFO  com.alibaba.nacos.client.config.impl.Limiter - limitTime:5.0
+2024-12-19 23:41:32.775 [main] INFO  com.alibaba.nacos.client.config.utils.JvmUtil - isMultiInstance:false
+2024-12-19 23:41:32.785 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[LittleRedBook-auth.yaml] & group[DEFAULT_GROUP]
+2024-12-19 23:41:32.790 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: [BootstrapPropertySource {name='bootstrapProperties-LittleRedBook-auth-dev.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-LittleRedBook-auth.yaml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-LittleRedBook-auth,DEFAULT_GROUP'}]
+2024-12-19 23:41:32.817 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2024-12-19 23:41:32.819 [main] INFO  com.haishi.littleredbookauth.DruidTests - The following 1 profile is active: "dev"
+2024-12-19 23:41:33.318 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-19 23:41:33.319 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-19 23:41:33.345 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2024-12-19 23:41:33.465 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=e2bc0405-68b0-3c95-8b8b-d8cc000a1994
+2024-12-19 23:41:33.726 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-12-19 23:41:34.044 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-12-19 23:41:35.935 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2024-12-19 23:41:37.181 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2024-12-19 23:41:37.211 [main] INFO  com.haishi.littleredbookauth.DruidTests - Started DruidTests in 7.992 seconds (process running for 8.609)
+2024-12-19 23:41:37.212 [main] INFO  c.h.l.runner.PushRolePermissions2RedisRunner - ==> 服务启动，开始同步角色权限数据到 Redis 中...
+2024-12-19 23:41:37.215 [main] ERROR c.h.l.runner.PushRolePermissions2RedisRunner - ==> 同步角色权限数据到 Redis 中失败: 
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.haishi.littleredbookauth.domain.mapper.RoleDOMapper.selectEnabledList
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:229)
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:53)
+	at org.apache.ibatis.binding.MapperProxy.lambda$cachedInvoker$0(MapperProxy.java:96)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708)
+	at org.apache.ibatis.util.MapUtil.computeIfAbsent(MapUtil.java:36)
+	at org.apache.ibatis.binding.MapperProxy.cachedInvoker(MapperProxy.java:94)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy102.selectEnabledList(Unknown Source)
+	at com.haishi.littleredbookauth.runner.PushRolePermissions2RedisRunner.run(PushRolePermissions2RedisRunner.java:46)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:748)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:137)
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:59)
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:47)
+	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1386)
+	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:543)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:137)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:108)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:184)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:118)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:127)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:191)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:130)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:241)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:138)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:377)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:382)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:377)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:310)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:376)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:289)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:288)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:278)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:277)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:105)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:104)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:147)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:127)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:90)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:55)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:102)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+2024-12-19 23:41:37.219 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - nacos.cache.data.init.snapshot = true 
+2024-12-19 23:41:37.220 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-Little-Red-Book-127.0.0.1_8848] [subscribe] LittleRedBook-auth-dev.yaml+DEFAULT_GROUP+Little-Red-Book
+2024-12-19 23:41:37.224 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-Little-Red-Book-127.0.0.1_8848] [add-listener] ok, tenant=Little-Red-Book, dataId=LittleRedBook-auth-dev.yaml, group=DEFAULT_GROUP, cnt=1
+2024-12-19 23:41:37.224 [main] INFO  c.a.cloud.nacos.refresh.NacosContextRefresher - [Nacos Config] Listening config: dataId=LittleRedBook-auth-dev.yaml, group=DEFAULT_GROUP
+2024-12-19 23:41:37.224 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-Little-Red-Book-127.0.0.1_8848] [subscribe] LittleRedBook-auth.yaml+DEFAULT_GROUP+Little-Red-Book
+2024-12-19 23:41:37.224 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-Little-Red-Book-127.0.0.1_8848] [add-listener] ok, tenant=Little-Red-Book, dataId=LittleRedBook-auth.yaml, group=DEFAULT_GROUP, cnt=1
+2024-12-19 23:41:37.224 [main] INFO  c.a.cloud.nacos.refresh.NacosContextRefresher - [Nacos Config] Listening config: dataId=LittleRedBook-auth.yaml, group=DEFAULT_GROUP
+2024-12-19 23:41:37.238 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-Little-Red-Book-127.0.0.1_8848] [subscribe] LittleRedBook-auth+DEFAULT_GROUP+Little-Red-Book
+2024-12-19 23:41:37.238 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-Little-Red-Book-127.0.0.1_8848] [add-listener] ok, tenant=Little-Red-Book, dataId=LittleRedBook-auth, group=DEFAULT_GROUP, cnt=1
+2024-12-19 23:41:37.238 [main] INFO  c.a.cloud.nacos.refresh.NacosContextRefresher - [Nacos Config] Listening config: dataId=LittleRedBook-auth, group=DEFAULT_GROUP
+2024-12-19 23:41:37.532 [main] INFO  com.haishi.littleredbookauth.DruidTests - privateKey: MIIBVAIBADANBgkqhkiG9w0BAQEFAASCAT4wggE6AgEAAkEAhKH5qF9XojifjOvGEHS9+e4An3dM63bv+cXMY7/VimOehhln2SY93lCutGxuJdmsaaB6P/bjsHPw3MZZKIw8jQIDAQABAkA22cGkxyE3vlEFd3Am2BDE7o+lYzIVYs+lrQ505h3KqALKTeoZDkLI86M5iYeLdRejaP1fpRpnKJj5sYsnoNllAiEA4DHmag4QqtEuC/r0zKA7UwG3aTxRgFc2zbXvPKssfX8CIQCXcs4jdkeW7m8AHCfamdXSSx/LoaUfhx2IFUHkvbdj8wIgVrkWvzmXmuv1mu7FmQ32RMKqNwv9Ht8dtO9GjrpMKHMCIGUYugpqFnfmSiqkoOYH8vgiNeNU0EkvhMMmjYoIKreJAiEAohMv3lzE155+960Vtby/2fGF4/7Lz+Pe/wLxy2fkgyM=
+2024-12-19 23:41:37.532 [main] INFO  com.haishi.littleredbookauth.DruidTests - publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAISh+ahfV6I4n4zrxhB0vfnuAJ93TOt27/nFzGO/1YpjnoYZZ9kmPd5QrrRsbiXZrGmgej/247Bz8NzGWSiMPI0CAwEAAQ==
+2024-12-19 23:41:37.534 [main] INFO  com.haishi.littleredbookauth.DruidTests - password: OrXdsd+u81o94QiS1rn0VNToxqXWUrpIJsHJrhHfDX1klyZ9UOnVOmUsMh/GEqCI6C3/PEjkmFZ4CuCvC5fi6A==
+2024-12-19 23:41:37.544 [Thread-9] WARN  com.alibaba.nacos.common.notify.NotifyCenter - [NotifyCenter] Start destroying Publisher
+2024-12-19 23:41:37.544 [Thread-2] WARN  c.alibaba.nacos.common.http.HttpClientBeanHolder - [HttpClientBeanHolder] Start destroying common HttpClient
+2024-12-19 23:41:37.544 [Thread-9] WARN  com.alibaba.nacos.common.notify.NotifyCenter - [NotifyCenter] Destruction of the end
+2024-12-19 23:41:37.544 [Thread-2] WARN  c.alibaba.nacos.common.http.HttpClientBeanHolder - [HttpClientBeanHolder] Destruction of the end
+2024-12-19 23:41:37.555 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-12-19 23:41:37.559 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed

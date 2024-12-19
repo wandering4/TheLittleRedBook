@@ -17,13 +17,12 @@
     <modules>
         <!-- 通用工具组件 -->
         <module>LittleRedBook-commons</module>
+        <!-- 接口日志组件 -->
         <module>LittleRedBook-spring-boot-starter-biz-operationlog</module>
+        <!--用户信息上下文组件-->
         <module>LittleRedBook-spring-boot-starter-biz-context</module>
-        <!--        <module>LittleRedBook-spring-boot-starter-biz-context</module>-->
-        <!--        &lt;!&ndash; 接口日志组件 &ndash;&gt;-->
-<!--        <module>LittleRedBook-spring-boot-starter-biz-operationlog</module>-->
-<!--        &lt;!&ndash; Jackson 组件 &ndash;&gt;-->
-<!--        <module>LittleRedBook-spring-boot-starter-jackson</module>-->
+        <!-- Jackson 组件 -->
+        <module>LittleRedBook-spring-boot-starter-jackson</module>
     </modules>
 
 </project>
