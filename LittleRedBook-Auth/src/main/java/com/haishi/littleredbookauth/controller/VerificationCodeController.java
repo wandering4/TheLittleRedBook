@@ -12,11 +12,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 
-//@RestController
+@RestController
 @Slf4j
 public class VerificationCodeController {
 
-/*
     @Resource
     private VerificationCodeService verificationCodeService;
 
@@ -25,7 +24,6 @@ public class VerificationCodeController {
     public Response<?> send(@Validated @RequestBody SendVerificationCodeReqVO sendVerificationCodeReqVO) {
         return verificationCodeService.send(sendVerificationCodeReqVO);
     }
-*/
 
 
 }
