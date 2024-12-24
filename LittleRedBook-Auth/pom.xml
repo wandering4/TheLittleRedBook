@@ -19,6 +19,11 @@
     <description>仿小红书：认证服务（负责处理用户登录、注册、账号注销等）</description>
     <dependencies>
 
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson-spring-boot-starter</artifactId>
+        </dependency>
+
         <!--上下文组件-->
         <dependency>
             <groupId>com.haishi</groupId>

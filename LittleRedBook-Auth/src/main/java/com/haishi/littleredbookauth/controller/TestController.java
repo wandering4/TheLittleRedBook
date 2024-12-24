@@ -4,6 +4,7 @@ import com.alibaba.nacos.api.config.annotation.NacosValue;
 import com.haishi.littleredbookauth.alarm.AlarmInterface;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,7 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
 
-    @NacosValue(value = "${rate-limit.api.limit}", autoRefreshed = true)
+//    @NacosValue(value = "${rate-limit.api.limit}", autoRefreshed = true)
+    @Value("${rate-limit.api.limit}")
     private Integer limit;
 
     @GetMapping("/test")

@@ -55,6 +55,7 @@
     <nacos-config.version>0.3.0-RC</nacos-config.version>
     <transmittable-thread-local.version>2.14.2</transmittable-thread-local.version>
     <minio.version>8.2.1</minio.version>
+    <redisson.version>3.18.1</redisson.version>
 
     <aliyun-sdk-oss.version>3.17.4</aliyun-sdk-oss.version>
     <jaxb-api.version>2.3.1</jaxb-api.version>
@@ -67,6 +68,15 @@
   <dependencyManagement>
 
     <dependencies>
+
+      <!--Redisson-->
+      <dependency>
+        <groupId>org.redisson</groupId>
+        <artifactId>redisson-spring-boot-starter</artifactId>
+        <version>${redisson.version}</version> <!-- 推荐使用的版本 -->
+      </dependency>
+
+
       <!-- 阿里云 OSS -->
       <dependency>
         <groupId>com.aliyun.oss</groupId>
