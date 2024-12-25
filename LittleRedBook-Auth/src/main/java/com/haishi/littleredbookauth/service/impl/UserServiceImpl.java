@@ -4,6 +4,7 @@ import cn.dev33.satoken.stp.SaTokenInfo;
 import cn.dev33.satoken.stp.StpUtil;
 
 import com.alibaba.nacos.shaded.com.google.common.base.Preconditions;
+
 import com.haishi.framework.biz.context.holder.LoginUserContextHolder;
 import com.haishi.framework.commons.constant.RedisKeyConstants;
 import com.haishi.framework.commons.enums.DeletedEnum;
@@ -25,6 +26,7 @@ import com.haishi.littleredbookauth.model.vo.user.UserLoginReqVO;
 import com.haishi.littleredbookauth.service.UserService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -35,6 +37,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 
 @Service
 @Slf4j
@@ -70,11 +73,16 @@ public class UserServiceImpl implements UserService {
 
         LoginTypeEnum loginTypeEnum = LoginTypeEnum.valueOf(type);
 
+        // 登录类型错误
+        if (Objects.isNull(loginTypeEnum)) {
+            throw new BizException(ResponseCodeEnum.LOGIN_TYPE_ERROR);
+        }
+
         Long userId = null;
 
         //判断登录类型
         switch (loginTypeEnum) {
-            case VERIFICATION_CODE :
+            case VERIFICATION_CODE:
                 //验证码登录
                 String verificationCode = userLoginReqVO.getCode();
 
@@ -82,9 +90,9 @@ public class UserServiceImpl implements UserService {
 
                 // 构建验证码 Redis Key
                 String key = RedisKeyConstants.buildVerificationCodeKey(phone);
-                String code=(String) redisTemplate.opsForValue().get(key);
+                String code = (String) redisTemplate.opsForValue().get(key);
 
-                if(!StringUtils.equals(verificationCode, code)) {
+                if (!StringUtils.equals(verificationCode, code)) {
                     throw new BizException(ResponseCodeEnum.VERIFICATION_CODE_ERROR);
                 }
 
@@ -106,10 +114,10 @@ public class UserServiceImpl implements UserService {
 
             case PASSWORD:
                 String password = userLoginReqVO.getPassword();
-                UserDO userDO1=userDOMapper.selectByPhone(phone);
+                UserDO userDO1 = userDOMapper.selectByPhone(phone);
 
                 //是否注册
-                if(Objects.isNull(userDO1)) {
+                if (Objects.isNull(userDO1)) {
                     throw new BizException(ResponseCodeEnum.USER_NOT_FOUND);
                 }
 
@@ -118,7 +126,7 @@ public class UserServiceImpl implements UserService {
                 boolean matches = passwordEncoder.matches(password, encodedPassword);
 
                 //如果不匹配，则抛出业务异常
-                if(!matches){
+                if (!matches) {
                     throw new BizException(ResponseCodeEnum.PHONE_OR_PASSWORD_ERROR);
                 }
                 userId = userDO1.getId();
@@ -127,12 +135,16 @@ public class UserServiceImpl implements UserService {
             default:
                 break;
         }
-        if(userId==null|| userId.toString().isEmpty()) {
+        if (userId == null || userId.toString().isEmpty()) {
             return Response.fail(ResponseCodeEnum.LOGIN_FAILURE);
         }
+
+        LoadUserRole(userId);
+
         // SaToken 登录用户，并返回 token 令牌
         // SaToken 登录用户, 入参为用户 ID
         StpUtil.login(userId);
+
 
         // 获取 Token 令牌
         SaTokenInfo tokenInfo = StpUtil.getTokenInfo();
@@ -141,8 +153,28 @@ public class UserServiceImpl implements UserService {
         return Response.success(tokenInfo.tokenValue);
     }
 
+    private void LoadUserRole(Long userId) {
+        String userRolesKey = RedisKeyConstants.buildUserRoleKey(userId);
+
+        Object o = redisTemplate.opsForValue().get(userRolesKey);
+
+        if (ObjectUtils.isNotEmpty(o)) {
+            return;
+        }
+
+        //如果不存在则加载进redis缓存
+        RoleDO roleDO = roleDOMapper.selectByPrimaryKey(RoleConstants.COMMON_USER_ROLE_ID);
+
+        // 将该用户的角色 ID 存入 Redis 中，指定初始容量为 1，这样可以减少在扩容时的性能开销
+        List<String> roles = new ArrayList<>(1);
+        roles.add(roleDO.getRoleKey());
+
+        redisTemplate.opsForValue().set(userRolesKey, JsonUtil.toJsonString(roles), RoleConstants.roleTimeoutDays, TimeUnit.DAYS);
+    }
+
     /**
      * 系统自动注册用户
+     *
      * @param phone
      * @return
      */
@@ -177,17 +209,9 @@ public class UserServiceImpl implements UserService {
                         .build();
                 userRoleDOMapper.insert(userRoleDO);
 
-                RoleDO roleDO = roleDOMapper.selectByPrimaryKey(RoleConstants.COMMON_USER_ROLE_ID);
-
-                // 将该用户的角色 ID 存入 Redis 中，指定初始容量为 1，这样可以减少在扩容时的性能开销
-                List<String> roles = new ArrayList<>(1);
-                roles.add(roleDO.getRoleKey());
-
-                String userRolesKey = RedisKeyConstants.buildUserRoleKey(userId);
-                redisTemplate.opsForValue().set(userRolesKey, JsonUtil.toJsonString(roles));
 
                 return userId;
-            }catch (Exception e) {
+            } catch (Exception e) {
                 //回滚
                 status.setRollbackOnly();
                 log.error(e.getMessage(), e);
@@ -203,6 +227,10 @@ public class UserServiceImpl implements UserService {
         Long userId = LoginUserContextHolder.getUserId();
 
         log.info("==> 用户退出登录, userId: {}", userId);
+
+        if (ObjectUtils.isEmpty(userId)) {
+            return Response.fail(ResponseCodeEnum.USER_NOT_FOUND);
+        }
 
         // 退出登录 (指定用户 ID)
         StpUtil.logout(userId);
