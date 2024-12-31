@@ -19,7 +19,7 @@
     <module>LittleRedBook-Auth</module>
     <module>LittleRedBook-Framework</module>
     <module>LittleRedBook-gateway</module>
-<!--    <module>LittleRedBook-oss</module>-->
+    <module>LittleRedBook-oss</module>
   </modules>
 
   <properties>
