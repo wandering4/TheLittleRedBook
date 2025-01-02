@@ -23,7 +23,7 @@ public class SaTokenConfig {
                 .setAuth(o -> {
                     //登录校验，拦截所有路由,并排除/user/doLogin 用于开放登录
                     SaRouter.match("/**")
-                            .notMatch("/auth/user/login")
+                            .notMatch("/auth/login")
                             .notMatch("/auth/verification/code/send")
                             .check(r->StpUtil.checkLogin());
 
@@ -31,7 +31,7 @@ public class SaTokenConfig {
 //                    SaRouter.match("/auth/user/logout", r -> StpUtil.checkPermission("user"));
 //                    SaRouter.match("/auth/user/logout", r -> StpUtil.checkPermission("app:note:publish"));
 //                    SaRouter.match("/auth/user/logout",r->StpUtil.checkRole("admin"));
-                            SaRouter.match("/auth/user/logout",r->StpUtil.checkRole("common_user"));
+                            SaRouter.match("/auth/logout",r->StpUtil.checkRole("common_user"));
 
 /*                    SaRouter.match("/user/**",r->StpUtil.checkPermission("user"));
                     SaRouter.match("/admin/**", r -> StpUtil.checkPermission("admin"));*/

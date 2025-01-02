@@ -1,6 +1,6 @@
-package com.haishi.LittleRedBook.oss.biz.exception;
+package com.haishi.LittleRedBook.user.biz.exception;
 
-import com.haishi.LittleRedBook.oss.biz.enums.ResponseCodeEnum;
+import com.haishi.LittleRedBook.user.biz.enums.ResponseCodeEnum;
 import com.haishi.framework.commons.exception.BizException;
 import com.haishi.framework.commons.response.Response;
 import jakarta.servlet.http.HttpServletRequest;
@@ -27,7 +27,6 @@ public class GlobalExceptionHandler {
         log.warn("{} request fail, errorCode: {}, errorMessage: {}", request.getRequestURI(), e.getErrorCode(), e.getErrorMessage());
         return Response.fail(e);
     }
-
 
 
     /**
@@ -65,7 +64,6 @@ public class GlobalExceptionHandler {
 
         return Response.fail(errorCode, errorMessage);
     }
-
 
     /**
      * 捕获图片过大异常

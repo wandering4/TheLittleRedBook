@@ -20,6 +20,7 @@
     <module>LittleRedBook-Framework</module>
     <module>LittleRedBook-gateway</module>
     <module>LittleRedBook-oss</module>
+      <module>LittleRedBook-user</module>
   </modules>
 
   <properties>
@@ -68,6 +69,13 @@
   <dependencyManagement>
 
     <dependencies>
+
+      <dependency>
+        <groupId>com.haishi</groupId>
+        <artifactId>LittleRedBook-oss-api</artifactId>
+        <version>${revision}</version>
+      </dependency>
+
 
       <!--Redisson-->
       <dependency>

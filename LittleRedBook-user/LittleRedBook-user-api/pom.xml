@@ -3,18 +3,14 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.haishi</groupId>
-        <artifactId>LittleRedBook-oss</artifactId>
+        <artifactId>LittleRedBook-user</artifactId>
         <version>${revision}</version>
     </parent>
 
     <!-- 打包方式 -->
     <packaging>jar</packaging>
 
-    <!-- 子模块管理 -->
-    <modules>
-    </modules>
-
-    <artifactId>LittleRedBook-oss-api</artifactId>
+    <artifactId>LittleRedBook-user-api</artifactId>
     <name>${project.artifactId}</name>
     <description>RPC层, 供其他服务调用</description>
 
@@ -24,24 +20,9 @@
     </properties>
 
     <dependencies>
-
-        <!-- OpenFeign -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
-
-        <!-- 负载均衡 -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
-        </dependency>
-
-
         <dependency>
             <groupId>com.haishi</groupId>
             <artifactId>LittleRedBook-commons</artifactId>
         </dependency>
-
     </dependencies>
 </project>
