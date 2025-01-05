@@ -13,7 +13,7 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalTimeSerializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.YearMonthSerializer;
 import com.haishi.framework.commons.constant.DateConstants;
-import com.haishi.framework.commons.util.JsonUtil;
+import com.haishi.framework.commons.util.JsonUtils;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.context.annotation.Bean;
 
@@ -59,7 +59,7 @@ public class JacksonAutoConfiguration {
         objectMapper.registerModule(javaTimeModule);
 
 
-        JsonUtil.init(objectMapper);
+        JsonUtils.init(objectMapper);
 
         return objectMapper;
     }

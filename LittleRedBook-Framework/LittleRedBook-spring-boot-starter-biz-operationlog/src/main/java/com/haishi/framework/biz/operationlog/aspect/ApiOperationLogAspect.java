@@ -1,6 +1,6 @@
 package com.haishi.framework.biz.operationlog.aspect;
 
-import com.haishi.framework.commons.util.JsonUtil;
+import com.haishi.framework.commons.util.JsonUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -56,7 +56,7 @@ public class ApiOperationLogAspect {
 
         // 打印出参等相关信息
         log.info("====== 请求结束: [{}], 耗时: {}ms, 出参: {} =================================== ",
-                description, executionTime, JsonUtil.toJsonString(result));
+                description, executionTime, JsonUtils.toJsonString(result));
 
         return result;
     }
@@ -85,7 +85,7 @@ public class ApiOperationLogAspect {
      * @return
      */
     private Function<Object, String> toJsonStr() {
-        return JsonUtil::toJsonString;
+        return JsonUtils::toJsonString;
     }
 
 }

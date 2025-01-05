@@ -17,6 +17,10 @@
   </properties>
   <dependencies>
     <dependency>
+      <groupId>io.github.openfeign</groupId>
+      <artifactId>feign-core</artifactId>
+    </dependency>
+    <dependency>
       <groupId>com.haishi</groupId>
       <artifactId>LittleRedBook-commons</artifactId>
     </dependency>

@@ -1,6 +1,7 @@
 package com.haishi.LittleRedBook.oss.biz.controller;
 
 import com.haishi.LittleRedBook.oss.biz.service.FileService;
+import com.haishi.framework.biz.context.holder.LoginUserContextHolder;
 import com.haishi.framework.commons.response.Response;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;

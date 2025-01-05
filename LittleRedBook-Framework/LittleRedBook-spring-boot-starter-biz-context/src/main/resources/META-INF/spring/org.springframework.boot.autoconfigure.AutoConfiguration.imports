@@ -1,1 +1,2 @@
 com.haishi.framework.biz.context.config.ContextAutoConfiguration
+com.haishi.framework.biz.context.config.FeignContextAutoConfiguration
