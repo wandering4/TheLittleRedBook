@@ -8,5 +8,4 @@ public class RoleConstants {
      */
     public static final Long COMMON_USER_ROLE_ID = 1L;
 
-    public static final int roleTimeoutDays= 3;
 }

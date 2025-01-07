@@ -216,8 +216,6 @@ public class UserServiceImpl implements UserService {
         RoleDO roleDO = roleDOMapper.selectByPrimaryKey(RoleConstants.COMMON_USER_ROLE_ID);
 
         // 将该用户的角色 ID 存入 Redis 中
-        //是否考虑登录时放入redis
-        //???
         List<String> roles = new ArrayList<>(1);
         roles.add(roleDO.getRoleKey());
 
