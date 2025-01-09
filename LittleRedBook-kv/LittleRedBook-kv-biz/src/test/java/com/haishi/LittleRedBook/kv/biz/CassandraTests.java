@@ -54,5 +54,6 @@ public class CassandraTests {
     @Test
     void testDelete() {
         noteContentRepository.deleteById(UUID.fromString("eaad1222-f091-40be-b824-0c9f275724a7"));
+//        noteContentRepository.deleteAll();
     }
 }

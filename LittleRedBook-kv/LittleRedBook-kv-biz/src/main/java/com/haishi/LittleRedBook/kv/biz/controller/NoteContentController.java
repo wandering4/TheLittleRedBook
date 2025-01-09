@@ -1,7 +1,10 @@
 package com.haishi.LittleRedBook.kv.biz.controller;
 
 import com.haishi.LittleRedBook.kv.biz.service.NoteContentService;
-import com.haishi.LittleRedBook.kv.dto.req.AddNoteContentReqDTO;
+import com.haishi.LittleRedBook.kv.dto.req.AddNoteContentRequest;
+import com.haishi.LittleRedBook.kv.dto.req.DeleteNoteContentRequest;
+import com.haishi.LittleRedBook.kv.dto.req.FindNoteContentRequest;
+import com.haishi.LittleRedBook.kv.dto.resp.FindNoteContentResponse;
 import com.haishi.framework.biz.operationlog.aspect.ApiOperationLog;
 import com.haishi.framework.commons.response.Response;
 import jakarta.annotation.Resource;
@@ -22,8 +25,20 @@ public class NoteContentController {
 
     @PostMapping(value = "/note/content/add")
     @ApiOperationLog(description = "添加笔记")
-    public Response<?> addNoteContent(@Validated @RequestBody AddNoteContentReqDTO addNoteContentReqDTO) {
-        return noteContentService.addNoteContent(addNoteContentReqDTO);
+    public Response<?> addNoteContent(@Validated @RequestBody AddNoteContentRequest addNoteContentRequest) {
+        return noteContentService.addNoteContent(addNoteContentRequest);
+    }
+
+
+    @PostMapping(value = "/note/content/find")
+    @ApiOperationLog(description = "查询笔记")
+    public Response<FindNoteContentResponse> findNoteContent(@Validated @RequestBody FindNoteContentRequest findNoteContentRequest) {
+        return noteContentService.findNoteContent(findNoteContentRequest);
+    }
+
+    @PostMapping(value = "/note/content/delete")
+    public Response<?> deleteNoteContent(@Validated @RequestBody DeleteNoteContentRequest deleteNoteContentReqDTO) {
+        return noteContentService.deleteNoteContent(deleteNoteContentReqDTO);
     }
 
 }
