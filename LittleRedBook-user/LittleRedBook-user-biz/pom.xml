@@ -23,6 +23,12 @@
 
         <dependency>
             <groupId>com.haishi</groupId>
+            <artifactId>LittleRedBook-distributed-id-generator-api</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.haishi</groupId>
             <artifactId>LittleRedBook-user-api</artifactId>
         </dependency>
 

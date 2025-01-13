@@ -22,6 +22,7 @@
         <module>LittleRedBook-oss</module>
         <module>LittleRedBook-user</module>
         <module>LittleRedBook-kv</module>
+        <module>LittleRedBook-distributed-id-generator</module>
     </modules>
 
     <properties>
@@ -72,6 +73,12 @@
     <dependencyManagement>
 
         <dependencies>
+
+            <dependency>
+                <groupId>com.haishi</groupId>
+                <artifactId>LittleRedBook-distributed-id-generator-api</artifactId>
+                <version>${revision}</version>
+            </dependency>
 
             <dependency>
                 <groupId>com.haishi</groupId>
