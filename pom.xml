@@ -23,6 +23,7 @@
         <module>LittleRedBook-user</module>
         <module>LittleRedBook-kv</module>
         <module>LittleRedBook-distributed-id-generator</module>
+        <module>LittleRedBook-note</module>
     </modules>
 
     <properties>
