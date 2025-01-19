@@ -15,6 +15,17 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>com.haishi</groupId>
+            <artifactId>LittleRedBook-distributed-id-generator-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.haishi</groupId>
+            <artifactId>LittleRedBook-kv-api</artifactId>
+        </dependency>
+
+
         <!-- Redis -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

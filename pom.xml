@@ -37,8 +37,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Maven 相关版本号 -->
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
-
-
+        <!--本地缓存caffeine-->
+        <caffeine.version>3.1.8</caffeine.version>
         <!-- 依赖包版本 -->
         <lombok.version>1.18.30</lombok.version>
 
@@ -74,6 +74,13 @@
     <dependencyManagement>
 
         <dependencies>
+
+            <!-- Caffeine 本地缓存 -->
+            <dependency>
+                <groupId>com.github.ben-manes.caffeine</groupId>
+                <artifactId>caffeine</artifactId>
+                <version>${caffeine.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>com.haishi</groupId>

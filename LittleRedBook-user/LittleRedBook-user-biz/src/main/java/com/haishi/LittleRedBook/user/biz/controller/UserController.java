@@ -2,9 +2,11 @@ package com.haishi.LittleRedBook.user.biz.controller;
 
 import com.haishi.LittleRedBook.user.biz.model.vo.UpdateUserInfoReqVO;
 import com.haishi.LittleRedBook.user.biz.service.UserService;
+import com.haishi.LittleRedBook.user.dto.req.FindUserByIdRequest;
 import com.haishi.LittleRedBook.user.dto.req.FindUserByPhoneReqDTO;
 import com.haishi.LittleRedBook.user.dto.req.RegisterUserReqDTO;
 import com.haishi.LittleRedBook.user.dto.req.UpdateUserPasswordReqDTO;
+import com.haishi.LittleRedBook.user.dto.resp.FindUserByIdResponse;
 import com.haishi.LittleRedBook.user.dto.resp.FindUserByPhoneRspDTO;
 import com.haishi.framework.biz.operationlog.aspect.ApiOperationLog;
 import com.haishi.framework.commons.response.Response;
@@ -53,6 +55,12 @@ public class UserController {
     @ApiOperationLog(description = "密码更新")
     public Response<?> updatePassword(@Validated @RequestBody UpdateUserPasswordReqDTO updateUserPasswordReqDTO) {
         return userService.updatePassword(updateUserPasswordReqDTO);
+    }
+
+    @PostMapping("/findById")
+    @ApiOperationLog(description = "查询用户信息")
+    public Response<FindUserByIdResponse> findById(@Validated @RequestBody FindUserByIdRequest findUserByIdRequest) {
+        return userService.findById(findUserByIdRequest);
     }
 
 }

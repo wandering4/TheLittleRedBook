@@ -3,6 +3,8 @@ package com.haishi.LittleRedBook.note.biz.domain.mapper;
 
 import com.haishi.LittleRedBook.note.biz.domain.dataobject.ChannelDO;
 
+import java.util.List;
+
 public interface ChannelDOMapper {
     int deleteByPrimaryKey(Long id);
 
@@ -15,4 +17,6 @@ public interface ChannelDOMapper {
     int updateByPrimaryKeySelective(ChannelDO record);
 
     int updateByPrimaryKey(ChannelDO record);
+
+    List<ChannelDO> findAll();
 }

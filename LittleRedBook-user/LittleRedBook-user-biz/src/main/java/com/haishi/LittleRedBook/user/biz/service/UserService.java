@@ -1,9 +1,11 @@
 package com.haishi.LittleRedBook.user.biz.service;
 
+import com.haishi.LittleRedBook.user.dto.req.FindUserByIdRequest;
 import com.haishi.LittleRedBook.user.dto.req.FindUserByPhoneReqDTO;
 import com.haishi.LittleRedBook.user.dto.req.RegisterUserReqDTO;
 import com.haishi.LittleRedBook.user.biz.model.vo.UpdateUserInfoReqVO;
 import com.haishi.LittleRedBook.user.dto.req.UpdateUserPasswordReqDTO;
+import com.haishi.LittleRedBook.user.dto.resp.FindUserByIdResponse;
 import com.haishi.LittleRedBook.user.dto.resp.FindUserByPhoneRspDTO;
 import com.haishi.framework.commons.response.Response;
 
@@ -43,5 +45,13 @@ public interface UserService {
      * @return
      */
     Response<?> updatePassword(UpdateUserPasswordReqDTO updateUserPasswordReqDTO);
+
+    /**
+     * 根据用户 ID 查询用户信息
+     *
+     * @param findUserByIdRequest
+     * @return
+     */
+    Response<FindUserByIdResponse> findById(FindUserByIdRequest findUserByIdRequest);
 
 }
