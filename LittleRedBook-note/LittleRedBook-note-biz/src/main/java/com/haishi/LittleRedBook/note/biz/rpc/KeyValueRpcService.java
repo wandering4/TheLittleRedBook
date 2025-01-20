@@ -3,6 +3,8 @@ package com.haishi.LittleRedBook.note.biz.rpc;
 import com.haishi.LittleRedBook.kv.api.KeyValueFeignApi;
 import com.haishi.LittleRedBook.kv.dto.req.AddNoteContentRequest;
 import com.haishi.LittleRedBook.kv.dto.req.DeleteNoteContentRequest;
+import com.haishi.LittleRedBook.kv.dto.req.FindNoteContentRequest;
+import com.haishi.LittleRedBook.kv.dto.resp.FindNoteContentResponse;
 import com.haishi.framework.commons.response.Response;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Component;
@@ -53,6 +55,25 @@ public class KeyValueRpcService {
         }
 
         return true;
+    }
+
+    /**
+     * 查询笔记内容
+     *
+     * @param uuid
+     * @return
+     */
+    public String findNoteContent(String uuid) {
+        FindNoteContentRequest findNoteContentRequest = new FindNoteContentRequest();
+        findNoteContentRequest.setUuid(uuid);
+
+        Response<FindNoteContentResponse> response = keyValueFeignApi.findNoteContent(findNoteContentRequest);
+
+        if (Objects.isNull(response) || !response.isSuccess() || Objects.isNull(response.getData())) {
+            return null;
+        }
+
+        return response.getData().getContent();
     }
 
 }

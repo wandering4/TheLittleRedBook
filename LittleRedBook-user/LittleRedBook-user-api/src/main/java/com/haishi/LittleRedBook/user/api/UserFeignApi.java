@@ -1,9 +1,11 @@
 package com.haishi.LittleRedBook.user.api;
 
 import com.haishi.LittleRedBook.user.constant.ApiConstants;
+import com.haishi.LittleRedBook.user.dto.req.FindUserByIdRequest;
 import com.haishi.LittleRedBook.user.dto.req.FindUserByPhoneReqDTO;
 import com.haishi.LittleRedBook.user.dto.req.RegisterUserReqDTO;
 import com.haishi.LittleRedBook.user.dto.req.UpdateUserPasswordReqDTO;
+import com.haishi.LittleRedBook.user.dto.resp.FindUserByIdResponse;
 import com.haishi.LittleRedBook.user.dto.resp.FindUserByPhoneRspDTO;
 import com.haishi.framework.commons.response.Response;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -41,4 +43,14 @@ public interface UserFeignApi {
      */
     @PostMapping(value = PREFIX + "/password/update")
     Response<?> updatePassword(@RequestBody UpdateUserPasswordReqDTO updateUserPasswordReqDTO);
+
+    /**
+     * 根据用户 ID 查询用户信息
+     *
+     * @param findUserByIdRequest
+     * @return
+     */
+    @PostMapping(value = PREFIX + "/findById")
+    Response<FindUserByIdResponse> findById(@RequestBody FindUserByIdRequest findUserByIdRequest);
+
 }

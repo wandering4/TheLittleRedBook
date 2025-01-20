@@ -1,4 +1,4 @@
-package com.haishi.LittleRedBook.note.biz.model.vo;
+package com.haishi.LittleRedBook.note.biz.model.vo.request;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class PublishNoteReqVO {
+public class PublishNoteRequest {
     /**
      * 笔记类型: 0 代表图文笔记，1 代表视频笔记
      * @see com.haishi.LittleRedBook.note.biz.enums.NoteTypeEnum

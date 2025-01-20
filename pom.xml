@@ -235,6 +235,19 @@
                 <version>${spring-boot.version}</version>
             </dependency>
 
+            <!-- MyBatis-Plus Starter -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-jpa</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
             <!-- MySQL 驱动 -->
             <dependency>
                 <groupId>mysql</groupId>
