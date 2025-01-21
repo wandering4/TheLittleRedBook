@@ -16,7 +16,7 @@ public class AddNoteContentRequest {
     @NotBlank(message = "笔记内容 UUID 不能为空")
     private String uuid;
 
-    @NotBlank(message = "笔记内容不能为空")
+    @NotNull(message = "笔记内容不能为空")
     private String content;
 
 }

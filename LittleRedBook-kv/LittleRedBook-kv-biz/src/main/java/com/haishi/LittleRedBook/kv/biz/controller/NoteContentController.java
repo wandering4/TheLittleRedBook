@@ -24,7 +24,7 @@ public class NoteContentController {
     private NoteContentService noteContentService;
 
     @PostMapping(value = "/note/content/add")
-    @ApiOperationLog(description = "添加笔记")
+    @ApiOperationLog(description = "添加或更新笔记")
     public Response<?> addNoteContent(@Validated @RequestBody AddNoteContentRequest addNoteContentRequest) {
         return noteContentService.addNoteContent(addNoteContentRequest);
     }

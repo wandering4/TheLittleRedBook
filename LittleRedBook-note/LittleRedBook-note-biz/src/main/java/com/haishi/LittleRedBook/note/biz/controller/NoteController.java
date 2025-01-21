@@ -1,8 +1,6 @@
 package com.haishi.LittleRedBook.note.biz.controller;
 
-import com.haishi.LittleRedBook.note.biz.model.vo.request.FindNoteDetailRequest;
-import com.haishi.LittleRedBook.note.biz.model.vo.request.PublishNoteRequest;
-import com.haishi.LittleRedBook.note.biz.model.vo.request.UpdateNoteRequest;
+import com.haishi.LittleRedBook.note.biz.model.vo.request.*;
 import com.haishi.LittleRedBook.note.biz.model.vo.response.FindNoteDetailResponse;
 import com.haishi.LittleRedBook.note.biz.service.NoteService;
 import com.haishi.framework.biz.operationlog.aspect.ApiOperationLog;
@@ -39,6 +37,24 @@ public class NoteController {
     @ApiOperationLog(description = "笔记修改")
     public Response<?> updateNote(@Validated @RequestBody UpdateNoteRequest request) {
         return noteService.updateNote(request);
+    }
+
+    @PostMapping(value = "/delete")
+    @ApiOperationLog(description = "删除笔记")
+    public Response<?> deleteNote(@Validated @RequestBody DeleteNoteRequest request) {
+        return noteService.deleteNote(request);
+    }
+
+    @PostMapping(value = "/visible/onlyme")
+    @ApiOperationLog(description = "笔记仅对自己可见")
+    public Response<?> visibleOnlyMe(@Validated @RequestBody UpdateNoteVisibleOnlyMeRequest updateNoteVisibleOnlyMeRequest) {
+        return noteService.visibleOnlyMe(updateNoteVisibleOnlyMeRequest);
+    }
+
+    @PostMapping(value = "/top")
+    @ApiOperationLog(description = "置顶/取消置顶笔记")
+    public Response<?> topNote(@Validated @RequestBody TopNoteRequest topNoteRequest) {
+        return noteService.topNote(topNoteRequest);
     }
 
 }
