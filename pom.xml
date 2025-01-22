@@ -24,6 +24,7 @@
         <module>LittleRedBook-kv</module>
         <module>LittleRedBook-distributed-id-generator</module>
         <module>LittleRedBook-note</module>
+        <module>LittleRedBook-user-relation</module>
     </modules>
 
     <properties>
