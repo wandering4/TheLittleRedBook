@@ -15,6 +15,13 @@
 
 
     <dependencies>
+
+        <dependency>
+            <groupId>com.haishi</groupId>
+            <artifactId>LittleRedBook-user-api</artifactId>
+        </dependency>
+
+
         <dependency>
             <groupId>com.haishi</groupId>
             <artifactId>LittleRedBook-commons</artifactId>
@@ -37,6 +44,19 @@
             <groupId>com.haishi</groupId>
             <artifactId>LittleRedBook-spring-boot-starter-jackson</artifactId>
         </dependency>
+
+        <!-- 提供 Redis 连接池 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+        </dependency>
+
+        <!-- Redis -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
