@@ -41,6 +41,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CompletionException;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
@@ -365,6 +366,21 @@ public class NoteServiceImpl implements NoteService {
                 break;
         }
 
+        // 当前登录用户 ID
+        Long currUserId = LoginUserContextHolder.getUserId();
+        NoteDO selectNoteDO = noteDOMapper.selectByPrimaryKey(noteId);
+
+        // 笔记不存在
+        if (Objects.isNull(selectNoteDO)) {
+            throw new BizException(ResponseCodeEnum.NOTE_NOT_FOUND);
+        }
+
+        // 判断权限：非笔记发布者不允许更新笔记
+        if (!Objects.equals(currUserId, selectNoteDO.getCreatorId())) {
+            throw new BizException(ResponseCodeEnum.NOTE_CANT_OPERATE);
+        }
+
+
         CompletableFuture<Boolean> updateKV= CompletableFuture.supplyAsync(()->{
             // 笔记内容更新
             // 查询此篇笔记内容对应的 UUID
@@ -411,7 +427,12 @@ public class NoteServiceImpl implements NoteService {
 
         noteDOMapper.updateByPrimaryKey(noteDO);
 
-        Boolean isUpdateContentSuccess = updateKV.join();
+        Boolean isUpdateContentSuccess=false;
+        try {
+            isUpdateContentSuccess = updateKV.join(); // 异常会被包装成 CompletionException
+        } catch (CompletionException e) {
+            throw new BizException(ResponseCodeEnum.NOTE_UPDATE_FAIL);
+        }
         // 如果更新失败，抛出业务异常，回滚事务
         if (!isUpdateContentSuccess) {
             throw new BizException(ResponseCodeEnum.NOTE_UPDATE_FAIL);
@@ -435,6 +456,19 @@ public class NoteServiceImpl implements NoteService {
     public Response<?> deleteNote(DeleteNoteRequest deleteNoteRequest) {
         // 笔记 ID
         Long noteId = deleteNoteRequest.getId();
+
+        NoteDO selectNoteDO = noteDOMapper.selectByPrimaryKey(noteId);
+
+        // 判断笔记是否存在
+        if (Objects.isNull(selectNoteDO)) {
+            throw new BizException(ResponseCodeEnum.NOTE_NOT_FOUND);
+        }
+
+        // 判断权限：非笔记发布者不允许删除笔记
+        Long currUserId = LoginUserContextHolder.getUserId();
+        if (!Objects.equals(currUserId, selectNoteDO.getCreatorId())) {
+            throw new BizException(ResponseCodeEnum.NOTE_CANT_OPERATE);
+        }
 
         // 逻辑删除
         NoteDO noteDO = NoteDO.builder()
@@ -467,6 +501,20 @@ public class NoteServiceImpl implements NoteService {
         // 笔记 ID
         Long noteId = updateNoteVisibleOnlyMeRequest.getId();
 
+        NoteDO selectNoteDO = noteDOMapper.selectByPrimaryKey(noteId);
+
+
+        // 笔记不存在
+        if (Objects.isNull(selectNoteDO)) {
+            throw new BizException(ResponseCodeEnum.NOTE_NOT_FOUND);
+        }
+
+        // 判断权限：非笔记发布者不允许更新笔记
+        Long currUserId = LoginUserContextHolder.getUserId();
+        if (!Objects.equals(currUserId, selectNoteDO.getCreatorId())) {
+            throw new BizException(ResponseCodeEnum.NOTE_CANT_OPERATE);
+        }
+
         // 构建更新 DO 实体类
         NoteDO noteDO = NoteDO.builder()
                 .id(noteId)
@@ -485,6 +533,22 @@ public class NoteServiceImpl implements NoteService {
         DeleteNoteCache(noteId);
 
         return Response.success();
+    }
+
+    //TODO: 提成自调用不影响@Transactional的方法(获取代理对象)
+    private void checkHasPermissionOfNote(Long noteId) {
+        NoteDO selectNoteDO = noteDOMapper.selectByPrimaryKey(noteId);
+
+        // 笔记不存在
+        if (Objects.isNull(selectNoteDO)) {
+            throw new BizException(ResponseCodeEnum.NOTE_NOT_FOUND);
+        }
+
+        // 判断权限：非笔记发布者不允许更新笔记
+        Long currUserId = LoginUserContextHolder.getUserId();
+        if (!Objects.equals(currUserId, selectNoteDO.getCreatorId())) {
+            throw new BizException(ResponseCodeEnum.NOTE_CANT_OPERATE);
+        }
     }
 
     /**

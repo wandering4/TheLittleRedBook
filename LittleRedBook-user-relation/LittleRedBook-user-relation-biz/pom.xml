@@ -16,6 +16,13 @@
 
     <dependencies>
 
+        <!-- Rocket MQ -->
+        <dependency>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-spring-boot-starter</artifactId>
+        </dependency>
+
+
         <dependency>
             <groupId>com.haishi</groupId>
             <artifactId>LittleRedBook-user-api</artifactId>
@@ -44,6 +51,13 @@
             <groupId>com.haishi</groupId>
             <artifactId>LittleRedBook-spring-boot-starter-jackson</artifactId>
         </dependency>
+
+        <!-- Nacos 配置中心 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+
 
         <!-- 提供 Redis 连接池 -->
         <dependency>
