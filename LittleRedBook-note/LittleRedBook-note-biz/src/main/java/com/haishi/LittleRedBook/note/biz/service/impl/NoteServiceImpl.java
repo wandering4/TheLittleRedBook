@@ -381,7 +381,7 @@ public class NoteServiceImpl implements NoteService {
         }
 
 
-        CompletableFuture<Boolean> updateKV= CompletableFuture.supplyAsync(()->{
+        CompletableFuture<Boolean> updateKV = CompletableFuture.supplyAsync(() -> {
             // 笔记内容更新
             // 查询此篇笔记内容对应的 UUID
             NoteDO noteDO1 = noteDOMapper.selectByPrimaryKey(noteId);
@@ -400,7 +400,6 @@ public class NoteServiceImpl implements NoteService {
             }
             return isUpdateContentSuccess;
         }, threadPoolTaskExecutor);
-
 
 
         String topicName = null;
@@ -427,7 +426,7 @@ public class NoteServiceImpl implements NoteService {
 
         noteDOMapper.updateByPrimaryKey(noteDO);
 
-        Boolean isUpdateContentSuccess=false;
+        Boolean isUpdateContentSuccess = false;
         try {
             isUpdateContentSuccess = updateKV.join(); // 异常会被包装成 CompletionException
         } catch (CompletionException e) {
@@ -439,7 +438,14 @@ public class NoteServiceImpl implements NoteService {
         }
 
 
-        DeleteNoteCache(noteId);
+        // 删除 Redis 缓存
+        String noteDetailRedisKey = RedisKeyConstants.buildNoteDetailKey(noteId);
+        redisTemplate.delete(noteDetailRedisKey);
+
+        // 同步发送广播模式 MQ，将所有实例中的本地缓存都删除掉
+        SendResult sendResult = rocketMQTemplate.syncSend(MQConstants.TOPIC_DELETE_NOTE_LOCAL_CACHE, noteId);
+        log.info(sendResult.toString());
+        log.info("====> MQ：删除笔记本地缓存发送成功...");
 
 
         return Response.success();
@@ -484,7 +490,14 @@ public class NoteServiceImpl implements NoteService {
             throw new BizException(ResponseCodeEnum.NOTE_NOT_FOUND);
         }
 
-        DeleteNoteCache(noteId);
+        // 删除 Redis 缓存
+        String noteDetailRedisKey = RedisKeyConstants.buildNoteDetailKey(noteId);
+        redisTemplate.delete(noteDetailRedisKey);
+
+        // 同步发送广播模式 MQ，将所有实例中的本地缓存都删除掉
+        SendResult sendResult = rocketMQTemplate.syncSend(MQConstants.TOPIC_DELETE_NOTE_LOCAL_CACHE, noteId);
+        log.info(sendResult.toString());
+        log.info("====> MQ：删除笔记本地缓存发送成功...");
 
         return Response.success();
     }
@@ -588,10 +601,11 @@ public class NoteServiceImpl implements NoteService {
 
     /**
      * 删除redis缓存和发送MQ删除所有分布式本地缓存
+     *
      * @param noteId
      */
     private void DeleteNoteCache(Long noteId) {
-        threadPoolTaskExecutor.execute(()->{
+        CompletableFuture<Boolean> result = CompletableFuture.supplyAsync(() -> {
             // 删除 Redis 缓存
             String noteDetailRedisKey = RedisKeyConstants.buildNoteDetailKey(noteId);
             redisTemplate.delete(noteDetailRedisKey);
@@ -600,7 +614,14 @@ public class NoteServiceImpl implements NoteService {
             SendResult sendResult = rocketMQTemplate.syncSend(MQConstants.TOPIC_DELETE_NOTE_LOCAL_CACHE, noteId);
             log.info(sendResult.toString());
             log.info("====> MQ：删除笔记本地缓存发送成功...");
-        });
+            return true;
+        }, threadPoolTaskExecutor);
+        try {
+            result.join();
+        } catch (Exception e) {
+            log.error("删除笔记缓存失败", e);
+            throw new BizException(ResponseCodeEnum.NOTE_UPDATE_FAIL);
+        }
     }
 
     /**
@@ -631,6 +652,7 @@ public class NoteServiceImpl implements NoteService {
 
     /**
      * 删除本地笔记缓存
+     *
      * @param noteId
      */
     public void deleteNoteLocalCache(Long noteId) {
