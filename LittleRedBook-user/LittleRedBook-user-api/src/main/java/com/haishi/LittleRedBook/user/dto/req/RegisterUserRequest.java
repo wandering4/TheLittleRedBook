@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class RegisterUserReqDTO {
+public class RegisterUserRequest {
 
     /**
      * 手机号

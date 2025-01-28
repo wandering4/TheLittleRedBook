@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class FollowUserReqVO {
+public class UnfollowUserRequest {
 
-    @NotNull(message = "被关注用户 ID 不能为空")
-    private Long followUserId;
+    @NotNull(message = "被取关用户 ID 不能为空")
+    private Long unfollowUserId;
 }

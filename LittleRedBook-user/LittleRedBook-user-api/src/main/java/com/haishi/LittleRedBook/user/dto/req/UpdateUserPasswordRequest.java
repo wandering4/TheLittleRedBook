@@ -1,6 +1,5 @@
 package com.haishi.LittleRedBook.user.dto.req;
 
-import com.haishi.framework.commons.validator.PhoneNumber;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,13 +10,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class FindUserByPhoneReqDTO {
+public class UpdateUserPasswordRequest {
 
-    /**
-     * 手机号
-     */
-    @NotBlank(message = "手机号不能为空")
-    @PhoneNumber
-    private String phone;
+    @NotBlank(message = "密码不能为空")
+    private String encodePassword;
 
 }

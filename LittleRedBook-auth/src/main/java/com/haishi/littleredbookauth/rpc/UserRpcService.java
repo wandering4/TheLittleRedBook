@@ -1,9 +1,9 @@
 package com.haishi.littleredbookauth.rpc;
 
 import com.haishi.LittleRedBook.user.api.UserFeignApi;
-import com.haishi.LittleRedBook.user.dto.req.FindUserByPhoneReqDTO;
-import com.haishi.LittleRedBook.user.dto.req.RegisterUserReqDTO;
-import com.haishi.LittleRedBook.user.dto.req.UpdateUserPasswordReqDTO;
+import com.haishi.LittleRedBook.user.dto.req.FindUserByPhoneRequest;
+import com.haishi.LittleRedBook.user.dto.req.RegisterUserRequest;
+import com.haishi.LittleRedBook.user.dto.req.UpdateUserPasswordRequest;
 import com.haishi.LittleRedBook.user.dto.resp.FindUserByPhoneRspDTO;
 import com.haishi.framework.commons.response.Response;
 import jakarta.annotation.Resource;
@@ -22,10 +22,10 @@ public class UserRpcService {
      * @return
      */
     public Long registerUser(String phone) {
-        RegisterUserReqDTO registerUserReqDTO = new RegisterUserReqDTO();
-        registerUserReqDTO.setPhone(phone);
+        RegisterUserRequest registerUserRequest = new RegisterUserRequest();
+        registerUserRequest.setPhone(phone);
 
-        Response<Long> response = userFeignApi.registerUser(registerUserReqDTO);
+        Response<Long> response = userFeignApi.registerUser(registerUserRequest);
 
         if (!response.isSuccess()) {
             return null;
@@ -41,10 +41,10 @@ public class UserRpcService {
      * @return
      */
     public FindUserByPhoneRspDTO findUserByPhone(String phone) {
-        FindUserByPhoneReqDTO findUserByPhoneReqDTO = new FindUserByPhoneReqDTO();
-        findUserByPhoneReqDTO.setPhone(phone);
+        FindUserByPhoneRequest findUserByPhoneRequest = new FindUserByPhoneRequest();
+        findUserByPhoneRequest.setPhone(phone);
 
-        Response<FindUserByPhoneRspDTO> response = userFeignApi.findByPhone(findUserByPhoneReqDTO);
+        Response<FindUserByPhoneRspDTO> response = userFeignApi.findByPhone(findUserByPhoneRequest);
 
         if (!response.isSuccess()) {
             return null;
@@ -59,10 +59,10 @@ public class UserRpcService {
      * @param encodePassword
      */
     public void updatePassword(String encodePassword) {
-        UpdateUserPasswordReqDTO updateUserPasswordReqDTO = new UpdateUserPasswordReqDTO();
-        updateUserPasswordReqDTO.setEncodePassword(encodePassword);
+        UpdateUserPasswordRequest updateUserPasswordRequest = new UpdateUserPasswordRequest();
+        updateUserPasswordRequest.setEncodePassword(encodePassword);
 
-        userFeignApi.updatePassword(updateUserPasswordReqDTO);
+        userFeignApi.updatePassword(updateUserPasswordRequest);
     }
 
 }

@@ -26,4 +26,9 @@ public class FindUserByIdResponse {
      */
     private String avatar;
 
+    /**
+     * 简介
+     */
+    private String introduction;
+
 }

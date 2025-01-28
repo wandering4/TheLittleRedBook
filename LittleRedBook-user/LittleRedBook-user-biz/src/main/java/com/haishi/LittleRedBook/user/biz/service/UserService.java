@@ -1,13 +1,12 @@
 package com.haishi.LittleRedBook.user.biz.service;
 
-import com.haishi.LittleRedBook.user.dto.req.FindUserByIdRequest;
-import com.haishi.LittleRedBook.user.dto.req.FindUserByPhoneReqDTO;
-import com.haishi.LittleRedBook.user.dto.req.RegisterUserReqDTO;
-import com.haishi.LittleRedBook.user.biz.model.vo.UpdateUserInfoReqVO;
-import com.haishi.LittleRedBook.user.dto.req.UpdateUserPasswordReqDTO;
+import com.haishi.LittleRedBook.user.dto.req.*;
+import com.haishi.LittleRedBook.user.biz.model.vo.request.UpdateUserInfoRequest;
 import com.haishi.LittleRedBook.user.dto.resp.FindUserByIdResponse;
 import com.haishi.LittleRedBook.user.dto.resp.FindUserByPhoneRspDTO;
 import com.haishi.framework.commons.response.Response;
+
+import java.util.List;
 
 /**
  * @description: 用户业务
@@ -17,34 +16,34 @@ public interface UserService {
     /**
      * 更新用户信息
      *
-     * @param updateUserInfoReqVO
+     * @param updateUserInfoRequest
      * @return
      */
-    Response<?> updateUserInfo(UpdateUserInfoReqVO updateUserInfoReqVO);
+    Response<?> updateUserInfo(UpdateUserInfoRequest updateUserInfoRequest);
 
     /**
      * 用户注册
      *
-     * @param registerUserReqDTO
+     * @param registerUserRequest
      * @return
      */
-    Response<Long> register(RegisterUserReqDTO registerUserReqDTO);
+    Response<Long> register(RegisterUserRequest registerUserRequest);
 
     /**
      * 根据手机号查询用户信息
      *
-     * @param findUserByPhoneReqDTO
+     * @param findUserByPhoneRequest
      * @return
      */
-    Response<FindUserByPhoneRspDTO> findByPhone(FindUserByPhoneReqDTO findUserByPhoneReqDTO);
+    Response<FindUserByPhoneRspDTO> findByPhone(FindUserByPhoneRequest findUserByPhoneRequest);
 
     /**
      * 更新密码
      *
-     * @param updateUserPasswordReqDTO
+     * @param updateUserPasswordRequest
      * @return
      */
-    Response<?> updatePassword(UpdateUserPasswordReqDTO updateUserPasswordReqDTO);
+    Response<?> updatePassword(UpdateUserPasswordRequest updateUserPasswordRequest);
 
     /**
      * 根据用户 ID 查询用户信息
@@ -53,5 +52,13 @@ public interface UserService {
      * @return
      */
     Response<FindUserByIdResponse> findById(FindUserByIdRequest findUserByIdRequest);
+
+    /**
+     * 批量根据用户 ID 查询用户信息
+     *
+     * @param findUsersByIdsReqDTO
+     * @return
+     */
+    Response<List<FindUserByIdResponse>> findByIds(FindUsersByIdsReqDTO findUsersByIdsReqDTO);
 
 }

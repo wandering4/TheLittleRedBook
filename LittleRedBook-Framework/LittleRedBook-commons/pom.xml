@@ -20,6 +20,12 @@
 
     <dependencies>
 
+        <!-- Redis -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
         <!-- 阿里云短信发送 -->
         <dependency>
             <groupId>com.aliyun</groupId>

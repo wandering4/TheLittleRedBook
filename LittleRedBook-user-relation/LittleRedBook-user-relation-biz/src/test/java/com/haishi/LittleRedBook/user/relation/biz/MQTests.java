@@ -2,6 +2,7 @@ package com.haishi.LittleRedBook.user.relation.biz;
 
 import com.haishi.LittleRedBook.user.relation.biz.constant.MQConstants;
 import com.haishi.LittleRedBook.user.relation.biz.model.dto.FollowUserMqDTO;
+import com.haishi.LittleRedBook.user.relation.biz.model.dto.UnfollowUserMqDTO;
 import com.haishi.framework.commons.util.JsonUtils;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -66,46 +67,64 @@ class MQTests {
 //        }
     }
 
+    /**
+     * 测试：发送对同一个用户关注、取关 MQ
+     */
     @Test
-    public void testReceive(){
-        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("LittleRedBook_relation_group");
+    void testSendFollowUnfollowMQ() {
+        // 操作者用户ID
+        Long userId = 27L;
+        // 目标用户ID
+        Long targetUserId = 100L;
 
-        // 设置 NameServer 地址
-        consumer.setNamesrvAddr("127.0.0.1:9876");
+        for (long i = 0; i < 10; i++) {
+            if (i % 2 == 0) { // 偶数发送关注 MQ
+                log.info("{} 是偶数", i);
 
-        // 设置消费模式（集群模式）
-        consumer.setMessageModel(MessageModel.BROADCASTING);
+                // 发送 MQ
+                // 构建消息体 DTO
+                FollowUserMqDTO followUserMqDTO = FollowUserMqDTO.builder()
+                        .userId(userId)
+                        .followUserId(targetUserId)
+                        .createTime(LocalDateTime.now())
+                        .build();
 
-        // 设置从哪里开始消费（比如从队列头部开始消费）
-        consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
+                // 构建消息对象，并将 DTO 转成 Json 字符串设置到消息体中
+                Message<String> message = MessageBuilder.withPayload(JsonUtils.toJsonString(followUserMqDTO))
+                        .build();
 
-        // 订阅 Topic
-        try {
-            consumer.subscribe(MQConstants.TOPIC_FOLLOW_OR_UNFOLLOW, "*"); // 订阅指定的 Topic（可以指定 tags）
+                // 通过冒号连接, 可让 MQ 发送给主题 Topic 时，携带上标签 Tag
+                String destination = MQConstants.TOPIC_FOLLOW_OR_UNFOLLOW + ":" + MQConstants.TAG_FOLLOW;
 
-            // 注册消息监听器
-            consumer.registerMessageListener((List<MessageExt> msgs, ConsumeConcurrentlyContext context) -> {
-                for (MessageExt msg : msgs) {
-                    String messageBody = new String(msg.getBody());
-                    log.info("收到消息：{}", messageBody);  // 打印消息内容
-                }
-                // 返回消费状态
-                return ConsumeConcurrentlyStatus.CONSUME_SUCCESS; // 消费成功
-            });
+                // 发送 MQ 消息
+                SendResult sendResult = rocketMQTemplate.syncSend(destination, message);
 
-            // 启动消费者
-            consumer.start();
-            log.info("消费者启动成功，正在拉取消息...");
+                log.info("==> MQ 发送结果，SendResult: {}", sendResult);
+            } else { // 取关发送取关 MQ
+                log.info("{} 是奇数", i);
 
-            // 等待几秒钟以便接收消息
-            Thread.sleep(5000);  // 等待5秒，可以根据实际情况调整
+                // 发送 MQ
+                // 构建消息体 DTO
+                UnfollowUserMqDTO unfollowUserMqDTO = UnfollowUserMqDTO.builder()
+                        .userId(userId)
+                        .unfollowUserId(targetUserId)
+                        .createTime(LocalDateTime.now())
+                        .build();
 
-            // 停止消费者
-            consumer.shutdown();
-            log.info("消费者停止。");
+                // 构建消息对象，并将 DTO 转成 Json 字符串设置到消息体中
+                Message<String> message = MessageBuilder.withPayload(JsonUtils.toJsonString(unfollowUserMqDTO))
+                        .build();
 
-        } catch (Exception e) {
-            log.error("消费者启动失败", e);
+                // 通过冒号连接, 可让 MQ 发送给主题 Topic 时，携带上标签 Tag
+                String destination = MQConstants.TOPIC_FOLLOW_OR_UNFOLLOW + ":" + MQConstants.TAG_UNFOLLOW;
+
+                String hashKey = String.valueOf(userId);
+
+                // 发送 MQ 消息
+                SendResult sendResult = rocketMQTemplate.syncSendOrderly(destination, message, hashKey);
+
+                log.info("==> MQ 发送结果，SendResult: {}", sendResult);
+            }
         }
     }
 

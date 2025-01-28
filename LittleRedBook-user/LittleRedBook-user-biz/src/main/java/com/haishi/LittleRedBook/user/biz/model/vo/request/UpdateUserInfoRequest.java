@@ -1,4 +1,4 @@
-package com.haishi.LittleRedBook.user.biz.model.vo;
+package com.haishi.LittleRedBook.user.biz.model.vo.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UpdateUserInfoReqVO {
+public class UpdateUserInfoRequest {
 
     /**
      * 头像
