@@ -25,6 +25,7 @@
         <module>LittleRedBook-distributed-id-generator</module>
         <module>LittleRedBook-note</module>
         <module>LittleRedBook-user-relation</module>
+        <module>LittleRedBook-count</module>
     </modules>
 
     <properties>
