@@ -80,7 +80,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.haishi.LittleRedBook.count.biz.domain.dataobject.UserCountDO">
+    <update id="updateByPrimaryKeySelective" parameterType="com.haishi.LittleRedBook.count.biz.domain.dataobject.UserCountDO">
     update t_user_count
     <set>
       <if test="userId != null">
@@ -114,4 +114,19 @@
       collect_total = #{collectTotal,jdbcType=BIGINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+  <insert id="insertOrUpdateFansTotalByUserId" parameterType="map">
+    INSERT INTO t_user_count (user_id, fans_total)
+    VALUES (#{userId}, #{count})
+      ON DUPLICATE KEY UPDATE fans_total = fans_total + (#{count});
+  </insert>
+
+
+  <insert id="insertOrUpdateFollowingTotalByUserId" parameterType="map">
+    INSERT INTO t_user_count (user_id, following_total)
+    VALUES (#{userId}, #{count})
+      ON DUPLICATE KEY UPDATE following_total = following_total + (#{count});
+  </insert>
+
+
 </mapper>

@@ -20,4 +20,11 @@ public interface NoteDOMapper {
 
     int updateIsTop(NoteDO noteDO);
 
+    /**
+     * 查询当前笔记点赞数
+     * @param noteId
+     * @return
+     */
+    int selectCountByNoteId(Long noteId);
+
 }

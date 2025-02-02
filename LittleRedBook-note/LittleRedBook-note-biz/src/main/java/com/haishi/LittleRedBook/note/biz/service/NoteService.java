@@ -54,4 +54,12 @@ public interface NoteService {
      */
     Response<?> topNote(TopNoteRequest topNoteRequest);
 
+
+    /**
+     * 点赞笔记
+     * @param likeNoteReqVO
+     * @return
+     */
+    Response<?> likeNote(LikeNoteReqVO likeNoteReqVO);
+
 }
