@@ -6,11 +6,16 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
+/**
+ * @version: v1.0.0
+ * @description: 取消点赞笔记
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class LikeNoteReqVO {
+public class UnlikeNoteRequest {
 
     @NotNull(message = "笔记 ID 不能为空")
     private Long id;

@@ -57,9 +57,23 @@ public interface NoteService {
 
     /**
      * 点赞笔记
-     * @param likeNoteReqVO
+     * @param likeNoteRequest
      * @return
      */
-    Response<?> likeNote(LikeNoteReqVO likeNoteReqVO);
+    Response<?> likeNote(LikeNoteRequest likeNoteRequest);
 
+
+    /**
+     * 取消点赞笔记
+     * @param unlikeNoteRequest
+     * @return
+     */
+    Response<?> unlikeNote(UnlikeNoteRequest unlikeNoteRequest);
+
+    /**
+     * 收藏笔记
+     * @param collectNoteReqVO
+     * @return
+     */
+    Response<?> collectNote(CollectNoteReqVO collectNoteReqVO);
 }

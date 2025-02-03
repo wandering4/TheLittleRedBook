@@ -59,8 +59,20 @@ public class NoteController {
 
     @PostMapping(value = "/like")
     @ApiOperationLog(description = "点赞笔记")
-    public Response<?> likeNote(@Validated @RequestBody LikeNoteReqVO likeNoteReqVO) {
-        return noteService.likeNote(likeNoteReqVO);
+    public Response<?> likeNote(@Validated @RequestBody LikeNoteRequest likeNoteRequest) {
+        return noteService.likeNote(likeNoteRequest);
+    }
+
+    @PostMapping(value = "/unlike")
+    @ApiOperationLog(description = "取消点赞笔记")
+    public Response<?> unlikeNote(@Validated @RequestBody UnlikeNoteRequest unlikeNoteRequest) {
+        return noteService.unlikeNote(unlikeNoteRequest);
+    }
+
+    @PostMapping(value = "/collect")
+    @ApiOperationLog(description = "收藏笔记")
+    public Response<?> collectNote(@Validated @RequestBody CollectNoteReqVO collectNoteReqVO) {
+        return noteService.collectNote(collectNoteReqVO);
     }
 
 }
