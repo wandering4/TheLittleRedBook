@@ -5,27 +5,25 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class CountLikeUnlikeNoteMqDTO {
-
-    private Long userId;
-
-    private Long noteId;
+public class AggregationCountLikeUnlikeNoteMqDTO {
 
     /**
      * 笔记发布者 ID
      */
-    private Long noteCreatorId;
+    private Long creatorId;
 
     /**
-     * 0: 取消点赞， 1：点赞
+     * 笔记 ID
      */
-    private Integer type;
+    private Long noteId;
 
-    private LocalDateTime createTime;
+    /**
+     * 聚合后的计数
+     */
+    private Integer count;
+
 }

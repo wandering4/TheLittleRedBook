@@ -11,19 +11,14 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class CountLikeUnlikeNoteMqDTO {
+public class CountCollectUnCollectNoteMqDTO {
 
     private Long userId;
 
     private Long noteId;
 
     /**
-     * 笔记发布者 ID
-     */
-    private Long noteCreatorId;
-
-    /**
-     * 0: 取消点赞， 1：点赞
+     * 0: 取消收藏， 1：收藏
      */
     private Integer type;
 

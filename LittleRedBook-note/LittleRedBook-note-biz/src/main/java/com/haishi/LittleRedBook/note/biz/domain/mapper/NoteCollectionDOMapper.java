@@ -24,7 +24,7 @@ public interface NoteCollectionDOMapper {
      * @param noteId
      * @return
      */
-    int selectCountByUserIdAndNoteId(@Param("userId") Long userId, @Param("noteId") Long noteId);
+    int selectNoteIsCollected(@Param("userId") Long userId, @Param("noteId") Long noteId);
 
     /**
      * 查询用户已收藏的笔记
@@ -32,4 +32,28 @@ public interface NoteCollectionDOMapper {
      * @return
      */
     List<NoteCollectionDO> selectByUserId(Long userId);
+
+
+    /**
+     * 查询用户最近收藏的笔记
+     * @param userId
+     * @param limit
+     * @return
+     */
+    List<NoteCollectionDO> selectCollectedByUserIdAndLimit(@Param("userId") Long userId, @Param("limit")  int limit);
+
+
+    /**
+     * 新增笔记收藏记录，若已存在，则更新笔记收藏记录
+     * @param noteCollectionDO
+     * @return
+     */
+    int insertOrUpdate(NoteCollectionDO noteCollectionDO);
+
+    /**
+     * 取消点赞
+     * @param noteCollectionDO
+     * @return
+     */
+    int update2UnCollectByUserIdAndNoteId(NoteCollectionDO noteCollectionDO);
 }
