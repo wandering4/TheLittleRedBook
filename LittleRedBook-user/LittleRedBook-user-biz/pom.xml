@@ -9,7 +9,6 @@
 
     <packaging>jar</packaging>
 
-    <groupId>com.haishi.LittleRedBook.user.biz</groupId>
     <artifactId>LittleRedBook-user-biz</artifactId>
     <name>${project.artifactId}</name>
     <description>用户服务业务模块</description>

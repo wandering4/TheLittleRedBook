@@ -6,6 +6,7 @@ import com.haishi.LittleRedBook.data.align.constant.TableConstants;
 import com.haishi.LittleRedBook.data.align.domain.mapper.DeleteMapper;
 import com.haishi.LittleRedBook.data.align.domain.mapper.SelectMapper;
 import com.haishi.LittleRedBook.data.align.domain.mapper.UpdateMapper;
+import com.haishi.LittleRedBook.data.align.rpc.SearchRpcService;
 import com.xxl.job.core.context.XxlJobHelper;
 import com.xxl.job.core.handler.annotation.XxlJob;
 import jakarta.annotation.Resource;
@@ -37,6 +38,9 @@ public class FansCountShardingXxlJob {
 
     @Resource
     private RedisTemplate<String, Object> redisTemplate;
+
+    @Resource
+    private SearchRpcService searchRpcService;
 
     /**
      * 分片广播任务
@@ -91,6 +95,10 @@ public class FansCountShardingXxlJob {
                         redisTemplate.opsForHash().put(redisKey, RedisKeyConstants.FIELD_FANS_TOTAL, fansTotal);
                     }
                 }
+
+                // TODO: 做出批量更新接口后优化更新
+                // 远程 RPC, 调用搜索服务，重新构建索引
+                searchRpcService.rebuildUserDocument(userId);
             });
 
             // 4. 批量物理删除这一批次记录

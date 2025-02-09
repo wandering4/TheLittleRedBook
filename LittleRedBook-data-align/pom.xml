@@ -16,6 +16,12 @@
 
         <dependency>
             <groupId>com.haishi</groupId>
+            <artifactId>LittleRedBook-search-api</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.haishi</groupId>
             <artifactId>LittleRedBook-commons</artifactId>
         </dependency>
 

@@ -22,6 +22,12 @@
             <artifactId>LittleRedBook-spring-boot-starter-biz-operationlog</artifactId>
         </dependency>
 
+        <!-- Jackson 组件 -->
+        <dependency>
+            <groupId>com.haishi</groupId>
+            <artifactId>LittleRedBook-spring-boot-starter-jackson</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>com.haishi</groupId>
             <artifactId>LittleRedBook-kv-api</artifactId>
