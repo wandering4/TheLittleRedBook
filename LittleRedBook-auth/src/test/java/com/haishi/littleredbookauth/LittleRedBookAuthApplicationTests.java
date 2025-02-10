@@ -23,7 +23,7 @@
 //    @Test
 //    void testInsert() {
 //        UserDO userDO = UserDO.builder()
-//                .nickname("犬小哈")
+//                .nickname("xzf")
 //                .createTime(LocalDateTime.now())
 //                .updateTime(LocalDateTime.now())
 //                .build();

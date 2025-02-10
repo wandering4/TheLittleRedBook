@@ -3,9 +3,11 @@ package com.haishi.LittleRedBook.comment.biz;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.retry.annotation.EnableRetry;
 
 @EnableRetry // 启用 Spring Retry
+@EnableFeignClients
 @SpringBootApplication
 @MapperScan("com.haishi.LittleRedBook.comment.biz.domain.mapper")
 public class LittleRedBookCommentBizApplication {

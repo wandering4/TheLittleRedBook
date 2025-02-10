@@ -2,6 +2,7 @@ package com.haishi.LittleRedBook.kv.biz.controller;
 
 import com.haishi.LittleRedBook.kv.biz.service.CommentContentService;
 import com.haishi.LittleRedBook.kv.dto.req.BatchAddCommentContentReqDTO;
+import com.haishi.LittleRedBook.kv.dto.req.BatchFindCommentContentReqDTO;
 import com.haishi.framework.biz.operationlog.aspect.ApiOperationLog;
 import com.haishi.framework.commons.response.Response;
 import jakarta.annotation.Resource;
@@ -28,6 +29,12 @@ public class CommentContentController {
     @ApiOperationLog(description = "批量存储评论内容")
     public Response<?> batchAddCommentContent(@Validated @RequestBody BatchAddCommentContentReqDTO batchAddCommentContentReqDTO) {
         return commentContentService.batchAddCommentContent(batchAddCommentContentReqDTO);
+    }
+
+    @PostMapping(value = "/comment/content/batchFind")
+    @ApiOperationLog(description = "批量查询评论内容")
+    public Response<?> batchFindCommentContent(@Validated @RequestBody BatchFindCommentContentReqDTO batchFindCommentContentReqDTO) {
+        return commentContentService.batchFindCommentContent(batchFindCommentContentReqDTO);
     }
 
 }

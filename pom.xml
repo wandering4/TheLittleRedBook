@@ -83,6 +83,12 @@
 
             <dependency>
                 <groupId>com.haishi</groupId>
+                <artifactId>LittleRedBook-comment-api</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.haishi</groupId>
                 <artifactId>LittleRedBook-search-api</artifactId>
                 <version>${revision}</version>
             </dependency>

@@ -1,4 +1,4 @@
-package com.haishi.LittleRedBook.comment.biz.model.dto;
+package com.haishi.LittleRedBook.comment.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,6 +18,11 @@ import java.time.LocalDateTime;
 public class PublishCommentMqDTO {
 
     private Long noteId;
+
+    /**
+     * 评论 ID
+     */
+    private Long commentId;
 
     /**
      * 评论内容
@@ -43,5 +48,6 @@ public class PublishCommentMqDTO {
      * 发布者 ID
      */
     private Long creatorId;
+
 
 }

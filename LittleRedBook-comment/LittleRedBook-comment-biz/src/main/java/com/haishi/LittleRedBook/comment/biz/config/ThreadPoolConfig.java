@@ -8,8 +8,6 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.ThreadPoolExecutor;
 
 /**
- * @author: 犬小哈
- * @date: 2024/5/23 15:40
  * @version: v1.0.0
  * @description: 自定义线程池
  **/

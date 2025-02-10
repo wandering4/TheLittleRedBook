@@ -1,6 +1,7 @@
 package com.haishi.LittleRedBook.kv.biz.service;
 
 import com.haishi.LittleRedBook.kv.dto.req.BatchAddCommentContentReqDTO;
+import com.haishi.LittleRedBook.kv.dto.req.BatchFindCommentContentReqDTO;
 import com.haishi.framework.commons.response.Response;
 
 /**
@@ -16,5 +17,13 @@ public interface CommentContentService {
      * @return
      */
     Response<?> batchAddCommentContent(BatchAddCommentContentReqDTO batchAddCommentContentReqDTO);
+
+
+    /**
+     * 批量查询评论内容
+     * @param batchFindCommentContentReqDTO
+     * @return
+     */
+    Response<?> batchFindCommentContent(BatchFindCommentContentReqDTO batchFindCommentContentReqDTO);
 
 }

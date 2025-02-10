@@ -1,31 +1,63 @@
 package com.haishi.LittleRedBook.comment.biz.consumer;
 
+import cn.hutool.core.collection.CollUtil;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import com.google.common.util.concurrent.RateLimiter;
 import com.haishi.LittleRedBook.comment.biz.constant.MQConstants;
+import com.haishi.LittleRedBook.comment.biz.domain.dataobject.CommentDO;
+import com.haishi.LittleRedBook.comment.biz.domain.mapper.CommentDOMapper;
+import com.haishi.LittleRedBook.comment.biz.enums.CommentLevelEnum;
+import com.haishi.LittleRedBook.comment.biz.model.bo.CommentBO;
+import com.haishi.LittleRedBook.comment.biz.rpc.KeyValueRpcService;
+import com.haishi.LittleRedBook.comment.dto.CountPublishCommentMqDTO;
+import com.haishi.LittleRedBook.comment.dto.PublishCommentMqDTO;
+import com.haishi.framework.commons.util.JsonUtils;
 import jakarta.annotation.PreDestroy;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
 import org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently;
 import org.apache.rocketmq.client.exception.MQClientException;
+import org.apache.rocketmq.client.producer.SendCallback;
+import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.common.consumer.ConsumeFromWhere;
 import org.apache.rocketmq.common.message.MessageExt;
 import org.apache.rocketmq.common.protocol.heartbeat.MessageModel;
+import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.support.TransactionTemplate;
 
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.UUID;
+import java.util.stream.Collectors;
 
 /**
- * @author: 犬小哈
- * @date: 2024/8/9 11:52
  * @version: v1.0.0
  * @description: 评论批量写库
  **/
 @Component
 @Slf4j
 public class Comment2DBConsumer {
+
+    @Resource
+    private CommentDOMapper commentDOMapper;
+
+    @Resource
+    private TransactionTemplate transactionTemplate;
+
+    @Resource
+    private KeyValueRpcService keyValueRpcService;
+
+    @Resource
+    private RocketMQTemplate rocketMQTemplate;
 
     @Value("${rocketmq.name-server}")
     private String namesrvAddr;
@@ -65,12 +97,139 @@ public class Comment2DBConsumer {
                 // 令牌桶流控
                 rateLimiter.acquire();
 
-                for (MessageExt msg : msgs) {
-                    String message = new String(msg.getBody());
-                    log.info("==> Consumer - Received message: {}", message);
+                // 消息体 Json 字符串转 DTO
+                List<PublishCommentMqDTO> publishCommentMqDTOS = Lists.newArrayList();
+                msgs.forEach(msg -> {
+                    String msgJson = new String(msg.getBody());
+                    log.info("==> Consumer - Received message: {}", msgJson);
+                    publishCommentMqDTOS.add(JsonUtils.parseObject(msgJson, PublishCommentMqDTO.class));
+                });
 
-                    // TODO: 业务处理
+                // 提取所有不为空的回复评论 ID
+                List<Long> replyCommentIds = publishCommentMqDTOS.stream()
+                        .filter(publishCommentMqDTO -> Objects.nonNull(publishCommentMqDTO.getReplyCommentId()))
+                        .map(PublishCommentMqDTO::getReplyCommentId).toList();
+
+                // 批量查询相关回复评论记录
+                List<CommentDO> replyCommentDOS = null;
+                if (CollUtil.isNotEmpty(replyCommentIds)) {
+                    // 查询数据库
+                    replyCommentDOS = commentDOMapper.selectByCommentIds(replyCommentIds);
                 }
+
+                // DO 集合转 <评论 ID - 评论 DO> 字典, 以方便后续查找
+                Map<Long, CommentDO> commentIdAndCommentDOMap = Maps.newHashMap();
+                if (CollUtil.isNotEmpty(replyCommentDOS)) {
+                    commentIdAndCommentDOMap = replyCommentDOS.stream().collect(Collectors.toMap(CommentDO::getId, commentDO -> commentDO));
+                }
+
+                // DTO 转 BO
+                List<CommentBO> commentBOS = Lists.newArrayList();
+                for (PublishCommentMqDTO publishCommentMqDTO : publishCommentMqDTOS) {
+                    String imageUrl = publishCommentMqDTO.getImageUrl();
+                    CommentBO commentBO = CommentBO.builder()
+                            .id(publishCommentMqDTO.getCommentId())
+                            .noteId(publishCommentMqDTO.getNoteId())
+                            .userId(publishCommentMqDTO.getCreatorId())
+                            .isContentEmpty(true) // 默认评论内容为空
+                            .imageUrl(StringUtils.isBlank(imageUrl) ? "" : imageUrl)
+                            .level(CommentLevelEnum.ONE.getCode()) // 默认为一级评论
+                            .parentId(publishCommentMqDTO.getNoteId()) // 默认设置为所属笔记 ID
+                            .createTime(publishCommentMqDTO.getCreateTime())
+                            .updateTime(publishCommentMqDTO.getCreateTime())
+                            .isTop(false)
+                            .replyTotal(0L)
+                            .likeTotal(0L)
+                            .replyCommentId(0L)
+                            .replyUserId(0L)
+                            .build();
+
+                    // 评论内容若不为空
+                    String content = publishCommentMqDTO.getContent();
+                    if (StringUtils.isNotBlank(content)) {
+                        commentBO.setContentUuid(UUID.randomUUID().toString()); // 生成评论内容的 UUID 标识
+                        commentBO.setIsContentEmpty(false);
+                        commentBO.setContent(content);
+                    }
+
+                    // 设置评论级别、回复用户 ID (reply_user_id)、父评论 ID (parent_id)
+                    Long replyCommentId = publishCommentMqDTO.getReplyCommentId();
+                    if (Objects.nonNull(replyCommentId)) {
+                        CommentDO replyCommentDO = commentIdAndCommentDOMap.get(replyCommentId);
+
+                        if (Objects.nonNull(replyCommentDO)) {
+                            // 若回复的评论 ID 不为空，说明是二级评论
+                            commentBO.setLevel(CommentLevelEnum.TWO.getCode());
+
+                            commentBO.setReplyCommentId(publishCommentMqDTO.getReplyCommentId());
+                            // 父评论 ID
+                            commentBO.setParentId(replyCommentDO.getId());
+                            if (Objects.equals(replyCommentDO.getLevel(), CommentLevelEnum.TWO.getCode())) { // 如果回复的评论属于二级评论
+                                commentBO.setParentId(replyCommentDO.getParentId());
+                            }
+                            // 回复的哪个用户
+                            commentBO.setReplyUserId(replyCommentDO.getUserId());
+                        }
+                    }
+
+                    commentBOS.add(commentBO);
+                }
+
+                log.info("## 清洗后的 CommentBOS: {}", JsonUtils.toJsonString(commentBOS));
+
+                // 编程式事务，保证整体操作的原子性
+                Integer insertedRows = transactionTemplate.execute(status -> {
+                    try {
+                        // 先批量存入评论元数据
+                        int count =commentDOMapper.batchInsert(commentBOS);
+
+                        // 过滤出评论内容不为空的 BO
+                        List<CommentBO> commentContentNotEmptyBOS = commentBOS.stream()
+                                .filter(commentBO -> Boolean.FALSE.equals(commentBO.getIsContentEmpty()))
+                                .toList();
+                        if (CollUtil.isNotEmpty(commentContentNotEmptyBOS)) {
+                            // 批量存入评论内容
+                            keyValueRpcService.batchSaveCommentContent(commentContentNotEmptyBOS);
+                        }
+
+                        return count;
+                    } catch (Exception ex) {
+                        status.setRollbackOnly(); // 标记事务为回滚
+                        log.error("", ex);
+                        throw ex;
+                    }
+                });
+
+                // 如果批量插入的行数大于 0
+                if (Objects.nonNull(insertedRows) && insertedRows > 0) {
+                    // 构建发送给计数服务的 DTO 集合
+                    List<CountPublishCommentMqDTO> countPublishCommentMqDTOS = commentBOS.stream()
+                            .map(commentBO -> CountPublishCommentMqDTO.builder()
+                                    .noteId(commentBO.getNoteId())
+                                    .commentId(commentBO.getId())
+                                    .level(commentBO.getLevel())
+                                    .parentId(commentBO.getParentId())
+                                    .build())
+                            .toList();
+
+                    // 异步发送计数 MQ
+                    org.springframework.messaging.Message<String> message = MessageBuilder.withPayload(JsonUtils.toJsonString(countPublishCommentMqDTOS))
+                            .build();
+
+                    // 异步发送 MQ 消息
+                    rocketMQTemplate.asyncSend(MQConstants.TOPIC_COUNT_NOTE_COMMENT, message, new SendCallback() {
+                        @Override
+                        public void onSuccess(SendResult sendResult) {
+                            log.info("==> 【计数: 评论发布】MQ 发送成功，SendResult: {}", sendResult);
+                        }
+
+                        @Override
+                        public void onException(Throwable throwable) {
+                            log.error("==> 【计数: 评论发布】MQ 发送异常: ", throwable);
+                        }
+                    });
+                }
+
 
                 // 手动 ACK，告诉 RocketMQ 这批次消息消费成功
                 return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;

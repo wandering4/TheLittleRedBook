@@ -1,10 +1,16 @@
 package com.haishi.LittleRedBook.kv.biz.service.impl;
 
+import cn.hutool.core.collection.CollUtil;
+import com.google.common.collect.Lists;
 import com.haishi.LittleRedBook.kv.biz.domain.dataobject.CommentContentDO;
 import com.haishi.LittleRedBook.kv.biz.domain.dataobject.CommentContentPrimaryKey;
+import com.haishi.LittleRedBook.kv.biz.domain.repository.CommentContentRepository;
 import com.haishi.LittleRedBook.kv.biz.service.CommentContentService;
 import com.haishi.LittleRedBook.kv.dto.req.BatchAddCommentContentReqDTO;
+import com.haishi.LittleRedBook.kv.dto.req.BatchFindCommentContentReqDTO;
 import com.haishi.LittleRedBook.kv.dto.req.CommentContentReqDTO;
+import com.haishi.LittleRedBook.kv.dto.req.FindCommentContentReqDTO;
+import com.haishi.LittleRedBook.kv.dto.resp.FindCommentContentRspDTO;
 import com.haishi.framework.commons.response.Response;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -13,6 +19,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 /**
  * @version: v1.0.0
@@ -24,6 +31,9 @@ public class CommentContentServiceImpl implements CommentContentService {
 
     @Resource
     private CassandraTemplate cassandraTemplate;
+
+    @Resource
+    private CommentContentRepository commentContentRepository;
 
     /**
      * 批量添加评论内容
@@ -61,4 +71,50 @@ public class CommentContentServiceImpl implements CommentContentService {
 
         return Response.success();
     }
+
+
+    /**
+     * 批量查询评论内容
+     *
+     * @param batchFindCommentContentReqDTO
+     * @return
+     */
+    @Override
+    public Response<?> batchFindCommentContent(BatchFindCommentContentReqDTO batchFindCommentContentReqDTO) {
+        // 归属的笔记 ID
+        Long noteId = batchFindCommentContentReqDTO.getNoteId();
+
+        // 查询评论的发布年月、内容 UUID
+        List<FindCommentContentReqDTO> commentContentKeys = batchFindCommentContentReqDTO.getCommentContentKeys();
+
+        // 过滤出年月
+        List<String> yearMonths = commentContentKeys.stream()
+                .map(FindCommentContentReqDTO::getYearMonth)
+                .distinct() // 去重
+                .collect(Collectors.toList());
+
+        // 过滤出评论内容 UUID
+        List<UUID> contentIds = commentContentKeys.stream()
+                .map(commentContentKey -> UUID.fromString(commentContentKey.getContentId()))
+                .distinct() // 去重
+                .collect(Collectors.toList());
+
+        // 批量查询 Cassandra
+        List<CommentContentDO> commentContentDOS = commentContentRepository
+                .findByPrimaryKeyNoteIdAndPrimaryKeyYearMonthInAndPrimaryKeyContentIdIn(noteId, yearMonths, contentIds);
+
+        // DO 转 DTO
+        List<FindCommentContentRspDTO> findCommentContentRspDTOS = Lists.newArrayList();
+        if (CollUtil.isNotEmpty(commentContentDOS)) {
+            findCommentContentRspDTOS = commentContentDOS.stream()
+                    .map(commentContentDO -> FindCommentContentRspDTO.builder()
+                            .contentId(String.valueOf(commentContentDO.getPrimaryKey().getContentId()))
+                            .content(commentContentDO.getContent())
+                            .build())
+                    .toList();
+        }
+
+        return Response.success(findCommentContentRspDTOS);
+    }
+
 }

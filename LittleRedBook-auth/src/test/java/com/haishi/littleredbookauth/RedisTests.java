@@ -15,7 +15,7 @@
 //
 //    @Test
 //    void testSetKeyValue() {
-//        // 添加一个 key 为 name, value 值为 犬小哈
+//        // 添加一个 key 为 name, value 值为 xzf
 //        redisTemplate.opsForValue().set("name", "xzf");
 //    }
 //
