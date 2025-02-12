@@ -4,16 +4,14 @@ import cn.hutool.core.collection.CollUtil;
 import com.google.common.collect.Lists;
 import com.haishi.LittleRedBook.comment.biz.model.bo.CommentBO;
 import com.haishi.LittleRedBook.kv.api.KeyValueFeignApi;
-import com.haishi.LittleRedBook.kv.dto.req.BatchAddCommentContentReqDTO;
-import com.haishi.LittleRedBook.kv.dto.req.BatchFindCommentContentReqDTO;
-import com.haishi.LittleRedBook.kv.dto.req.CommentContentReqDTO;
-import com.haishi.LittleRedBook.kv.dto.req.FindCommentContentReqDTO;
+import com.haishi.LittleRedBook.kv.dto.req.*;
 import com.haishi.LittleRedBook.kv.dto.resp.FindCommentContentRspDTO;
 import com.haishi.framework.commons.constant.DateConstants;
 import com.haishi.framework.commons.response.Response;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 
@@ -82,6 +80,30 @@ public class KeyValueRpcService {
         }
 
         return response.getData();
+    }
+
+    /**
+     * 删除评论内容
+     * @param noteId
+     * @param createTime
+     * @param contentId
+     * @return
+     */
+    public boolean deleteCommentContent(Long noteId, LocalDateTime createTime, String contentId) {
+        DeleteCommentContentReqDTO deleteCommentContentReqDTO = DeleteCommentContentReqDTO.builder()
+                .noteId(noteId)
+                .yearMonth(DateConstants.DATE_FORMAT_Y_M.format(createTime))
+                .contentId(contentId)
+                .build();
+
+        // 调用 KV 存储服务
+        Response<?> response = keyValueFeignApi.deleteCommentContent(deleteCommentContentReqDTO);
+
+        if (!response.isSuccess()) {
+            throw new RuntimeException("删除评论内容失败");
+        }
+
+        return true;
     }
 
 }

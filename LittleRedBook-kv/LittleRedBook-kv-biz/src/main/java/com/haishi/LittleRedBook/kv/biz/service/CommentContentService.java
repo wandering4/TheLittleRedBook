@@ -2,6 +2,7 @@ package com.haishi.LittleRedBook.kv.biz.service;
 
 import com.haishi.LittleRedBook.kv.dto.req.BatchAddCommentContentReqDTO;
 import com.haishi.LittleRedBook.kv.dto.req.BatchFindCommentContentReqDTO;
+import com.haishi.LittleRedBook.kv.dto.req.DeleteCommentContentReqDTO;
 import com.haishi.framework.commons.response.Response;
 
 /**
@@ -25,5 +26,14 @@ public interface CommentContentService {
      * @return
      */
     Response<?> batchFindCommentContent(BatchFindCommentContentReqDTO batchFindCommentContentReqDTO);
+
+
+    /**
+     * 删除评论内容
+     * @param deleteCommentContentReqDTO
+     * @return
+     */
+    Response<?> deleteCommentContent(DeleteCommentContentReqDTO deleteCommentContentReqDTO);
+
 
 }

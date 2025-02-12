@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
+/**
+ * @version: v1.0.0
+ * @description: K-V 键值存储 Feign 接口
+ **/
 @FeignClient(name = ApiConstants.SERVICE_NAME)
 public interface KeyValueFeignApi {
 
@@ -30,5 +34,9 @@ public interface KeyValueFeignApi {
 
     @PostMapping(value = PREFIX + "/comment/content/batchFind")
     Response<List<FindCommentContentRspDTO>> batchFindCommentContent(@RequestBody BatchFindCommentContentReqDTO batchFindCommentContentReqDTO);
+
+    @PostMapping(value = PREFIX + "/comment/content/delete")
+    Response<?> deleteCommentContent(@RequestBody DeleteCommentContentReqDTO deleteCommentContentReqDTO);
+
 
 }

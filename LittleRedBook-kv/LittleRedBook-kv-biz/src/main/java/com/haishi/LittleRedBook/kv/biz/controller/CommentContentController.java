@@ -3,6 +3,7 @@ package com.haishi.LittleRedBook.kv.biz.controller;
 import com.haishi.LittleRedBook.kv.biz.service.CommentContentService;
 import com.haishi.LittleRedBook.kv.dto.req.BatchAddCommentContentReqDTO;
 import com.haishi.LittleRedBook.kv.dto.req.BatchFindCommentContentReqDTO;
+import com.haishi.LittleRedBook.kv.dto.req.DeleteCommentContentReqDTO;
 import com.haishi.framework.biz.operationlog.aspect.ApiOperationLog;
 import com.haishi.framework.commons.response.Response;
 import jakarta.annotation.Resource;
@@ -35,6 +36,12 @@ public class CommentContentController {
     @ApiOperationLog(description = "批量查询评论内容")
     public Response<?> batchFindCommentContent(@Validated @RequestBody BatchFindCommentContentReqDTO batchFindCommentContentReqDTO) {
         return commentContentService.batchFindCommentContent(batchFindCommentContentReqDTO);
+    }
+
+    @PostMapping(value = "/comment/content/delete")
+    @ApiOperationLog(description = "删除评论内容")
+    public Response<?> deleteCommentContent(@Validated @RequestBody DeleteCommentContentReqDTO deleteCommentContentReqDTO) {
+        return commentContentService.deleteCommentContent(deleteCommentContentReqDTO);
     }
 
 }

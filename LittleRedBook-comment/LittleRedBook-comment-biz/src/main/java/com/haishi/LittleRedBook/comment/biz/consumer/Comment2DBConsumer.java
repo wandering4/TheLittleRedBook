@@ -72,7 +72,7 @@ public class Comment2DBConsumer {
     // 每秒创建 1000 个令牌
     private RateLimiter rateLimiter = RateLimiter.create(1000);
 
-    @Bean
+    @Bean(name = "Comment2DBConsumer")
     public DefaultMQPushConsumer mqPushConsumer() throws MQClientException {
         // Group 组
         String group = "LittleRedBook_group_" + MQConstants.TOPIC_PUBLISH_COMMENT;
