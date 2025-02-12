@@ -5,11 +5,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * @version: v1.0.0
+ * @description: 查询二级评论
+ **/
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class FindCommentItemRspVO {
+public class FindChildCommentItemRspVO {
 
     /**
      * 评论 ID
@@ -52,18 +56,12 @@ public class FindCommentItemRspVO {
     private Long likeTotal;
 
     /**
-     * 二级评论总数
+     * 回复的用户昵称
      */
-    private Long childCommentTotal;
+    private String replyUserName;
 
     /**
-     * 最早回复的评论
+     * 回复的用户 ID
      */
-    private FindCommentItemRspVO firstReplyComment;
-
-    /**
-     * 热度值
-     */
-    private Double heat;
-
+    private Long replyUserId;
 }

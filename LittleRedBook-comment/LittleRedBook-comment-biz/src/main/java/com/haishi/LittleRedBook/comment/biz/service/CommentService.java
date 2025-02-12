@@ -1,7 +1,9 @@
 package com.haishi.LittleRedBook.comment.biz.service;
 
+import com.haishi.LittleRedBook.comment.biz.model.vo.request.FindChildCommentPageListReqVO;
 import com.haishi.LittleRedBook.comment.biz.model.vo.request.FindCommentPageListReqVO;
 import com.haishi.LittleRedBook.comment.biz.model.vo.request.PublishCommentReqVO;
+import com.haishi.LittleRedBook.comment.biz.model.vo.response.FindChildCommentItemRspVO;
 import com.haishi.LittleRedBook.comment.biz.model.vo.response.FindCommentItemRspVO;
 import com.haishi.framework.commons.response.PageResponse;
 import com.haishi.framework.commons.response.Response;
@@ -25,6 +27,13 @@ public interface CommentService {
      * @return
      */
     PageResponse<FindCommentItemRspVO> findCommentPageList(FindCommentPageListReqVO findCommentPageListReqVO);
+
+    /**
+     * 二级评论分页查询
+     * @param findChildCommentPageListReqVO
+     * @return
+     */
+    PageResponse<FindChildCommentItemRspVO> findChildCommentPageList(FindChildCommentPageListReqVO findChildCommentPageListReqVO);
 
 
 }

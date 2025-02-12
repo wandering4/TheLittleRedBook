@@ -1,4 +1,4 @@
-package com.haishi.framework.commons.util;
+package com.haishi.LittleRedBook.user.relation.biz.util;
 
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.redis.core.script.DefaultRedisScript;

@@ -1,7 +1,9 @@
 package com.haishi.LittleRedBook.comment.biz.controller;
 
+import com.haishi.LittleRedBook.comment.biz.model.vo.request.FindChildCommentPageListReqVO;
 import com.haishi.LittleRedBook.comment.biz.model.vo.request.FindCommentPageListReqVO;
 import com.haishi.LittleRedBook.comment.biz.model.vo.request.PublishCommentReqVO;
+import com.haishi.LittleRedBook.comment.biz.model.vo.response.FindChildCommentItemRspVO;
 import com.haishi.LittleRedBook.comment.biz.model.vo.response.FindCommentItemRspVO;
 import com.haishi.LittleRedBook.comment.biz.service.CommentService;
 import com.haishi.framework.biz.operationlog.aspect.ApiOperationLog;
@@ -33,6 +35,12 @@ public class CommentController {
     @ApiOperationLog(description = "评论分页查询")
     public PageResponse<FindCommentItemRspVO> findCommentPageList(@Validated @RequestBody FindCommentPageListReqVO findCommentPageListReqVO) {
         return commentService.findCommentPageList(findCommentPageListReqVO);
+    }
+
+    @PostMapping("/child/list")
+    @ApiOperationLog(description = "二级评论分页查询")
+    public PageResponse<FindChildCommentItemRspVO> findChildCommentPageList(@Validated @RequestBody FindChildCommentPageListReqVO findChildCommentPageListReqVO) {
+        return commentService.findChildCommentPageList(findChildCommentPageListReqVO);
     }
 
 

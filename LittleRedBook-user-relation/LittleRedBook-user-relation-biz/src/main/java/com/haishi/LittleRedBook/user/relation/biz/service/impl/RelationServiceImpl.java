@@ -22,13 +22,13 @@ import com.haishi.LittleRedBook.user.relation.biz.model.vo.response.FindFansUser
 import com.haishi.LittleRedBook.user.relation.biz.model.vo.response.FindFollowingUserResponse;
 import com.haishi.LittleRedBook.user.relation.biz.rpc.UserRpcService;
 import com.haishi.LittleRedBook.user.relation.biz.service.RelationService;
+import com.haishi.LittleRedBook.user.relation.biz.util.LuaUtils;
 import com.haishi.framework.biz.context.holder.LoginUserContextHolder;
 import com.haishi.framework.commons.exception.BizException;
 import com.haishi.framework.commons.response.PageResponse;
 import com.haishi.framework.commons.response.Response;
 import com.haishi.framework.commons.util.DateUtils;
 import com.haishi.framework.commons.util.JsonUtils;
-import com.haishi.framework.commons.util.LuaUtils;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.producer.SendCallback;
