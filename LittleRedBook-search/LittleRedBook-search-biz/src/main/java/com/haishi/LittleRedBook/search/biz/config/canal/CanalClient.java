@@ -47,6 +47,7 @@ public class CanalClient implements DisposableBean {
         canalConnector.subscribe(canalProperties.getSubscribe());
         // 回滚 Canal 消费者的位点，回滚到上次提交的消费位置
         canalConnector.rollback();
+        //不写明监听表，使用配置文件中配置
         return canalConnector;
     }
 

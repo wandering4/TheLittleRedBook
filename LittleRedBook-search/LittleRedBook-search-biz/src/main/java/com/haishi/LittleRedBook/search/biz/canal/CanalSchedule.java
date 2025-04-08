@@ -59,7 +59,7 @@ public class CanalSchedule implements Runnable {
             if (batchId == -1 || size == 0) {
                 try {
                     // 拉取数据为空，休眠 1s, 防止频繁拉取
-                    TimeUnit.SECONDS.sleep(1);
+                    TimeUnit.SECONDS.sleep(50);
                 } catch (InterruptedException e) {
                 }
             } else {
@@ -103,9 +103,7 @@ public class CanalSchedule implements Runnable {
                     // 将列数据解析为 Map，方便后续处理
                     Map<String, Object> columnMap = parseColumns2Map(columns);
 
-                    // TODO: 自定义处理
                     log.info("EventType: {}, Database: {}, Table: {}, Columns: {}", eventType, database, table, columnMap);
-
 
                     // 处理事件
                     processEvent(columnMap, table, eventType);
@@ -292,6 +290,7 @@ public class CanalSchedule implements Runnable {
         // 从数据库查询 Elasticsearch 索引数据
         List<Map<String, Object>> result = selectMapper.selectEsNoteIndexData(noteId, null);
 
+        //TODO : 使用bulk批量更新
         // 遍历查询结果，将每条记录同步到 Elasticsearch
         for (Map<String, Object> recordMap : result) {
             // 创建索引请求对象，指定索引名称
@@ -313,6 +312,7 @@ public class CanalSchedule implements Runnable {
         // 1. 同步用户索引
         List<Map<String, Object>> userResult = selectMapper.selectEsUserIndexData(userId);
 
+        //TODO: 使用bulk批量更新
         // 遍历查询结果，将每条记录同步到 Elasticsearch
         for (Map<String, Object> recordMap : userResult) {
             // 创建索引请求对象，指定索引名称

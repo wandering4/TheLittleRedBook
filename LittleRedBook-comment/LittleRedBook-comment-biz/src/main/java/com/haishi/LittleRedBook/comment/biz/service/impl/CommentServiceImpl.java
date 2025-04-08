@@ -171,6 +171,7 @@ public class CommentServiceImpl implements CommentService {
         Number commentTotal = (Number) redisTemplate.opsForHash().get(noteCommentTotalKey, RedisKeyConstants.FIELD_COMMENT_TOTAL);
         long count = Objects.isNull(commentTotal) ? 0L : commentTotal.longValue();
 
+        // 为避免缓存击穿，采用冷热分离，针对热key设置永不过期
         // 若缓存不存在，则查询数据库
         if (Objects.isNull(commentTotal)) {
             // 查询评论总数 (从 t_note_count 笔记计数表查，提升查询性能, 避免 count(*))
