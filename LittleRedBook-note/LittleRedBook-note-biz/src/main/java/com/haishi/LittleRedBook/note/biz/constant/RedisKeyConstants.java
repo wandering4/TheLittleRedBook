@@ -24,6 +24,11 @@ public class RedisKeyConstants {
     public static final String BLOOM_USER_NOTE_COLLECT_LIST_KEY = "bloom:note:collects:";
 
     /**
+     * Roaring Bitmap：用户笔记收藏 前缀
+     */
+    public static final String R_BITMAP_USER_NOTE_COLLECT_LIST_KEY = "rbitmap:note:collects:";
+
+    /**
      * 用户笔记收藏列表 ZSet 前缀
      */
     public static final String USER_NOTE_COLLECT_ZSET_KEY = "user:note:collects:";
@@ -75,4 +80,14 @@ public class RedisKeyConstants {
     public static String buildUserNoteCollectZSetKey(Long userId) {
         return USER_NOTE_COLLECT_ZSET_KEY + userId;
     }
+
+    /**
+     * 构建完整的 Roaring Bitmap：用户笔记收藏 KEY
+     * @param userId
+     * @return
+     */
+    public static String buildRBitmapUserNoteCollectListKey(Long userId) {
+        return R_BITMAP_USER_NOTE_COLLECT_LIST_KEY + userId;
+    }
+
 }

@@ -2,6 +2,7 @@ package com.haishi.LittleRedBook.note.biz.controller;
 
 import com.haishi.LittleRedBook.note.biz.model.vo.request.*;
 import com.haishi.LittleRedBook.note.biz.model.vo.response.FindNoteDetailResponse;
+import com.haishi.LittleRedBook.note.biz.model.vo.response.FindNoteIsLikedAndCollectedRspVO;
 import com.haishi.LittleRedBook.note.biz.service.NoteService;
 import com.haishi.framework.biz.operationlog.aspect.ApiOperationLog;
 import com.haishi.framework.commons.response.Response;
@@ -79,6 +80,12 @@ public class NoteController {
     @ApiOperationLog(description = "取消收藏笔记")
     public Response<?> unCollectNote(@Validated @RequestBody UnCollectNoteReqVO unCollectNoteReqVO) {
         return noteService.unCollectNote(unCollectNoteReqVO);
+    }
+
+    @PostMapping(value = "/isLikedAndCollectedData")
+    @ApiOperationLog(description = "获取当前用户是否点赞、收藏数据")
+    public Response<FindNoteIsLikedAndCollectedRspVO> isLikedAndCollectedData(@Validated @RequestBody FindNoteIsLikedAndCollectedReqVO findNoteIsLikedAndCollectedReqVO) {
+        return noteService.isLikedAndCollectedData(findNoteIsLikedAndCollectedReqVO);
     }
 
 }
