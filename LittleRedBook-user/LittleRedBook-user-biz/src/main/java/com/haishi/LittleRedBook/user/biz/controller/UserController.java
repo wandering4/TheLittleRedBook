@@ -1,6 +1,8 @@
 package com.haishi.LittleRedBook.user.biz.controller;
 
+import com.haishi.LittleRedBook.user.biz.model.vo.request.FindUserProfileReqVO;
 import com.haishi.LittleRedBook.user.biz.model.vo.request.UpdateUserInfoRequest;
+import com.haishi.LittleRedBook.user.biz.model.vo.response.FindUserProfileRspVO;
 import com.haishi.LittleRedBook.user.biz.service.UserService;
 import com.haishi.LittleRedBook.user.dto.req.*;
 import com.haishi.LittleRedBook.user.dto.resp.FindUserByIdResponse;
@@ -36,6 +38,17 @@ public class UserController {
     public Response<?> updateUserInfo(@Validated UpdateUserInfoRequest updateUserInfoRequest) {
         return userService.updateUserInfo(updateUserInfoRequest);
     }
+
+    /**
+     * 获取用户主页信息
+     *
+     * @return
+     */
+    @PostMapping(value = "/profile")
+    public Response<FindUserProfileRspVO> findUserProfile(@Validated @RequestBody FindUserProfileReqVO findUserProfileReqVO) {
+        return userService.findUserProfile(findUserProfileReqVO);
+    }
+
 
     // ===================================== 对其他服务提供的接口 =====================================
     @PostMapping("/register")

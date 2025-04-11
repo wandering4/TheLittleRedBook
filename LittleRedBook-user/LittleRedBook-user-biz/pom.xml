@@ -20,6 +20,12 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>com.haishi</groupId>
+            <artifactId>LittleRedBook-count-api</artifactId>
+        </dependency>
+
+
         <!-- Caffeine 本地缓存 -->
         <dependency>
             <groupId>com.github.ben-manes.caffeine</groupId>

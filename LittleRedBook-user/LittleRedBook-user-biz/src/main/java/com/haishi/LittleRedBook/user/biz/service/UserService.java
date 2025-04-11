@@ -1,5 +1,7 @@
 package com.haishi.LittleRedBook.user.biz.service;
 
+import com.haishi.LittleRedBook.user.biz.model.vo.request.FindUserProfileReqVO;
+import com.haishi.LittleRedBook.user.biz.model.vo.response.FindUserProfileRspVO;
 import com.haishi.LittleRedBook.user.dto.req.*;
 import com.haishi.LittleRedBook.user.biz.model.vo.request.UpdateUserInfoRequest;
 import com.haishi.LittleRedBook.user.dto.resp.FindUserByIdResponse;
@@ -60,5 +62,14 @@ public interface UserService {
      * @return
      */
     Response<List<FindUserByIdResponse>> findByIds(FindUsersByIdsReqDTO findUsersByIdsReqDTO);
+
+
+    /**
+     * 获取用户主页信息
+     *
+     * @return
+     */
+    Response<FindUserProfileRspVO> findUserProfile(FindUserProfileReqVO findUserProfileReqVO);
+
 
 }

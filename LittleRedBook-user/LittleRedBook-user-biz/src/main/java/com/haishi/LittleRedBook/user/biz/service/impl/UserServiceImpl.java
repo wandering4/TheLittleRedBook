@@ -6,12 +6,16 @@ import com.alibaba.nacos.shaded.com.google.common.base.Preconditions;
 import com.alibaba.nacos.shaded.com.google.common.collect.Lists;
 import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
+import com.haishi.LittleRedBook.count.dto.response.FindUserCountsByIdRspDTO;
 import com.haishi.LittleRedBook.oss.api.FileFeignApi;
 import com.haishi.LittleRedBook.user.biz.constant.RoleConstants;
 import com.haishi.LittleRedBook.user.biz.domain.dataobject.RoleDO;
 import com.haishi.LittleRedBook.user.biz.domain.dataobject.UserRoleDO;
 import com.haishi.LittleRedBook.user.biz.domain.mapper.RoleDOMapper;
 import com.haishi.LittleRedBook.user.biz.domain.mapper.UserRoleDOMapper;
+import com.haishi.LittleRedBook.user.biz.model.vo.request.FindUserProfileReqVO;
+import com.haishi.LittleRedBook.user.biz.model.vo.response.FindUserProfileRspVO;
+import com.haishi.LittleRedBook.user.biz.rpc.CountRpcService;
 import com.haishi.LittleRedBook.user.biz.rpc.DistributedIdGeneratorRpcService;
 import com.haishi.LittleRedBook.user.dto.req.*;
 import com.haishi.LittleRedBook.user.biz.domain.dataobject.UserDO;
@@ -29,7 +33,9 @@ import com.haishi.framework.commons.enums.DeletedEnum;
 import com.haishi.framework.commons.enums.StatusEnum;
 import com.haishi.framework.commons.exception.BizException;
 import com.haishi.framework.commons.response.Response;
+import com.haishi.framework.commons.util.DateUtils;
 import com.haishi.framework.commons.util.JsonUtils;
+import com.haishi.framework.commons.util.NumberUtils;
 import com.haishi.framework.commons.util.ParamUtils;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -72,6 +78,9 @@ public class UserServiceImpl implements UserService {
 
     @Resource
     private RoleDOMapper roleDOMapper;
+
+    @Resource
+    private CountRpcService countRpcService;
 
     @Resource
     private RedisTemplate<String, Object> redisTemplate;
@@ -477,5 +486,69 @@ public class UserServiceImpl implements UserService {
 
         return Response.success(findUserByIdRspDTOS);
     }
+
+
+    /**
+     * 获取用户主页信息
+     *
+     * @param findUserProfileReqVO
+     * @return
+     */
+    @Override
+    public Response<FindUserProfileRspVO> findUserProfile(FindUserProfileReqVO findUserProfileReqVO) {
+        // 要查询的用户 ID
+        Long userId = findUserProfileReqVO.getUserId();
+
+        // 若入参中用户 ID 为空，则查询当前登录用户
+        if (Objects.isNull(userId)) {
+            userId = LoginUserContextHolder.getUserId();
+        }
+
+        // TODO 1. 优先查询缓存
+
+        // TODO 2. 再查询数据库
+        UserDO userDO = userDOMapper.selectByPrimaryKey(userId);
+
+        if (Objects.isNull(userDO)) {
+            throw new BizException(ResponseCodeEnum.USER_NOT_FOUND);
+        }
+
+        // 构建返参 VO
+        FindUserProfileRspVO findUserProfileRspVO = FindUserProfileRspVO.builder()
+                .userId(userDO.getId())
+                .avatar(userDO.getAvatar())
+                .nickname(userDO.getNickname())
+                .accountId(userDO.getAccountId())
+                .sex(userDO.getSex())
+                .introduction(userDO.getIntroduction())
+                .build();
+
+        // 计算年龄
+        LocalDate birthday = userDO.getBirthday();
+        findUserProfileRspVO.setAge(Objects.isNull(birthday) ? 0 : DateUtils.calculateAge(birthday));
+
+
+        // RPC: Feign 调用计数服务
+        // 关注数、粉丝数、收藏与点赞总数；发布的笔记数，获得的点赞数、收藏数
+        FindUserCountsByIdRspDTO findUserCountsByIdRspDTO = countRpcService.findUserCountById(userId);
+
+        if (Objects.nonNull(findUserCountsByIdRspDTO)) {
+            Long fansTotal = findUserCountsByIdRspDTO.getFansTotal();
+            Long followingTotal = findUserCountsByIdRspDTO.getFollowingTotal();
+            Long likeTotal = findUserCountsByIdRspDTO.getLikeTotal();
+            Long collectTotal = findUserCountsByIdRspDTO.getCollectTotal();
+            Long noteTotal = findUserCountsByIdRspDTO.getNoteTotal();
+
+            findUserProfileRspVO.setFansTotal(NumberUtils.formatNumberString(fansTotal));
+            findUserProfileRspVO.setFollowingTotal(NumberUtils.formatNumberString(followingTotal));
+            findUserProfileRspVO.setLikeAndCollectTotal(NumberUtils.formatNumberString(likeTotal + collectTotal));
+            findUserProfileRspVO.setNoteTotal(NumberUtils.formatNumberString(noteTotal));
+            findUserProfileRspVO.setLikeTotal(NumberUtils.formatNumberString(likeTotal));
+            findUserProfileRspVO.setCollectTotal(NumberUtils.formatNumberString(collectTotal));
+        }
+
+        return Response.success(findUserProfileRspVO);
+    }
+
 }
 
