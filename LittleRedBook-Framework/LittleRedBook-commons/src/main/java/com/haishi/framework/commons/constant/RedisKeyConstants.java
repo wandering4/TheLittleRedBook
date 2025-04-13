@@ -7,7 +7,7 @@ public class RedisKeyConstants {
     private static final String VERIFICATION_CODE_KEY_PREFIX = "verification_code:";
 
     /**
-     * 小哈书全局 ID 生成器 KEY
+     * 小红书全局 ID 生成器 KEY
      */
     public static final String BOOK_ID_GENERATOR_KEY = "book_id_generator";
 
