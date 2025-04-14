@@ -592,6 +592,10 @@ public class UserServiceImpl implements UserService {
 
         if (StringUtils.isNotBlank(userProfileJson)) {
             FindUserProfileRspVO findUserProfileRspVO = JsonUtils.parseObject(userProfileJson, FindUserProfileRspVO.class);
+            // 异步同步到本地缓存
+            syncUserProfile2LocalCache(userId, findUserProfileRspVO);
+            // 如果是博主本人查看，保证计数的实时性
+            authorGetActualCountData(userId, findUserProfileRspVO);
             return Response.success(findUserProfileRspVO);
         }
 
@@ -619,6 +623,34 @@ public class UserServiceImpl implements UserService {
 
         // RPC: Feign 调用计数服务
         // 关注数、粉丝数、收藏与点赞总数；发布的笔记数，获得的点赞数、收藏数
+        rpcCountServiceAndSetData(userId, findUserProfileRspVO);
+
+        // 异步同步到 Redis 中
+        syncUserProfile2Redis(userProfileRedisKey, findUserProfileRspVO);
+
+        // 异步同步到本地缓存
+        syncUserProfile2LocalCache(userId, findUserProfileRspVO);
+
+        return Response.success(findUserProfileRspVO);
+    }
+
+    /**
+     * 作者本人获取真实的计数数据（保证实时性）
+     * @param userId
+     * @param findUserProfileRspVO
+     */
+    private void authorGetActualCountData(Long userId, FindUserProfileRspVO findUserProfileRspVO) {
+        if (Objects.equals(userId, LoginUserContextHolder.getUserId())) { // 如果是博主本人
+            rpcCountServiceAndSetData(userId, findUserProfileRspVO);
+        }
+    }
+
+    /**
+     * Feign 调用计数服务, 并设置计数数据
+     * @param userId
+     * @param findUserProfileRspVO
+     */
+    private void rpcCountServiceAndSetData(Long userId, FindUserProfileRspVO findUserProfileRspVO) {
         FindUserCountsByIdRspDTO findUserCountsByIdRspDTO = countRpcService.findUserCountById(userId);
 
         if (Objects.nonNull(findUserCountsByIdRspDTO)) {
@@ -635,14 +667,6 @@ public class UserServiceImpl implements UserService {
             findUserProfileRspVO.setLikeTotal(NumberUtils.formatNumberString(likeTotal));
             findUserProfileRspVO.setCollectTotal(NumberUtils.formatNumberString(collectTotal));
         }
-
-        // 异步同步到 Redis 中
-        syncUserProfile2Redis(userProfileRedisKey, findUserProfileRspVO);
-
-        // 异步同步到本地缓存
-        syncUserProfile2LocalCache(userId, findUserProfileRspVO);
-
-        return Response.success(findUserProfileRspVO);
     }
 
 

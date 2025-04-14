@@ -5,6 +5,7 @@ import com.haishi.framework.commons.exception.BizException;
 import com.haishi.framework.commons.response.Response;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -33,14 +34,24 @@ public class GlobalExceptionHandler {
      * 捕获参数校验异常
      * @return
      */
-    @ExceptionHandler({ MethodArgumentNotValidException.class })
+    @ExceptionHandler({
+            MethodArgumentNotValidException.class,
+            BindException.class
+    })
     @ResponseBody
-    public Response<Object> handleMethodArgumentNotValidException(HttpServletRequest request, MethodArgumentNotValidException e) {
+    public Response<Object> handleControllerException(HttpServletRequest request, Throwable  e) {
         // 参数错误异常码
         String errorCode = ResponseCodeEnum.PARAM_NOT_VALID.getErrorCode();
 
-        // 获取 BindingResult
-        BindingResult bindingResult = e.getBindingResult();
+        // 声明一个 BindingResult 变量，用于存储参数校验的错误结果
+        BindingResult bindingResult = null;
+
+        // 检查异常类型，并强制类型转换，获取绑定结果
+        if (e instanceof MethodArgumentNotValidException) {
+            bindingResult = (((MethodArgumentNotValidException) e)).getBindingResult();
+        } else if (e instanceof BindException) {
+            bindingResult = ((BindException) e).getBindingResult();
+        }
 
         StringBuilder sb = new StringBuilder();
 
@@ -59,6 +70,24 @@ public class GlobalExceptionHandler {
 
         // 错误信息
         String errorMessage = sb.toString();
+
+        log.warn("{} request error, errorCode: {}, errorMessage: {}", request.getRequestURI(), errorCode, errorMessage);
+
+        return Response.fail(errorCode, errorMessage);
+    }
+
+    /**
+     * 捕获 guava 参数校验异常
+     * @return
+     */
+    @ExceptionHandler({ IllegalArgumentException.class })
+    @ResponseBody
+    public Response<Object> handleIllegalArgumentException(HttpServletRequest request, IllegalArgumentException e) {
+        // 参数错误异常码
+        String errorCode = ResponseCodeEnum.PARAM_NOT_VALID.getErrorCode();
+
+        // 错误信息
+        String errorMessage = e.getMessage();
 
         log.warn("{} request error, errorCode: {}, errorMessage: {}", request.getRequestURI(), errorCode, errorMessage);
 
