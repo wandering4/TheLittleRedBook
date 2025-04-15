@@ -3,6 +3,7 @@ package com.haishi.LittleRedBook.note.biz.service;
 import com.haishi.LittleRedBook.note.biz.model.vo.request.*;
 import com.haishi.LittleRedBook.note.biz.model.vo.response.FindNoteDetailResponse;
 import com.haishi.LittleRedBook.note.biz.model.vo.response.FindNoteIsLikedAndCollectedRspVO;
+import com.haishi.LittleRedBook.note.biz.model.vo.response.FindPublishedNoteListRspVO;
 import com.haishi.framework.commons.response.Response;
 
 public interface NoteService {
@@ -91,5 +92,17 @@ public interface NoteService {
      * @return
      */
     Response<FindNoteIsLikedAndCollectedRspVO> isLikedAndCollectedData(FindNoteIsLikedAndCollectedReqVO findNoteIsLikedAndCollectedReqVO);
+
+
+
+
+    /**
+     * 用户主页 - 查询已发布的笔记列表
+     * @param findPublishedNoteListReqVO
+     * @return
+     */
+    Response<FindPublishedNoteListRspVO> findPublishedNoteList(FindPublishedNoteListReqVO findPublishedNoteListReqVO);
+
+
 
 }

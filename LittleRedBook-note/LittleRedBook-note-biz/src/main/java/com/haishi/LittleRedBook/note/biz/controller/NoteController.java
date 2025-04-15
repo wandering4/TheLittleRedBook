@@ -3,6 +3,7 @@ package com.haishi.LittleRedBook.note.biz.controller;
 import com.haishi.LittleRedBook.note.biz.model.vo.request.*;
 import com.haishi.LittleRedBook.note.biz.model.vo.response.FindNoteDetailResponse;
 import com.haishi.LittleRedBook.note.biz.model.vo.response.FindNoteIsLikedAndCollectedRspVO;
+import com.haishi.LittleRedBook.note.biz.model.vo.response.FindPublishedNoteListRspVO;
 import com.haishi.LittleRedBook.note.biz.service.NoteService;
 import com.haishi.framework.biz.operationlog.aspect.ApiOperationLog;
 import com.haishi.framework.commons.response.Response;
@@ -21,6 +22,12 @@ public class NoteController {
 
     @Resource
     private NoteService noteService;
+
+    @PostMapping(value = "/published/list")
+    @ApiOperationLog(description = "用户主页 - 已发布笔记列表")
+    public Response<FindPublishedNoteListRspVO> findPublishedNoteList(@Validated @RequestBody FindPublishedNoteListReqVO findPublishedNoteListReqVO) {
+        return noteService.findPublishedNoteList(findPublishedNoteListReqVO);
+    }
 
     @PostMapping(value = "/publish")
     @ApiOperationLog(description = "笔记发布")

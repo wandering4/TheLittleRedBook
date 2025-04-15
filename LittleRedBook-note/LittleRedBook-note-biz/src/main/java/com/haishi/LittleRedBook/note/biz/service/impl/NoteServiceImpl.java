@@ -22,6 +22,8 @@ import com.haishi.LittleRedBook.note.biz.model.dto.NoteOperateMqDTO;
 import com.haishi.LittleRedBook.note.biz.model.vo.request.*;
 import com.haishi.LittleRedBook.note.biz.model.vo.response.FindNoteDetailResponse;
 import com.haishi.LittleRedBook.note.biz.model.vo.response.FindNoteIsLikedAndCollectedRspVO;
+import com.haishi.LittleRedBook.note.biz.model.vo.response.FindPublishedNoteListRspVO;
+import com.haishi.LittleRedBook.note.biz.model.vo.response.NoteItemRspVO;
 import com.haishi.LittleRedBook.note.biz.rpc.DistributedIdGeneratorRpcService;
 import com.haishi.LittleRedBook.note.biz.rpc.KeyValueRpcService;
 import com.haishi.LittleRedBook.note.biz.rpc.UserRpcService;
@@ -51,10 +53,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
-import java.util.UUID;
+import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionException;
 import java.util.concurrent.TimeUnit;
@@ -1211,6 +1210,71 @@ public class NoteServiceImpl implements NoteService {
                 .build());
     }
 
+
+    /**
+     * 用户主页 - 查询已发布的笔记列表
+     *
+     * @param findPublishedNoteListReqVO
+     * @return
+     */
+    @Override
+    public Response<FindPublishedNoteListRspVO> findPublishedNoteList(FindPublishedNoteListReqVO findPublishedNoteListReqVO) {
+
+        // 目标用户ID
+        Long userId = findPublishedNoteListReqVO.getUserId();
+        // 游标
+        Long cursor = findPublishedNoteListReqVO.getCursor();
+
+        // TODO: 优先查询缓存
+
+        // 缓存无，则查询数据库
+        List<NoteDO> noteDOS = noteDOMapper.selectPublishedNoteListByUserIdAndCursor(userId, cursor);
+
+        // 返参 VO
+        FindPublishedNoteListRspVO findPublishedNoteListRspVO = null;
+        if (CollUtil.isNotEmpty(noteDOS)) {
+            // DO 转 VO
+            List<NoteItemRspVO> noteVOS = noteDOS.stream()
+                    .map(noteDO -> {
+                        // 获取封面图片
+                        String cover = StringUtils.isNotBlank(noteDO.getImgUris()) ?
+                                StringUtils.split(noteDO.getImgUris(), ",")[0] : null;
+
+                        NoteItemRspVO noteItemRspVO = NoteItemRspVO.builder()
+                                .noteId(noteDO.getId())
+                                .type(noteDO.getType())
+                                .creatorId(noteDO.getCreatorId())
+                                .cover(cover)
+                                .videoUri(noteDO.getVideoUri())
+                                .title(noteDO.getTitle())
+                                .build();
+                        return noteItemRspVO;
+                    }).toList();
+
+            // Feign 调用用户服务，获取博主的用户头像、昵称
+            Optional<Long> creatorIdOptional = noteDOS.stream().map(NoteDO::getCreatorId).findAny();
+            FindUserByIdResponse findUserByIdRspDTO = userRpcService.findById(creatorIdOptional.get());
+            if (Objects.nonNull(findUserByIdRspDTO)) {
+                // 循环 VO 集合，分别设置头像、昵称
+                noteVOS.forEach(noteItemRspVO -> {
+                    noteItemRspVO.setAvatar(findUserByIdRspDTO.getAvatar());
+                    noteItemRspVO.setNickname(findUserByIdRspDTO.getNickName());
+                });
+            }
+
+            // TODO: Feign 调用计数服务，批量获取笔记点赞数
+
+            // 过滤出最早发布的笔记 ID，充当下一页的游标
+            Optional<Long> earliestNoteId = noteDOS.stream().map(NoteDO::getId).min(Long::compareTo);
+
+            findPublishedNoteListRspVO = FindPublishedNoteListRspVO.builder()
+                    .notes(noteVOS)
+                    .nextCursor(earliestNoteId.orElse(null))
+                    .build();
+        }
+
+        return Response.success(findPublishedNoteListRspVO);
+    }
 
     /**
      * 校验当前用户是否点赞笔记
