@@ -15,7 +15,6 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 /**
- * @author: 犬小哈
  * @date: 2024/8/9 11:52
  * @version: v1.0.0
  * @description: 计数: 评论点赞数落库

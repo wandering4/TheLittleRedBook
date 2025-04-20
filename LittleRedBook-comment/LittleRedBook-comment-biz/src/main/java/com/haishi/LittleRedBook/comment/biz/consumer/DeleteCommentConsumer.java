@@ -27,8 +27,6 @@ import java.util.Objects;
 import java.util.Set;
 
 /**
- * @author: 犬小哈
- * @url: www.quanxiaoha.com
  * @date: 2024/8/30 11:27
  * @description: 删除评论 - 后续业务处理
  **/

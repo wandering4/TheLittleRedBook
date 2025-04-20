@@ -15,6 +15,11 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>com.haishi</groupId>
+            <artifactId>LittleRedBook-count-api</artifactId>
+        </dependency>
+
         <!-- Rocket MQ -->
         <dependency>
             <groupId>org.apache.rocketmq</groupId>

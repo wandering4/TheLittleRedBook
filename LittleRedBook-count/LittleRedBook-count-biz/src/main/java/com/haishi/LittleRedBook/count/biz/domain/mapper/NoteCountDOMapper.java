@@ -3,6 +3,8 @@ package com.haishi.LittleRedBook.count.biz.domain.mapper;
 import com.haishi.LittleRedBook.count.biz.domain.dataobject.NoteCountDO;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 public interface NoteCountDOMapper {
     int deleteByPrimaryKey(Long id);
 
@@ -40,5 +42,12 @@ public interface NoteCountDOMapper {
      */
     int insertOrUpdateCommentTotalByNoteId(@Param("count") int count, @Param("noteId") Long noteId);
 
+
+    /**
+     * 根据笔记 ID 批量查询
+     * @param noteIds
+     * @return
+     */
+    List<NoteCountDO> selectByNoteIds(@Param("noteIds") List<Long> noteIds);
 
 }

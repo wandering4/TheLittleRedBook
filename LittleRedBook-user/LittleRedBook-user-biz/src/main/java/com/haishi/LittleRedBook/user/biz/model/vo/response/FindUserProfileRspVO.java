@@ -32,7 +32,7 @@ public class FindUserProfileRspVO {
     private String nickname;
 
     /**
-     * 小哈书 ID
+     * 小红书 ID
      */
     private String accountId;
 

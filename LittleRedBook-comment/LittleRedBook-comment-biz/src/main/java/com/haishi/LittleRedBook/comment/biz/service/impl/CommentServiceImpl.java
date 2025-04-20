@@ -1222,7 +1222,7 @@ public class CommentServiceImpl implements CommentService {
 
             Long parentId = childCommentDO.getParentId();
             Long replyCommentId = childCommentDO.getReplyCommentId();
-            // 若当前评论的 replyCommentId 不等于 parentId，则前端需要展示回复的哪个用户，如  “回复 犬小哈：”
+            // 若当前评论的 replyCommentId 不等于 parentId，则前端需要展示回复的哪个用户，如  “回复 小红书：”
             if (!Objects.equals(parentId, replyCommentId)) {
                 userIds.add(childCommentDO.getReplyUserId());
             }

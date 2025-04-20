@@ -32,7 +32,7 @@ public class SearchUserRspVO {
     private String avatar;
 
     /**
-     * 小哈书ID
+     * 小红书ID
      */
     private String accountId;
 

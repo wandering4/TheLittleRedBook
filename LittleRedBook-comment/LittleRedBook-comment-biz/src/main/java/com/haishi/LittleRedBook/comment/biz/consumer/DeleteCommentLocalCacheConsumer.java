@@ -10,8 +10,6 @@ import org.apache.rocketmq.spring.core.RocketMQListener;
 import org.springframework.stereotype.Component;
 
 /**
- * @author: 犬小哈
- * @url: www.quanxiaoha.com
  * @date: 2024/8/30 11:27
  * @description: 删除本地评论缓存
  **/
