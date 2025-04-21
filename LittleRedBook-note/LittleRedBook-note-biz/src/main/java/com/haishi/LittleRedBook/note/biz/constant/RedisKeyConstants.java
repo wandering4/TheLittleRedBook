@@ -3,6 +3,11 @@ package com.haishi.LittleRedBook.note.biz.constant;
 public class RedisKeyConstants {
 
     /**
+     * 已发布笔记列表 KEY 前缀
+     */
+    private static final String PUBLISHED_NOTE_LIST_KEY = "note:published:list:";
+
+    /**
      * 笔记详情 KEY 前缀
      */
     public static final String NOTE_DETAIL_KEY = "note:detail:";
@@ -33,6 +38,15 @@ public class RedisKeyConstants {
      */
     public static final String USER_NOTE_COLLECT_ZSET_KEY = "user:note:collects:";
 
+
+    /**
+     * 构建完整的已发布笔记列表 KEY
+     * @param userId
+     * @return
+     */
+    public static String buildPublishedNoteListKey(Long userId) {
+        return PUBLISHED_NOTE_LIST_KEY + userId;
+    }
 
     /**
      * 构建完整的笔记详情 KEY
