@@ -61,4 +61,9 @@ public class NoteItemRspVO {
      */
     private String likeTotal;
 
+    /**
+     * 当前登录用户是否已点赞
+     */
+    private Boolean isLiked;
+
 }
