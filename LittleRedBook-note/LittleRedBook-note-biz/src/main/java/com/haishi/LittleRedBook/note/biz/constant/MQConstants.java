@@ -3,6 +3,11 @@ package com.haishi.LittleRedBook.note.biz.constant;
 public interface MQConstants {
 
     /**
+     * Topic: 发布笔记事务消息
+     */
+    String TOPIC_PUBLISH_NOTE_TRANSACTION = "PublishNoteTransactionTopic";
+
+    /**
      * Topic 主题：延迟双删 Redis 已发布笔记列表缓存
      */
     String TOPIC_DELAY_DELETE_PUBLISHED_NOTE_LIST_REDIS_CACHE = "DelayDeletePublishedNoteListRedisCacheTopic";

@@ -45,6 +45,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.rocketmq.client.producer.SendCallback;
 import org.apache.rocketmq.client.producer.SendResult;
+import org.apache.rocketmq.client.producer.TransactionSendResult;
 import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.script.DefaultRedisScript;
@@ -110,8 +111,10 @@ public class NoteServiceImpl implements NoteService {
 
     @Override
     public Response<?> publishNote(PublishNoteRequest publishNoteRequest) {
-        //笔记类型
+        // 笔记类型
         Integer type = publishNoteRequest.getType();
+
+        // 获取对应类型的枚举
         NoteTypeEnum noteTypeEnum = NoteTypeEnum.valueOf(type);
 
         // 若非图文、视频，抛出业务业务异常
@@ -120,11 +123,11 @@ public class NoteServiceImpl implements NoteService {
         }
 
         String imgUris = null;
+        // 笔记内容是否为空，默认值为 true，即空
         Boolean isContentEmpty = true;
         String videoUri = null;
-
         switch (noteTypeEnum) {
-            case IMAGE_TEXT:
+            case IMAGE_TEXT: // 图文笔记
                 List<String> imgUriList = publishNoteRequest.getImgUris();
                 // 校验图片是否为空
                 Preconditions.checkArgument(CollUtil.isNotEmpty(imgUriList), "笔记图片不能为空");
@@ -134,20 +137,17 @@ public class NoteServiceImpl implements NoteService {
                 imgUris = StringUtils.join(imgUriList, ",");
 
                 break;
-
-            case VIDEO:
+            case VIDEO: // 视频笔记
                 videoUri = publishNoteRequest.getVideoUri();
                 // 校验视频链接是否为空
                 Preconditions.checkArgument(StringUtils.isNotBlank(videoUri), "笔记视频不能为空");
-
                 break;
-
             default:
                 break;
         }
 
-        //生成分布式笔记id
-        String snowflakeId = distributedIdGeneratorRpcService.getSnowflakeId();
+        // RPC: 调用分布式 ID 生成服务，生成笔记 ID
+        String snowflakeIdId = distributedIdGeneratorRpcService.getSnowflakeId();
         // 笔记内容 UUID
         String contentUuid = null;
 
@@ -158,17 +158,15 @@ public class NoteServiceImpl implements NoteService {
         if (StringUtils.isNotBlank(content)) {
             // 内容是否为空，置为 false，即不为空
             isContentEmpty = false;
-        }
-
-        //不管有没有笔记内容都生成一条记录,将笔记uuid入库
-        // 生成笔记内容 UUID
-        contentUuid = UUID.randomUUID().toString();
-        // RPC: 调用 KV 键值服务，存储短文本
-        boolean isSavedSuccess = keyValueRpcService.saveNoteContent(contentUuid, content == null ? "" : content);
-
-        // 若存储失败，抛出业务异常，提示用户发布笔记失败
-        if (!isSavedSuccess) {
-            throw new BizException(ResponseCodeEnum.NOTE_PUBLISH_FAIL);
+            // 生成笔记内容 UUID
+            contentUuid = UUID.randomUUID().toString();
+            // // RPC: 调用 KV 键值服务，存储短文本
+            // boolean isSavedSuccess = keyValueRpcService.saveNoteContent(contentUuid, content);
+            //
+            // // 若存储失败，抛出业务异常，提示用户发布笔记失败
+            // if (!isSavedSuccess) {
+            //     throw new BizException(ResponseCodeEnum.NOTE_PUBLISH_FAIL);
+            // }
         }
 
         // 话题
@@ -183,37 +181,58 @@ public class NoteServiceImpl implements NoteService {
         Long creatorId = LoginUserContextHolder.getUserId();
 
         // 构建笔记 DO 对象
-        NoteDO noteDO = NoteDO.builder().id(Long.valueOf(snowflakeId)).isContentEmpty(isContentEmpty).creatorId(creatorId).imgUris(imgUris).title(publishNoteRequest.getTitle()).topicId(publishNoteRequest.getTopicId()).topicName(topicName).type(type).visible(NoteVisibleEnum.PUBLIC.getCode()).createTime(LocalDateTime.now()).updateTime(LocalDateTime.now()).status(NoteStatusEnum.NORMAL.getCode()).isTop(Boolean.FALSE).videoUri(videoUri).contentUuid(contentUuid).build();
+        NoteDO noteDO = NoteDO.builder().id(Long.valueOf(snowflakeIdId)).isContentEmpty(isContentEmpty).creatorId(creatorId).imgUris(imgUris).title(publishNoteRequest.getTitle()).topicId(publishNoteRequest.getTopicId()).topicName(topicName).type(type).visible(NoteVisibleEnum.PUBLIC.getCode()).createTime(LocalDateTime.now()).updateTime(LocalDateTime.now()).status(NoteStatusEnum.NORMAL.getCode()).isTop(Boolean.FALSE).videoUri(videoUri).contentUuid(contentUuid).build();
 
+        // 若笔记正文未填写，不用发事务消息
+        if (StringUtils.isBlank(content)) {
+            processPublishContentEmptyNote(creatorId, noteDO, snowflakeIdId);
+            return Response.success();
+        }
 
+        // 发送事务消息
+        // 构建消息内容
+        Message<String> message = MessageBuilder.withPayload(JsonUtils.toJsonString(noteDO)).build();
+        // 发送事务消息
+        TransactionSendResult transactionSendResult = rocketMQTemplate.sendMessageInTransaction(MQConstants.TOPIC_PUBLISH_NOTE_TRANSACTION, message, null);
+
+        log.info("## 事务消息发送结果: {}", transactionSendResult.getLocalTransactionState());
+
+        return Response.success();
+
+    }
+
+    /**
+     * 处理笔记正文为空的情况
+     *
+     * @param creatorId
+     * @param noteDO
+     * @param snowflakeIdId
+     */
+    private void processPublishContentEmptyNote(Long creatorId, NoteDO noteDO, String snowflakeIdId) {
         // 删除个人主页 - 已发布笔记列表缓存
         // TODO: 应采取灵活的策略，如果是大V, 应该直接更新缓存，而不是直接删除；普通用户则可直接删除
         String publishedNoteListRedisKey = RedisKeyConstants.buildPublishedNoteListKey(creatorId);
         redisTemplate.delete(publishedNoteListRedisKey);
 
-        try {
-            // 笔记入库存储
-            noteDOMapper.insert(noteDO);
-        } catch (Exception e) {
-            log.error("==> 笔记存储失败", e);
-
-            // RPC: 笔记保存失败，则删除笔记内容
-            if (StringUtils.isNotBlank(contentUuid)) {
-                keyValueRpcService.deleteNoteContent(contentUuid);
-            }
-        }
+        // 笔记入库存储
+        noteDOMapper.insert(noteDO);
 
         // 延迟双删：发送延迟消息
         sendDelayDeleteRedisCacheMQ(MQConstants.TOPIC_DELAY_DELETE_PUBLISHED_NOTE_LIST_REDIS_CACHE, MessageBuilder.withPayload(String.valueOf(creatorId)).build());
 
-
         // 发送 MQ
         // 构建消息体 DTO
-        NoteOperateMqDTO noteOperateMqDTO = NoteOperateMqDTO.builder().creatorId(creatorId).noteId(Long.valueOf(snowflakeId)).type(NoteOperateEnum.PUBLISH.getCode()) // 发布笔记
+        NoteOperateMqDTO noteOperateMqDTO = NoteOperateMqDTO
+                .builder()
+                .creatorId(creatorId)
+                .noteId(Long.valueOf(snowflakeIdId))
+                .type(NoteOperateEnum.PUBLISH.getCode()) // 发布笔记
                 .build();
 
         // 构建消息对象，并将 DTO 转成 Json 字符串设置到消息体中
-        Message<String> message = MessageBuilder.withPayload(JsonUtils.toJsonString(noteOperateMqDTO)).build();
+        Message<String> message = MessageBuilder
+                .withPayload(JsonUtils.toJsonString(noteOperateMqDTO))
+                .build();
 
         // 通过冒号连接, 可让 MQ 发送给主题 Topic 时，携带上标签 Tag
         String destination = MQConstants.TOPIC_NOTE_OPERATE + ":" + MQConstants.TAG_NOTE_PUBLISH;
@@ -230,9 +249,6 @@ public class NoteServiceImpl implements NoteService {
                 log.error("==> 【笔记发布】MQ 发送异常: ", throwable);
             }
         });
-
-        return Response.success();
-
     }
 
 
@@ -1224,15 +1240,7 @@ public class NoteServiceImpl implements NoteService {
                 // 获取封面图片
                 String cover = StringUtils.isNotBlank(noteDO.getImgUris()) ? StringUtils.split(noteDO.getImgUris(), ",")[0] : null;
 
-                NoteItemRspVO noteItemRspVO = NoteItemRspVO.builder()
-                        .noteId(noteDO.getId())
-                        .type(noteDO.getType())
-                        .creatorId(noteDO.getCreatorId())
-                        .cover(cover)
-                        .videoUri(noteDO.getVideoUri())
-                        .title(noteDO.getTitle())
-                        .isLiked(false)
-                        .build();
+                NoteItemRspVO noteItemRspVO = NoteItemRspVO.builder().noteId(noteDO.getId()).type(noteDO.getType()).creatorId(noteDO.getCreatorId()).cover(cover).videoUri(noteDO.getVideoUri()).title(noteDO.getTitle()).isLiked(false).build();
                 return noteItemRspVO;
             }).toList();
 
@@ -1293,6 +1301,7 @@ public class NoteServiceImpl implements NoteService {
 
     /**
      * 批量获取笔记的点赞状态
+     *
      * @param noteItemRspVOS
      */
     private void batchGetAndSetNoteIsLiked(List<NoteItemRspVO> noteItemRspVOS) {
@@ -1308,8 +1317,7 @@ public class NoteServiceImpl implements NoteService {
             DefaultRedisScript<List> script = LuaUtils.getLuaScript("/lua/rbitmap_batch_get_note_liked.lua", List.class);
 
             // 执行 Lua 脚本，拿到返回结果
-            List<Long> results = redisTemplate.execute(
-                    script, Collections.singletonList(rbitmapUserNoteLikeListKey), noteIds.toArray());
+            List<Long> results = redisTemplate.execute(script, Collections.singletonList(rbitmapUserNoteLikeListKey), noteIds.toArray());
 
             // 若 Redis 中缓存不存在，下标 0 存放的标识为 -1
             Long hasKey = results.get(0);
@@ -1321,8 +1329,7 @@ public class NoteServiceImpl implements NoteService {
                 if (CollUtil.isEmpty(noteLikeDOS)) return;
 
                 // DO 转 Map, 方便查询对应笔记是否点赞
-                Map<Long, NoteLikeDO> noteIdIsLikedMap = noteLikeDOS.stream()
-                        .collect(Collectors.toMap(NoteLikeDO::getNoteId, notelikeDO -> notelikeDO));
+                Map<Long, NoteLikeDO> noteIdIsLikedMap = noteLikeDOS.stream().collect(Collectors.toMap(NoteLikeDO::getNoteId, notelikeDO -> notelikeDO));
 
                 // 循环 VO 集合，设置是否点赞
                 noteItemRspVOS.forEach(noteItemRspVO -> {
@@ -1334,7 +1341,7 @@ public class NoteServiceImpl implements NoteService {
                 // 再异步初始化 Roaring Bitmap
                 threadPoolTaskExecutor.submit(() -> {
                     // 随机过期时间（1小时内）
-                    long expireSeconds = 60*30 + RandomUtil.randomInt(60*30);
+                    long expireSeconds = 60 * 30 + RandomUtil.randomInt(60 * 30);
                     batchAddNoteLike2RBitmapAndExpire(loginUserId, expireSeconds, rbitmapUserNoteLikeListKey);
                 });
                 return;
@@ -1360,6 +1367,7 @@ public class NoteServiceImpl implements NoteService {
 
     /**
      * 如果是博主本人，需要调用计数服务，获取最新的点赞数据
+     *
      * @param userId
      * @param sortedList
      */
@@ -1377,21 +1385,20 @@ public class NoteServiceImpl implements NoteService {
 
     /**
      * 设置 VO 集合中每篇笔记的点赞量
+     *
      * @param noteItemRspVOS
      * @param findNoteCountsByIdRspDTOS
      */
     private static void setVOListLikeTotal(List<NoteItemRspVO> noteItemRspVOS, List<FindNoteCountsByIdRspDTO> findNoteCountsByIdRspDTOS) {
         if (CollUtil.isNotEmpty(findNoteCountsByIdRspDTOS)) {
             // DTO 集合转 Map
-            Map<Long, FindNoteCountsByIdRspDTO> noteIdAndDTOMap = findNoteCountsByIdRspDTOS.stream()
-                    .collect(Collectors.toMap(FindNoteCountsByIdRspDTO::getNoteId, dto -> dto));
+            Map<Long, FindNoteCountsByIdRspDTO> noteIdAndDTOMap = findNoteCountsByIdRspDTOS.stream().collect(Collectors.toMap(FindNoteCountsByIdRspDTO::getNoteId, dto -> dto));
 
             // 循环设置 VO 集合，设置每篇笔记的点赞量
             noteItemRspVOS.forEach(noteItemRspVO -> {
                 Long currNoteId = noteItemRspVO.getNoteId();
                 FindNoteCountsByIdRspDTO findNoteCountsByIdRspDTO = noteIdAndDTOMap.get(currNoteId);
-                noteItemRspVO.setLikeTotal((Objects.nonNull(findNoteCountsByIdRspDTO) && Objects.nonNull(findNoteCountsByIdRspDTO.getLikeTotal())) ?
-                        NumberUtils.formatNumberString(findNoteCountsByIdRspDTO.getLikeTotal()) : "0");
+                noteItemRspVO.setLikeTotal((Objects.nonNull(findNoteCountsByIdRspDTO) && Objects.nonNull(findNoteCountsByIdRspDTO.getLikeTotal())) ? NumberUtils.formatNumberString(findNoteCountsByIdRspDTO.getLikeTotal()) : "0");
             });
         }
     }
