@@ -10,6 +10,7 @@ import com.google.common.collect.Maps;
 import com.haishi.LittleRedBook.count.dto.response.FindNoteCountsByIdRspDTO;
 import com.haishi.LittleRedBook.note.biz.constant.MQConstants;
 import com.haishi.LittleRedBook.note.biz.constant.RedisKeyConstants;
+import com.haishi.LittleRedBook.note.biz.convert.NoteConvert;
 import com.haishi.LittleRedBook.note.biz.domain.dataobject.NoteCollectionDO;
 import com.haishi.LittleRedBook.note.biz.domain.dataobject.NoteDO;
 import com.haishi.LittleRedBook.note.biz.domain.dataobject.NoteLikeDO;
@@ -21,6 +22,7 @@ import com.haishi.LittleRedBook.note.biz.enums.*;
 import com.haishi.LittleRedBook.note.biz.model.dto.CollectUnCollectNoteMqDTO;
 import com.haishi.LittleRedBook.note.biz.model.dto.LikeUnlikeNoteMqDTO;
 import com.haishi.LittleRedBook.note.biz.model.dto.NoteOperateMqDTO;
+import com.haishi.LittleRedBook.note.biz.model.dto.PublishNoteDTO;
 import com.haishi.LittleRedBook.note.biz.model.vo.request.*;
 import com.haishi.LittleRedBook.note.biz.model.vo.response.FindNoteDetailResponse;
 import com.haishi.LittleRedBook.note.biz.model.vo.response.FindNoteIsLikedAndCollectedRspVO;
@@ -190,8 +192,12 @@ public class NoteServiceImpl implements NoteService {
         }
 
         // 发送事务消息
+        // DO 转 DTO
+        PublishNoteDTO publishNoteDTO = NoteConvert.INSTANCE.convertDO2DTO(noteDO);
+        publishNoteDTO.setContent(content);
+
         // 构建消息内容
-        Message<String> message = MessageBuilder.withPayload(JsonUtils.toJsonString(noteDO)).build();
+        Message<String> message = MessageBuilder.withPayload(JsonUtils.toJsonString(publishNoteDTO)).build();
         // 发送事务消息
         TransactionSendResult transactionSendResult = rocketMQTemplate.sendMessageInTransaction(MQConstants.TOPIC_PUBLISH_NOTE_TRANSACTION, message, null);
 
