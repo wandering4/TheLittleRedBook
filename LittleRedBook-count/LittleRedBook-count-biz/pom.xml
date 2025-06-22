@@ -21,6 +21,12 @@
             <artifactId>LittleRedBook-count-api</artifactId>
         </dependency>
 
+        <!-- Sentinel 流量治理 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
+
 
         <!-- 快手 Buffer Trigger -->
         <dependency>

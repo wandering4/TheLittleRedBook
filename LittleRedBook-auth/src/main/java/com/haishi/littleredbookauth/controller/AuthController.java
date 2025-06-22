@@ -4,7 +4,7 @@ import com.haishi.framework.biz.operationlog.aspect.ApiOperationLog;
 import com.haishi.framework.commons.response.Response;
 import com.haishi.littleredbookauth.service.AuthService;
 import com.haishi.littleredbookauth.model.vo.user.UpdatePasswordReqVO;
-import com.haishi.littleredbookauth.model.vo.user.UserLoginReqVO;
+import com.haishi.littleredbookauth.model.vo.user.UserLoginRequest;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.annotation.Validated;
@@ -21,8 +21,8 @@ public class AuthController {
 
     @PostMapping("/login")
     @ApiOperationLog(description = "用户登录/注册")
-    public Response<String> loginAndRegister(@Validated @RequestBody UserLoginReqVO userLoginReqVO) {
-        return authService.loginAndRegister(userLoginReqVO);
+    public Response<String> loginAndRegister(@Validated @RequestBody UserLoginRequest userLoginRequest) {
+        return authService.loginAndRegister(userLoginRequest);
     }
 
     @PostMapping("/logout")

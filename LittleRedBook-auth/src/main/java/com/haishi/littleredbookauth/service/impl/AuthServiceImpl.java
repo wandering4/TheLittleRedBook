@@ -13,7 +13,7 @@ import com.haishi.framework.commons.response.Response;
 import com.haishi.littleredbookauth.enums.LoginTypeEnum;
 import com.haishi.littleredbookauth.enums.ResponseCodeEnum;
 import com.haishi.littleredbookauth.model.vo.user.UpdatePasswordReqVO;
-import com.haishi.littleredbookauth.model.vo.user.UserLoginReqVO;
+import com.haishi.littleredbookauth.model.vo.user.UserLoginRequest;
 import com.haishi.littleredbookauth.rpc.UserRpcService;
 import com.haishi.littleredbookauth.service.AuthService;
 import jakarta.annotation.Resource;
@@ -42,13 +42,13 @@ public class AuthServiceImpl implements AuthService {
     /**
      * 登录与注册
      *
-     * @param userLoginReqVO
+     * @param userLoginRequest
      * @return
      */
     @Override
-    public Response<String> loginAndRegister(UserLoginReqVO userLoginReqVO) {
-        String phone = userLoginReqVO.getPhone();
-        Integer type = userLoginReqVO.getType();
+    public Response<String> loginAndRegister(UserLoginRequest userLoginRequest) {
+        String phone = userLoginRequest.getPhone();
+        Integer type = userLoginRequest.getType();
 
         LoginTypeEnum loginTypeEnum = LoginTypeEnum.valueOf(type);
 
@@ -63,7 +63,7 @@ public class AuthServiceImpl implements AuthService {
         switch (loginTypeEnum) {
             case VERIFICATION_CODE:
                 //验证码登录
-                String verificationCode = userLoginReqVO.getCode();
+                String verificationCode = userLoginRequest.getCode();
 
                 Preconditions.checkArgument(StringUtils.isNotBlank(verificationCode), "验证码不能为空");
 
@@ -88,7 +88,7 @@ public class AuthServiceImpl implements AuthService {
                 break;
 
             case PASSWORD:
-                String password = userLoginReqVO.getPassword();
+                String password = userLoginRequest.getPassword();
 
                 FindUserByPhoneRspDTO findUserByPhoneRspDTO  = userRpcService.findUserByPhone(phone);
 
