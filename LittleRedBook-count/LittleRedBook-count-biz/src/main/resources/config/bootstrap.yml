@@ -21,3 +21,11 @@ spring:
       transport:
         port: 8719 # Sentinel Server 端口
         dashboard: 127.0.0.1:8060 # Sentinel 控制台端口
+      datasource:
+        nacos: # 自定义数据源名称（可随意命名）
+          nacos: # 数据源类型为 Nacos（Sentinel规则存储和动态配置）
+            serverAddr: http://127.0.0.1:8848 # Nacos服务器地址
+            namespace: Little-Red-Book # 命名空间
+            groupId: DEFAULT_GROUP # 所属组
+            dataId: sentinel-count # 数据 ID（Sentinel 规则的唯一标识，对应 Nacos 中配置的 Data ID）
+            ruleType: flow # 规则类型（flow 表示流控规则）

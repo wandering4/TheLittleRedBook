@@ -16,6 +16,13 @@
 
     <dependencies>
 
+        <!-- 以 Nacos 作为 Sentinel 的数据源 -->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-datasource-nacos</artifactId>
+        </dependency>
+
+
         <dependency>
             <groupId>com.haishi</groupId>
             <artifactId>LittleRedBook-count-api</artifactId>
