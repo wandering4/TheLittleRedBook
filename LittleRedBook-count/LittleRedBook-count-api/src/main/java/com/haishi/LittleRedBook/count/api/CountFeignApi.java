@@ -5,6 +5,7 @@ import com.haishi.LittleRedBook.count.dto.request.FindNoteCountsByIdsReqDTO;
 import com.haishi.LittleRedBook.count.dto.request.FindUserCountsByIdReqDTO;
 import com.haishi.LittleRedBook.count.dto.response.FindNoteCountsByIdRspDTO;
 import com.haishi.LittleRedBook.count.dto.response.FindUserCountsByIdRspDTO;
+import com.haishi.LittleRedBook.count.fallback.CountFeignApiFallback;
 import com.haishi.framework.commons.response.Response;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,7 +18,7 @@ import java.util.List;
  * @version: v1.0.0
  * @description: 计数服务 Feign 接口
  **/
-@FeignClient(name = ApiConstants.SERVICE_NAME)
+@FeignClient(name = ApiConstants.SERVICE_NAME, fallback = CountFeignApiFallback.class)
 public interface CountFeignApi {
 
     String PREFIX = "/count";

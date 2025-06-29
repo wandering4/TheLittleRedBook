@@ -40,6 +40,18 @@ public class UserCountController {
     }
 
     /**
+     * 测试 “流控模式：链路” 使用
+     * @param findUserCountsByIdReqDTO
+     * @return
+     */
+    @PostMapping(value = "/user/data2")
+    @ApiOperationLog(description = "获取用户计数数据")
+    @SentinelResource("findUserCountData4Controller2")
+    public Response<FindUserCountsByIdRspDTO> findUserCountData2(@Validated @RequestBody FindUserCountsByIdReqDTO findUserCountsByIdReqDTO) {
+        return userCountService.findUserCountData(findUserCountsByIdReqDTO);
+    }
+
+    /**
      * blockHandler 函数，原方法调用被限流/降级/系统保护的时候调用
      * 注意, 需要包含限流方法的所有参数，和 BlockException 参数
      * @param findUserCountsByIdReqDTO
